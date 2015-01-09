@@ -33,7 +33,7 @@ namespace SharedPreferences
             base.OnCreate(bundle);
 
             // Create your application here
-            SetContentView(Resource.Layout.TesctCase);
+            SetContentView(Resource.Layout.TestCase);
             mListView = FindViewById<ListView>(Resource.Id.listView);
             mSearch = FindViewById<EditText>(Resource.Id.etSearch);
             mContainer = FindViewById<LinearLayout>(Resource.Id.llContainer);

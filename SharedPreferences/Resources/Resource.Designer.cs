@@ -200,7 +200,7 @@ namespace SharedPreferences
 			public const int row_userinfo = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int TesctCase = 2130903044;
+			public const int TestCase = 2130903044;
 			
 			// aapt resource value: 0x7f030005
 			public const int TestCase1 = 2130903045;
