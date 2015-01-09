@@ -52,8 +52,16 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\packages\Xamarin.Android.Support.v4.21.0.3.0\lib\MonoAndroid10\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common.cs" />
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="SlidingTabScrollView.cs" />
+    <Compile Include="SlidingTabsFragment.cs" />
+    <Compile Include="SlidingTabStrip.cs" />
     <Compile Include="Testcase.cs" />
     <Compile Include="ExtMethods.cs" />
     <Compile Include="FormatRows.cs" />
@@ -72,18 +80,23 @@
     <AndroidResource Include="Resources\layout\TestCase.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\row_userinfo.axml">
+    <AndroidResource Include="Resources\layout\row_testcase.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\Main.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\row_testcase1.axml">
+    <AndroidResource Include="Resources\layout\row_testcase11.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\TestCase1.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\row_testcase12.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_sample.axml" />
+    <AndroidResource Include="Resources\layout\pager_item.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Login.axml" />
@@ -111,12 +124,22 @@
     <AndroidResource Include="Resources\drawable\ic_navigation_drawer.png" />
     <AndroidResource Include="Resources\menu\action_bar.xml" />
     <AndroidResource Include="Resources\values\theme.xml" />
+    <AndroidResource Include="Resources\drawable\ic_action_overflow.png" />
+    <AndroidResource Include="Resources\drawable\xs.png" />
+    <AndroidResource Include="Resources\values\themes.xml" />
+    <AndroidResource Include="Resources\menu\actionbar_main.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{1386282b-7a13-4e34-9663-12854688eb7b}</Project>
       <Name>Entity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="xamandroidsupportv4-18">
+      <Visible>False</Visible>
+      <Version>21.0.3.0</Version>
+    </XamarinComponentReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

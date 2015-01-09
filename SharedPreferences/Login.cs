@@ -46,7 +46,7 @@ namespace SharedPreferences
         void mButton_Click(object sender, EventArgs e)
         {            
             mClient = new WebClient();
-            mUrl = new Uri("http://192.168.1.101:8011/home/LoginSubmit2?UserName=" + mUserText.Text + "&Pwd=" + mPwd.Text + "&isspe=1");
+            mUrl = new Uri("http://cloud.tescar.cn/home/LoginSubmit2?UserName=" + mUserText.Text + "&Pwd=" + mPwd.Text + "&isspe=1");
             mClient.DownloadDataAsync(mUrl);
             mProgressBar.Visibility = ViewStates.Visible;
             mButton.Enabled = false;
@@ -67,7 +67,7 @@ namespace SharedPreferences
                 {
                     mButton.Enabled = true;
                     mProgressBar.Visibility = ViewStates.Invisible;
-                    Intent intent = new Intent(this, typeof(Testcase1));
+                    Intent intent = new Intent(this, typeof(MainActivity));
                     this.StartActivity(intent);
                     this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);    
                 }

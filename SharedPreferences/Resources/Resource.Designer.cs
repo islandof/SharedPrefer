@@ -81,19 +81,25 @@ namespace SharedPreferences
 			public const int ic_action_download = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int ic_action_search = 2130837509;
+			public const int ic_action_overflow = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int ic_navigation_drawer = 2130837510;
+			public const int ic_action_search = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int Icon = 2130837511;
+			public const int ic_navigation_drawer = 2130837511;
 			
 			// aapt resource value: 0x7f020008
-			public const int monoandroidsplash = 2130837512;
+			public const int Icon = 2130837512;
 			
 			// aapt resource value: 0x7f020009
-			public const int progressbarStyle = 2130837513;
+			public const int monoandroidsplash = 2130837513;
+			
+			// aapt resource value: 0x7f02000a
+			public const int progressbarStyle = 2130837514;
+			
+			// aapt resource value: 0x7f02000b
+			public const int xs = 2130837515;
 			
 			static Drawable()
 			{
@@ -108,71 +114,104 @@ namespace SharedPreferences
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f080003
-			public const int btnLogin = 2131230723;
-			
-			// aapt resource value: 0x7f080004
-			public const int checkBox1 = 2131230724;
-			
-			// aapt resource value: 0x7f080014
-			public const int downloads = 2131230740;
-			
-			// aapt resource value: 0x7f080011
-			public const int etSearch = 2131230737;
-			
-			// aapt resource value: 0x7f080013
-			public const int etSearch1 = 2131230739;
-			
-			// aapt resource value: 0x7f080010
-			public const int listView = 2131230736;
-			
-			// aapt resource value: 0x7f08000f
-			public const int llContainer = 2131230735;
-			
-			// aapt resource value: 0x7f080012
-			public const int llContainer1 = 2131230738;
-			
-			// aapt resource value: 0x7f080000
-			public const int mainView = 2131230720;
+			// aapt resource value: 0x7f080005
+			public const int btnLogin = 2131230725;
 			
 			// aapt resource value: 0x7f080006
-			public const int progressBar1 = 2131230726;
+			public const int checkBox1 = 2131230726;
 			
-			// aapt resource value: 0x7f080005
-			public const int relativeLayout1 = 2131230725;
+			// aapt resource value: 0x7f08001e
+			public const int downloads = 2131230750;
 			
-			// aapt resource value: 0x7f080015
-			public const int search = 2131230741;
+			// aapt resource value: 0x7f08001b
+			public const int etSearch = 2131230747;
 			
-			// aapt resource value: 0x7f080007
-			public const int txtAla11 = 2131230727;
-			
-			// aapt resource value: 0x7f080008
-			public const int txtAla12 = 2131230728;
-			
-			// aapt resource value: 0x7f080009
-			public const int txtAla13 = 2131230729;
-			
-			// aapt resource value: 0x7f08000a
-			public const int txtAla14 = 2131230730;
-			
-			// aapt resource value: 0x7f08000c
-			public const int txtDeptName = 2131230732;
-			
-			// aapt resource value: 0x7f080002
-			public const int txtPwd = 2131230722;
-			
-			// aapt resource value: 0x7f080001
-			public const int txtUser = 2131230721;
-			
-			// aapt resource value: 0x7f08000e
-			public const int txtUserEmail = 2131230734;
+			// aapt resource value: 0x7f08001d
+			public const int etSearch1 = 2131230749;
 			
 			// aapt resource value: 0x7f08000b
-			public const int txtUserName = 2131230731;
+			public const int item_subtitle = 2131230731;
+			
+			// aapt resource value: 0x7f08000c
+			public const int item_title = 2131230732;
+			
+			// aapt resource value: 0x7f08001a
+			public const int listView = 2131230746;
+			
+			// aapt resource value: 0x7f080019
+			public const int llContainer = 2131230745;
+			
+			// aapt resource value: 0x7f08001c
+			public const int llContainer1 = 2131230748;
+			
+			// aapt resource value: 0x7f080002
+			public const int mainView = 2131230722;
+			
+			// aapt resource value: 0x7f080020
+			public const int menu = 2131230752;
+			
+			// aapt resource value: 0x7f080008
+			public const int progressBar1 = 2131230728;
+			
+			// aapt resource value: 0x7f080007
+			public const int relativeLayout1 = 2131230727;
+			
+			// aapt resource value: 0x7f08000a
+			public const int sample_content_fragment = 2131230730;
+			
+			// aapt resource value: 0x7f080009
+			public const int sample_main_layout = 2131230729;
+			
+			// aapt resource value: 0x7f08001f
+			public const int search = 2131230751;
+			
+			// aapt resource value: 0x7f080000
+			public const int sliding_tabs = 2131230720;
+			
+			// aapt resource value: 0x7f080011
+			public const int txtAla11 = 2131230737;
+			
+			// aapt resource value: 0x7f080012
+			public const int txtAla12 = 2131230738;
+			
+			// aapt resource value: 0x7f080013
+			public const int txtAla13 = 2131230739;
+			
+			// aapt resource value: 0x7f080014
+			public const int txtAla14 = 2131230740;
+			
+			// aapt resource value: 0x7f080015
+			public const int txtAla15 = 2131230741;
+			
+			// aapt resource value: 0x7f080016
+			public const int txtAla16 = 2131230742;
+			
+			// aapt resource value: 0x7f080017
+			public const int txtAla17 = 2131230743;
+			
+			// aapt resource value: 0x7f080018
+			public const int txtAla18 = 2131230744;
+			
+			// aapt resource value: 0x7f08000e
+			public const int txtDeptName = 2131230734;
+			
+			// aapt resource value: 0x7f080004
+			public const int txtPwd = 2131230724;
+			
+			// aapt resource value: 0x7f080003
+			public const int txtUser = 2131230723;
+			
+			// aapt resource value: 0x7f080010
+			public const int txtUserEmail = 2131230736;
 			
 			// aapt resource value: 0x7f08000d
-			public const int txtUserPwd = 2131230733;
+			public const int txtUserName = 2131230733;
+			
+			// aapt resource value: 0x7f08000f
+			public const int txtUserPwd = 2131230735;
+			
+			// aapt resource value: 0x7f080001
+			public const int viewpager = 2131230721;
 			
 			static Id()
 			{
@@ -188,22 +227,31 @@ namespace SharedPreferences
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Login = 2130903040;
+			public const int fragment_sample = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int Main = 2130903041;
+			public const int Login = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int row_testcase1 = 2130903042;
+			public const int Main = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int row_userinfo = 2130903043;
+			public const int pager_item = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int TestCase = 2130903044;
+			public const int row_testcase = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int TestCase1 = 2130903045;
+			public const int row_testcase11 = 2130903045;
+			
+			// aapt resource value: 0x7f030006
+			public const int row_testcase12 = 2130903046;
+			
+			// aapt resource value: 0x7f030007
+			public const int TestCase = 2130903047;
+			
+			// aapt resource value: 0x7f030008
+			public const int TestCase1 = 2130903048;
 			
 			static Layout()
 			{
@@ -224,6 +272,9 @@ namespace SharedPreferences
 			// aapt resource value: 0x7f070001
 			public const int actionbar = 2131165185;
 			
+			// aapt resource value: 0x7f070002
+			public const int actionbar_main = 2131165186;
+			
 			static Menu()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -242,6 +293,12 @@ namespace SharedPreferences
 			
 			// aapt resource value: 0x7f050000
 			public const int Hello = 2131034112;
+			
+			// aapt resource value: 0x7f050003
+			public const int sample_hide_log = 2131034115;
+			
+			// aapt resource value: 0x7f050002
+			public const int sample_show_log = 2131034114;
 			
 			static String()
 			{

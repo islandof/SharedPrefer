@@ -56,7 +56,7 @@ namespace SharedPreferences
                 //Action<ImageView> action = PicSelected;
                 //mAdapter = new UserinfosAdapter(this, Resource.Layout.row_userinfo, mUserinfo, action);
                 //mListView.Adapter = mAdapter;
-                mAdapter = new Testcase1sAdapter(this, Resource.Layout.row_userinfo, mTestcase1);
+                mAdapter = new Testcase1sAdapter(this, Resource.Layout.row_testcase11, mTestcase1);
                 mListView.Adapter = mAdapter;
             });
         } 
