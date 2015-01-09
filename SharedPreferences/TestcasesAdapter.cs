@@ -14,29 +14,29 @@ using Entity;
 
 namespace SharedPreferences
 {
-    class TestcasesAdapter : BaseAdapter<testCase1>
+    class TestcasesAdapter : BaseAdapter<user_info>
     {
         private Context mContext;
         private int mRowLayout;
-        private List<testCase1> mTestcase1s;
+        private List<user_info> mUserinfos;
         private int [] mAlternatingColors;
-
-        public TestcasesAdapter(Context context, int rowLayout, List<testCase1> Testcase1s)
+        
+        public TestcasesAdapter(Context context, int rowLayout, List<user_info> Userinfos)
         {
             mContext = context;
             mRowLayout = rowLayout;
-            mTestcase1s = Testcase1s;
+            mUserinfos = Userinfos;
             mAlternatingColors = new int[] { 0xF2F2F2, 0x009900 };
         }
 
         public override int Count
         {
-            get { return mTestcase1s.Count; }
+            get { return mUserinfos.Count; }
         }
 
-        public override testCase1 this[int position]
+        public override user_info this[int position]
         {
-            get { return mTestcase1s[position]; }
+            get { return mUserinfos[position]; }
         }
 
         public override long GetItemId(int position)
@@ -55,11 +55,36 @@ namespace SharedPreferences
 
             row.SetBackgroundColor(GetColorFromInteger(mAlternatingColors[position % mAlternatingColors.Length]));
 
-                        
-            row.FindViewById<TextView>(Resource.Id.txtAla11).Text = mTestcase1s[position].Ala11;
-            row.FindViewById<TextView>(Resource.Id.txtAla12).Text = mTestcase1s[position].Ala12;
-            row.FindViewById<TextView>(Resource.Id.txtAla13).Text = mTestcase1s[position].Ala13;
-            row.FindViewById<TextView>(Resource.Id.txtAla14).Text = mTestcase1s[position].Ala14;
+            
+            TextView firstName = row.FindViewById<TextView>(Resource.Id.txtUserName);
+            firstName.Text = mUserinfos[position].USER_NAME;
+
+            TextView lastName = row.FindViewById<TextView>(Resource.Id.txtDeptName);
+            lastName.Text = mUserinfos[position].ROLE_NAME;
+
+            TextView age = row.FindViewById<TextView>(Resource.Id.txtUserPwd);
+            age.Text = mUserinfos[position].USER_PWD;
+
+            TextView gender = row.FindViewById<TextView>(Resource.Id.txtUserEmail);
+            gender.Text = mUserinfos[position].companyname;
+
+            if ((position % 2) == 1)
+            {
+                //Green background, set text white
+                firstName.SetTextColor(Color.White);
+                lastName.SetTextColor(Color.White);
+                age.SetTextColor(Color.White);
+                gender.SetTextColor(Color.White);
+            }
+
+            else
+            {
+                //White background, set text black
+                firstName.SetTextColor(Color.Black);
+                lastName.SetTextColor(Color.Black);
+                age.SetTextColor(Color.Black);
+                gender.SetTextColor(Color.Black);
+            }
 
             return row;
         }

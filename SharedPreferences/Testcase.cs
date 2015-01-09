@@ -17,7 +17,7 @@ using Newtonsoft.Json;
 namespace SharedPreferences
 {
     [Activity(Label = "Activity2")]
-    public class Activity2 : Activity
+    public class Testcase : Activity
     {
         private List<user_info> mUserinfo;
         private ListView mListView;
@@ -25,7 +25,7 @@ namespace SharedPreferences
         private LinearLayout mContainer;
         private bool mAnimatedDown;
         private bool mIsAnimating;
-        private UserinfosAdapter mAdapter;
+        private TestcasesAdapter mAdapter;
         private WebClient mClient;
         private Uri mUrl;
         protected override void OnCreate(Bundle bundle)
@@ -65,7 +65,7 @@ namespace SharedPreferences
                                             || userinfo.USER_PWD.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase) || userinfo.USER_EMAIL.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase)
                                                select userinfo).ToList<user_info>();
 
-            mAdapter = new UserinfosAdapter(this, Resource.Layout.row_userinfo, searchedFriends);
+            mAdapter = new TestcasesAdapter(this, Resource.Layout.row_userinfo, searchedFriends);
             mListView.Adapter = mAdapter;
 
 
@@ -132,7 +132,7 @@ namespace SharedPreferences
                 //Action<ImageView> action = PicSelected;
                 //mAdapter = new UserinfosAdapter(this, Resource.Layout.row_userinfo, mUserinfo, action);
                 //mListView.Adapter = mAdapter;
-                mAdapter = new UserinfosAdapter(this, Resource.Layout.row_userinfo, mUserinfo);
+                mAdapter = new TestcasesAdapter(this, Resource.Layout.row_userinfo, mUserinfo);
                 mListView.Adapter = mAdapter;
             });
         } 

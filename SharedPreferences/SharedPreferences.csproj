@@ -54,7 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Activity2.cs" />
+    <Compile Include="Testcase.cs" />
     <Compile Include="ExtMethods.cs" />
     <Compile Include="FormatRows.cs" />
     <Compile Include="Login.cs" />
@@ -62,8 +62,8 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Testcase1.cs" />
+    <Compile Include="Testcase1sAdapter.cs" />
     <Compile Include="TestcasesAdapter.cs" />
-    <Compile Include="UserinfosAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

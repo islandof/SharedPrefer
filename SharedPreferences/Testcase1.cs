@@ -25,7 +25,7 @@ namespace SharedPreferences
         private LinearLayout mContainer;
         private bool mAnimatedDown;
         private bool mIsAnimating;
-        private TestcasesAdapter mAdapter;
+        private Testcase1sAdapter mAdapter;
         private WebClient mClient;
         private Uri mUrl;
         protected override void OnCreate(Bundle bundle)
@@ -56,7 +56,7 @@ namespace SharedPreferences
                 //Action<ImageView> action = PicSelected;
                 //mAdapter = new UserinfosAdapter(this, Resource.Layout.row_userinfo, mUserinfo, action);
                 //mListView.Adapter = mAdapter;
-                mAdapter = new TestcasesAdapter(this, Resource.Layout.row_userinfo, mTestcase1);
+                mAdapter = new Testcase1sAdapter(this, Resource.Layout.row_userinfo, mTestcase1);
                 mListView.Adapter = mAdapter;
             });
         } 
