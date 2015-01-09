@@ -14,7 +14,7 @@ using Entity;
 
 namespace SharedPreferences
 {
-    class TestcasesAdapter : BaseAdapter<user_info>
+    public class TestcasesAdapter : BaseAdapter<user_info>
     {
         private Context mContext;
         private int mRowLayout;

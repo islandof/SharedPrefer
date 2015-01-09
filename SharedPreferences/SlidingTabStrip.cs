@@ -14,7 +14,7 @@ using Android.Util;
 
 namespace SharedPreferences
 {
-    public class SlidingTabStrip : LinearLayout
+    public sealed class SlidingTabStrip : LinearLayout
     {
         //Copy and paste from here................................................................
         private const int DEFAULT_BOTTOM_BORDER_THICKNESS_DIPS = 2;
