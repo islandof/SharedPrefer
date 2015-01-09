@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Graphics;
+using Entity;
 
 namespace SharedPreferences
 {
@@ -19,7 +20,7 @@ namespace SharedPreferences
         private int mRowLayout;
         private List<user_info> mUserinfos;
         private int [] mAlternatingColors;
-
+        
         public UserinfosAdapter(Context context, int rowLayout, List<user_info> Userinfos)
         {
             mContext = context;

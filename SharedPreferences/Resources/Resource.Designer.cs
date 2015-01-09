@@ -26,6 +26,8 @@ namespace SharedPreferences
 		
 		public static void UpdateIdValues()
 		{
+			global::Entity.Resource.String.ApplicationName = global::SharedPreferences.Resource.String.ApplicationName;
+			global::Entity.Resource.String.Hello = global::SharedPreferences.Resource.String.Hello;
 		}
 		
 		public partial class Animation
@@ -112,17 +114,23 @@ namespace SharedPreferences
 			// aapt resource value: 0x7f080007
 			public const int checkBox1 = 2131230727;
 			
-			// aapt resource value: 0x7f08000e
-			public const int downloads = 2131230734;
+			// aapt resource value: 0x7f080014
+			public const int downloads = 2131230740;
 			
 			// aapt resource value: 0x7f080002
 			public const int etSearch = 2131230722;
+			
+			// aapt resource value: 0x7f080013
+			public const int etSearch1 = 2131230739;
 			
 			// aapt resource value: 0x7f080001
 			public const int listView = 2131230721;
 			
 			// aapt resource value: 0x7f080000
 			public const int llContainer = 2131230720;
+			
+			// aapt resource value: 0x7f080012
+			public const int llContainer1 = 2131230738;
 			
 			// aapt resource value: 0x7f080003
 			public const int mainView = 2131230723;
@@ -133,11 +141,23 @@ namespace SharedPreferences
 			// aapt resource value: 0x7f080008
 			public const int relativeLayout1 = 2131230728;
 			
-			// aapt resource value: 0x7f08000f
-			public const int search = 2131230735;
+			// aapt resource value: 0x7f080015
+			public const int search = 2131230741;
+			
+			// aapt resource value: 0x7f08000a
+			public const int txtAla11 = 2131230730;
 			
 			// aapt resource value: 0x7f08000b
-			public const int txtDeptName = 2131230731;
+			public const int txtAla12 = 2131230731;
+			
+			// aapt resource value: 0x7f08000c
+			public const int txtAla13 = 2131230732;
+			
+			// aapt resource value: 0x7f08000d
+			public const int txtAla14 = 2131230733;
+			
+			// aapt resource value: 0x7f08000f
+			public const int txtDeptName = 2131230735;
 			
 			// aapt resource value: 0x7f080005
 			public const int txtPwd = 2131230725;
@@ -145,14 +165,14 @@ namespace SharedPreferences
 			// aapt resource value: 0x7f080004
 			public const int txtUser = 2131230724;
 			
-			// aapt resource value: 0x7f08000d
-			public const int txtUserEmail = 2131230733;
+			// aapt resource value: 0x7f080011
+			public const int txtUserEmail = 2131230737;
 			
-			// aapt resource value: 0x7f08000a
-			public const int txtUserName = 2131230730;
+			// aapt resource value: 0x7f08000e
+			public const int txtUserName = 2131230734;
 			
-			// aapt resource value: 0x7f08000c
-			public const int txtUserPwd = 2131230732;
+			// aapt resource value: 0x7f080010
+			public const int txtUserPwd = 2131230736;
 			
 			static Id()
 			{
@@ -177,7 +197,13 @@ namespace SharedPreferences
 			public const int Main = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int row_userinfo = 2130903043;
+			public const int row_testcase1 = 2130903043;
+			
+			// aapt resource value: 0x7f030004
+			public const int row_userinfo = 2130903044;
+			
+			// aapt resource value: 0x7f030005
+			public const int TestCase1 = 2130903045;
 			
 			static Layout()
 			{

@@ -10,6 +10,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Android.Views.InputMethods;
+using Entity;
 using Newtonsoft.Json;
 
 namespace SharedPreferences
@@ -66,7 +67,7 @@ namespace SharedPreferences
                 {
                     mButton.Enabled = true;
                     mProgressBar.Visibility = ViewStates.Invisible;
-                    Intent intent = new Intent(this, typeof(Activity2));
+                    Intent intent = new Intent(this, typeof(Testcase1));
                     this.StartActivity(intent);
                     this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);    
                 }

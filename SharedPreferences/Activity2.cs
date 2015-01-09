@@ -11,6 +11,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Views.InputMethods;
 using Android.Widget;
+using Entity;
 using Newtonsoft.Json;
 
 namespace SharedPreferences
