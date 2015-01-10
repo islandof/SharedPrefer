@@ -44,6 +44,7 @@ namespace SharedPreferences
             mClient.DownloadDataCompleted += mClient_DownloadDataCompleted;
             // Create your application here
         }
+
         void mClient_DownloadDataCompleted(object sender, DownloadDataCompletedEventArgs e)
         {
             RunOnUiThread(() =>
@@ -60,6 +61,7 @@ namespace SharedPreferences
                 mListView.Adapter = mAdapter;
             });
         } 
+
         void mSearch_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
         {
 

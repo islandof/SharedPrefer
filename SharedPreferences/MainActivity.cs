@@ -13,13 +13,13 @@ using Newtonsoft.Json;
 
 namespace SharedPreferences
 {
-    [Activity(Label = "Sliding Tab Layout",  Icon = "@drawable/xs")]
+    [Activity(Label = "Sliding Tab Layout", MainLauncher = true, Icon = "@drawable/xs")]
     public class MainActivity : Activity
     {
         private WebClient mClient;
         private Uri mUrl;
         private List<testCase1> mTestcase1;
-        private Testcase1sAdapter mAdapter;
+        //private Testcase1sAdapter mAdapter;
         private ListView mListView;
         protected override void OnCreate(Bundle bundle)
         {
@@ -28,10 +28,7 @@ namespace SharedPreferences
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-            FragmentTransaction transaction = FragmentManager.BeginTransaction();
-            SlidingTabsFragment fragment = new SlidingTabsFragment();
-            transaction.Replace(Resource.Id.sample_content_fragment, fragment);
-            transaction.Commit();
+            
             mListView = FindViewById<ListView>(Resource.Id.listView);
             //mSearch = FindViewById<EditText>(Resource.Id.etSearch1);
             //mContainer = FindViewById<LinearLayout>(Resource.Id.llContainer1);
@@ -54,7 +51,12 @@ namespace SharedPreferences
                 //Action<ImageView> action = PicSelected;
                 //mAdapter = new UserinfosAdapter(this, Resource.Layout.row_userinfo, mUserinfo, action);
                 //mListView.Adapter = mAdapter;
-                mAdapter = new Testcase1sAdapter(this, Resource.Layout.row_testcase11, mTestcase1);
+                Testcase1sAdapter mAdapter1 = new Testcase1sAdapter(this, Resource.Layout.row_testcase11, mTestcase1);
+                Testcase2sAdapter mAdapter2 = new Testcase2sAdapter(this, Resource.Layout.row_testcase12, mTestcase1);
+                FragmentTransaction transaction = FragmentManager.BeginTransaction();
+                SlidingTabsFragment fragment = new SlidingTabsFragment(mTestcase1, mAdapter1, mAdapter2);
+                transaction.Replace(Resource.Id.sample_content_fragment, fragment);
+                transaction.Commit();
                 //mListView.Adapter = mAdapter;
             });
         } 

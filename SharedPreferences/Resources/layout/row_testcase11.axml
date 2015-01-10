@@ -7,11 +7,19 @@
     android:paddingLeft="5dp"
     android:paddingTop="2dp">
     <TextView
+        android:id="@+id/txtchepaino"
+        android:text="Ala11"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_weight="20"
+        android:gravity="center"
+        android:textColor="#333333" />
+    <TextView
         android:id="@+id/txtAla11"
         android:text="Ala11"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_weight="25"
+        android:layout_weight="20"
         android:gravity="center"
         android:textColor="#333333" />
     <TextView
@@ -19,7 +27,7 @@
         android:text="Ala13"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_weight="25"
+        android:layout_weight="20"
         android:gravity="center"
         android:textColor="#333333" />
     <TextView
@@ -27,7 +35,7 @@
         android:text="Ala13"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_weight="25"
+        android:layout_weight="20"
         android:gravity="center"
         android:textColor="#333333" />
     <TextView
@@ -35,7 +43,7 @@
         android:text="Ala14"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_weight="25"
+        android:layout_weight="20"
         android:gravity="center"
         android:textColor="#333333" />
 </LinearLayout>

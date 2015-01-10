@@ -14,14 +14,14 @@ using Entity;
 
 namespace SharedPreferences
 {
-    public class Testcase1sAdapter : BaseAdapter<testCase1>
+    public class Testcase2sAdapter : BaseAdapter<testCase1>
     {
         private Context mContext;
         private int mRowLayout;
         private List<testCase1> mTestcase1s;
         private int [] mAlternatingColors;
 
-        public Testcase1sAdapter(Context context, int rowLayout, List<testCase1> Testcase1s)
+        public Testcase2sAdapter(Context context, int rowLayout, List<testCase1> Testcase1s)
         {
             mContext = context;
             mRowLayout = rowLayout;
@@ -55,11 +55,11 @@ namespace SharedPreferences
 
             row.SetBackgroundColor(GetColorFromInteger(mAlternatingColors[position % mAlternatingColors.Length]));
 
-            row.FindViewById<TextView>(Resource.Id.txtchepaino).Text = mTestcase1s[position].chepaino;
-            row.FindViewById<TextView>(Resource.Id.txtAla11).Text = mTestcase1s[position].Ala11;
-            row.FindViewById<TextView>(Resource.Id.txtAla12).Text = mTestcase1s[position].Ala12;
-            row.FindViewById<TextView>(Resource.Id.txtAla13).Text = mTestcase1s[position].Ala13;
-            row.FindViewById<TextView>(Resource.Id.txtAla14).Text = mTestcase1s[position].Ala14;
+            row.FindViewById<TextView>(Resource.Id.txtchepaino).Text = mTestcase1s[position].chepaino;            
+            row.FindViewById<TextView>(Resource.Id.txtAla15).Text = mTestcase1s[position].Ala15;
+            row.FindViewById<TextView>(Resource.Id.txtAla16).Text = mTestcase1s[position].Ala16;
+            row.FindViewById<TextView>(Resource.Id.txtAla17).Text = mTestcase1s[position].Ala17;
+            row.FindViewById<TextView>(Resource.Id.txtAla18).Text = mTestcase1s[position].Ala18;
 
             return row;
         }

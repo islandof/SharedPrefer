@@ -15,7 +15,7 @@ using Newtonsoft.Json;
 
 namespace SharedPreferences
 {
-    [Activity(Label = "SharedPreferences", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "SharedPreferences", Icon = "@drawable/icon")]
     public class Login : Activity
     {
         RelativeLayout mRelativeLayout;

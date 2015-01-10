@@ -120,35 +120,29 @@ namespace SharedPreferences
 			// aapt resource value: 0x7f080006
 			public const int checkBox1 = 2131230726;
 			
+			// aapt resource value: 0x7f080022
+			public const int downloads = 2131230754;
+			
+			// aapt resource value: 0x7f08001f
+			public const int etSearch = 2131230751;
+			
+			// aapt resource value: 0x7f080021
+			public const int etSearch1 = 2131230753;
+			
+			// aapt resource value: 0x7f080010
+			public const int listView = 2131230736;
+			
 			// aapt resource value: 0x7f08001e
-			public const int downloads = 2131230750;
+			public const int llContainer = 2131230750;
 			
-			// aapt resource value: 0x7f08001b
-			public const int etSearch = 2131230747;
-			
-			// aapt resource value: 0x7f08001d
-			public const int etSearch1 = 2131230749;
-			
-			// aapt resource value: 0x7f08000b
-			public const int item_subtitle = 2131230731;
-			
-			// aapt resource value: 0x7f08000c
-			public const int item_title = 2131230732;
-			
-			// aapt resource value: 0x7f08001a
-			public const int listView = 2131230746;
-			
-			// aapt resource value: 0x7f080019
-			public const int llContainer = 2131230745;
-			
-			// aapt resource value: 0x7f08001c
-			public const int llContainer1 = 2131230748;
+			// aapt resource value: 0x7f080020
+			public const int llContainer1 = 2131230752;
 			
 			// aapt resource value: 0x7f080002
 			public const int mainView = 2131230722;
 			
-			// aapt resource value: 0x7f080020
-			public const int menu = 2131230752;
+			// aapt resource value: 0x7f080024
+			public const int menu = 2131230756;
 			
 			// aapt resource value: 0x7f080008
 			public const int progressBar1 = 2131230728;
@@ -162,38 +156,38 @@ namespace SharedPreferences
 			// aapt resource value: 0x7f080009
 			public const int sample_main_layout = 2131230729;
 			
-			// aapt resource value: 0x7f08001f
-			public const int search = 2131230751;
+			// aapt resource value: 0x7f080023
+			public const int search = 2131230755;
 			
 			// aapt resource value: 0x7f080000
 			public const int sliding_tabs = 2131230720;
 			
-			// aapt resource value: 0x7f080011
-			public const int txtAla11 = 2131230737;
-			
-			// aapt resource value: 0x7f080012
-			public const int txtAla12 = 2131230738;
-			
-			// aapt resource value: 0x7f080013
-			public const int txtAla13 = 2131230739;
-			
-			// aapt resource value: 0x7f080014
-			public const int txtAla14 = 2131230740;
-			
-			// aapt resource value: 0x7f080015
-			public const int txtAla15 = 2131230741;
-			
 			// aapt resource value: 0x7f080016
-			public const int txtAla16 = 2131230742;
+			public const int txtAla11 = 2131230742;
 			
 			// aapt resource value: 0x7f080017
-			public const int txtAla17 = 2131230743;
+			public const int txtAla12 = 2131230743;
 			
 			// aapt resource value: 0x7f080018
-			public const int txtAla18 = 2131230744;
+			public const int txtAla13 = 2131230744;
 			
-			// aapt resource value: 0x7f08000e
-			public const int txtDeptName = 2131230734;
+			// aapt resource value: 0x7f080019
+			public const int txtAla14 = 2131230745;
+			
+			// aapt resource value: 0x7f08001a
+			public const int txtAla15 = 2131230746;
+			
+			// aapt resource value: 0x7f08001b
+			public const int txtAla16 = 2131230747;
+			
+			// aapt resource value: 0x7f08001c
+			public const int txtAla17 = 2131230748;
+			
+			// aapt resource value: 0x7f08001d
+			public const int txtAla18 = 2131230749;
+			
+			// aapt resource value: 0x7f080012
+			public const int txtDeptName = 2131230738;
 			
 			// aapt resource value: 0x7f080004
 			public const int txtPwd = 2131230724;
@@ -201,14 +195,32 @@ namespace SharedPreferences
 			// aapt resource value: 0x7f080003
 			public const int txtUser = 2131230723;
 			
-			// aapt resource value: 0x7f080010
-			public const int txtUserEmail = 2131230736;
+			// aapt resource value: 0x7f080014
+			public const int txtUserEmail = 2131230740;
+			
+			// aapt resource value: 0x7f080011
+			public const int txtUserName = 2131230737;
+			
+			// aapt resource value: 0x7f080013
+			public const int txtUserPwd = 2131230739;
+			
+			// aapt resource value: 0x7f080015
+			public const int txtchepaino = 2131230741;
+			
+			// aapt resource value: 0x7f08000b
+			public const int txtrow1 = 2131230731;
+			
+			// aapt resource value: 0x7f08000c
+			public const int txtrow2 = 2131230732;
 			
 			// aapt resource value: 0x7f08000d
-			public const int txtUserName = 2131230733;
+			public const int txtrow3 = 2131230733;
+			
+			// aapt resource value: 0x7f08000e
+			public const int txtrow4 = 2131230734;
 			
 			// aapt resource value: 0x7f08000f
-			public const int txtUserPwd = 2131230735;
+			public const int txtrow5 = 2131230735;
 			
 			// aapt resource value: 0x7f080001
 			public const int viewpager = 2131230721;
