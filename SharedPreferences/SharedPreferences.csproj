@@ -75,6 +75,7 @@
     <Compile Include="TestcasesAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidNativeLibrary Include="libs\armeabi\libBaiduMapSDK_v3_2_0_15.so" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
@@ -129,11 +130,16 @@
     <AndroidResource Include="Resources\drawable\xs.png" />
     <AndroidResource Include="Resources\values\themes.xml" />
     <AndroidResource Include="Resources\menu\actionbar_main.xml" />
+    <AndroidResource Include="Resources\drawable\tescarfav.ico" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{1386282b-7a13-4e34-9663-12854688eb7b}</Project>
       <Name>Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Maps\Maps.csproj">
+      <Project>{fcb0e22a-88eb-4e53-bd20-ca63a8a0eaa0}</Project>
+      <Name>Maps</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

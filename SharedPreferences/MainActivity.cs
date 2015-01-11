@@ -13,7 +13,7 @@ using Newtonsoft.Json;
 
 namespace SharedPreferences
 {
-    [Activity(Label = "Sliding Tab Layout", MainLauncher = true, Icon = "@drawable/xs")]
+    [Activity(Label = "Vehicle Monitor", MainLauncher = true, Icon = "@drawable/xs")]
     public class MainActivity : Activity
     {
         private WebClient mClient;

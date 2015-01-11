@@ -99,7 +99,10 @@ namespace SharedPreferences
 			public const int progressbarStyle = 2130837514;
 			
 			// aapt resource value: 0x7f02000b
-			public const int xs = 2130837515;
+			public const int tescarfav = 2130837515;
+			
+			// aapt resource value: 0x7f02000c
+			public const int xs = 2130837516;
 			
 			static Drawable()
 			{
