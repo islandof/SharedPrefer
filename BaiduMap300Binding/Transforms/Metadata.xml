@@ -1,0 +1,57 @@
+<metadata>
+  <!--
+  This sample removes the class: android.support.v4.content.AsyncTaskLoader.LoadTask:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='AsyncTaskLoader.LoadTask']" />
+  
+  This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
+  -->
+
+  <attr path="/api/package[@name='com.baidu.mapapi']/class[@name='VersionInfo']/field[@name='VERSION_INFO']" name="managedName">VERSION_INFO</attr>
+  <attr path="/api/package[@name='com.baidu.mapapi']/class[@name='VersionInfo']/field[@name='VERSION_DESC']" name="managedName">VERSION_DESC</attr>
+
+  <attr path="/api/package[@name='com.baidu.mapapi.map']/class[@name='MyLocationConfigeration']/field[@name='locationMode']" name="managedName">locationModeVar</attr>
+
+  <attr path="/api/package[@name='com.baidu.location']/class[@name='LocationClientOption']/field[@name='a']" name="visibility">private</attr>
+  <attr path="/api/package[@name='com.baidu.location']/class[@name='LocationClientOption']/field[@name='byte']" name="visibility">private</attr>
+  <attr path="/api/package[@name='com.baidu.location']/class[@name='LocationClientOption']/field[@name='case']" name="visibility">private</attr>
+  <attr path="/api/package[@name='com.baidu.location']/class[@name='LocationClientOption']/field[@name='char']" name="visibility">private</attr>
+  <attr path="/api/package[@name='com.baidu.location']/class[@name='LocationClientOption']/field[@name='do']" name="visibility">private</attr>
+  <attr path="/api/package[@name='com.baidu.location']/class[@name='LocationClientOption']/field[@name='else']" name="visibility">private</attr>
+  <attr path="/api/package[@name='com.baidu.location']/class[@name='LocationClientOption']/field[@name='for']" name="visibility">private</attr>
+  <attr path="/api/package[@name='com.baidu.location']/class[@name='LocationClientOption']/field[@name='goto']" name="visibility">private</attr>
+  <attr path="/api/package[@name='com.baidu.location']/class[@name='LocationClientOption']/field[@name='if']" name="visibility">private</attr>
+  <attr path="/api/package[@name='com.baidu.location']/class[@name='LocationClientOption']/field[@name='int']" name="visibility">private</attr>
+  <attr path="/api/package[@name='com.baidu.location']/class[@name='LocationClientOption']/field[@name='long']" name="visibility">private</attr>
+  <attr path="/api/package[@name='com.baidu.location']/class[@name='LocationClientOption']/field[@name='new']" name="visibility">private</attr>
+  <attr path="/api/package[@name='com.baidu.location']/class[@name='LocationClientOption']/field[@name='try']" name="visibility">private</attr>
+  <attr path="/api/package[@name='com.baidu.location']/class[@name='LocationClientOption']/field[@name='void']" name="visibility">private</attr>
+
+
+
+
+  <attr path="/api/package[@name='com.baidu.platform.comapi.map']/class[@name='MapRenderer']/field[@name='a']" name="managedName">aVar</attr>
+  <attr path="/api/package[@name='com.baidu.platform.comapi.map']/interface[@name='MapRenderer.a']" name="obfuscated">false</attr>
+
+  <attr path="/api/package[@name='com.baidu.location']/class[@name='BDLocation.a']" name="obfuscated">false</attr>
+
+  <attr path="/api/package[@name='com.baidu.location']/class[@name='i']" name="obfuscated">false</attr>
+
+  <attr path="/api/package[@name='com.baidu.mapapi.map']/interface[@name='Overlay.a']" name="obfuscated">false</attr>
+
+  <attr path="/api/package[@name='com.baidu.mapapi.utils']/class[@name='PermissionCheck.b']" name="obfuscated">false</attr>
+  <attr path="/api/package[@name='com.baidu.mapapi.utils']/class[@name='PermissionCheck.b']" name="managedName">bClass</attr>
+
+  <attr path="/api/package[@name='com.baidu.mapapi.utils']/interface[@name='PermissionCheck.c']" name="obfuscated">false</attr>
+
+  <attr path="/api/package[@name='com.baidu.platform.comjni.map.basemap']/interface[@name='b']" name="obfuscated">false</attr>
+
+  <attr path="/api/package[@name='com.baidu.vi']/class[@name='c']" name="obfuscated">false</attr>
+  <attr path="/api/package[@name='com.baidu.vi']/class[@name='c']" name="managedName">cClass</attr>
+
+
+
+
+  <!-- public List<CloudPoiInfo> poiList 不会生成泛型, 所以移除, 手动通过 Additions/CloudSearchResult.cs 绑定 -->
+  <remove-node path="/api/package[@name='com.baidu.mapapi.cloud']/class[@name='CloudSearchResult']/field[@name='poiList']"/>
+</metadata>

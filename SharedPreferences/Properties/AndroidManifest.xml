@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="SharedPreferences.SharedPreferences" android:versionCode="1" android:versionName="1.0">
 	<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="19" />
-	<application android:label="SharedPreferences" android:icon="@drawable/Icon"></application>
+	<application android:label="SharedPreferences" android:icon="@drawable/Icon">
+    <meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="0V4lKBqLL2G1IL9vKAeaU3i2" />
+    <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote"></service>
+    <activity
+    android:name="com.baidu.mapapi.search.poi.PlaceCaterActivity"
+    android:configChanges="orientation|keyboardHidden"
+    android:label="@string/demo_name_poi"
+    android:screenOrientation="sensor" >
+    </activity>
+  </application>
 </manifest>

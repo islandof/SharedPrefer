@@ -44,6 +44,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
+    <Reference Include="Mono.Android.Export" />
+    <Reference Include="Mono.Android.Support.v4" />
     <Reference Include="mscorlib" />
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.7\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
@@ -52,13 +54,31 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
-    <Reference Include="Xamarin.Android.Support.v4">
-      <HintPath>..\packages\Xamarin.Android.Support.v4.21.0.3.0\lib\MonoAndroid10\Xamarin.Android.Support.v4.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common.cs" />
-    <Compile Include="MainActivity.cs" />
+    <Compile Include="DdriveActivity.cs" />
+    <Compile Include="Maps\BaseMapDemo.cs" />
+    <Compile Include="Maps\BMapApiDemoMain.cs" />
+    <Compile Include="Maps\BusLineSearchDemo.cs" />
+    <Compile Include="Maps\CloudSearchActivity.cs" />
+    <Compile Include="Maps\CloudSearchDemo.cs" />
+    <Compile Include="Maps\DemoApplication.cs" />
+    <Compile Include="Maps\GeoCoderDemo.cs" />
+    <Compile Include="Maps\GeometryDemo.cs" />
+    <Compile Include="Maps\LayersDemo.cs" />
+    <Compile Include="Maps\LocationOverlayDemo.cs" />
+    <Compile Include="Maps\MapControlDemo.cs" />
+    <Compile Include="Maps\MapFragmentDemo.cs" />
+    <Compile Include="Maps\MutiMapViewDemo.cs" />
+    <Compile Include="Maps\NaviDemo.cs" />
+    <Compile Include="Maps\OfflineDemo.cs" />
+    <Compile Include="Maps\OverlayDemo.cs" />
+    <Compile Include="Maps\PoiSearchDemo.cs" />
+    <Compile Include="Maps\RoutePlanDemo.cs" />
+    <Compile Include="Maps\ShareDemo.cs" />
+    <Compile Include="Maps\ShareDemoActivity.cs" />
+    <Compile Include="Maps\UISettingDemo.cs" />
     <Compile Include="SlidingTabScrollView.cs" />
     <Compile Include="SlidingTabsFragment.cs" />
     <Compile Include="SlidingTabStrip.cs" />
@@ -75,7 +95,10 @@
     <Compile Include="TestcasesAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidNativeLibrary Include="libs\armeabi\libBaiduMapSDK_v3_2_0_15.so" />
+    <None Include="Libs\armeabi-v7a\libBaiduMapSDK_v3_0_0.so" />
+    <None Include="Libs\armeabi-v7a\liblocSDK3.so" />
+    <None Include="Libs\armeabi\libBaiduMapSDK_v3_0_0.so" />
+    <None Include="Libs\armeabi\liblocSDK3.so" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
@@ -85,7 +108,7 @@
     <AndroidResource Include="Resources\layout\row_testcase.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\Main.axml">
+    <AndroidResource Include="Resources\layout\Ddrive.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\row_testcase11.axml">
@@ -99,17 +122,45 @@
     </AndroidResource>
     <AndroidResource Include="Resources\layout\fragment_sample.axml" />
     <AndroidResource Include="Resources\layout\pager_item.axml" />
+    <AndroidResource Include="Resources\layout\activity_busline.axml" />
+    <AndroidResource Include="Resources\layout\activity_cloud_search_demo.axml" />
+    <AndroidResource Include="Resources\layout\activity_fragment.axml" />
+    <AndroidResource Include="Resources\layout\activity_geocoder.axml" />
+    <AndroidResource Include="Resources\layout\activity_geometry.axml" />
+    <AndroidResource Include="Resources\layout\activity_layers.axml" />
+    <AndroidResource Include="Resources\layout\activity_lbssearch.axml" />
+    <AndroidResource Include="Resources\layout\activity_location.axml" />
+    <AndroidResource Include="Resources\layout\activity_main.axml" />
+    <AndroidResource Include="Resources\layout\activity_mapcontrol.axml" />
+    <AndroidResource Include="Resources\layout\activity_multimap.axml" />
+    <AndroidResource Include="Resources\layout\activity_navi_demo.axml" />
+    <AndroidResource Include="Resources\layout\activity_offline.axml" />
+    <AndroidResource Include="Resources\layout\activity_overlay.axml" />
+    <AndroidResource Include="Resources\layout\activity_poisearch.axml" />
+    <AndroidResource Include="Resources\layout\activity_routeplan.axml" />
+    <AndroidResource Include="Resources\layout\activity_share_demo.axml" />
+    <AndroidResource Include="Resources\layout\activity_share_demo_activity.axml" />
+    <AndroidResource Include="Resources\layout\activity_uisetting.axml" />
+    <AndroidResource Include="Resources\layout\custom_text_view.axml" />
+    <AndroidResource Include="Resources\layout\demo_info_item.axml" />
+    <AndroidResource Include="Resources\layout\main.axml" />
+    <AndroidResource Include="Resources\layout\offline_localmap_list.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Login.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\values\Strings.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\marker1.png" />
+    <AndroidAsset Include="Assets\marker2.png" />
+    <AndroidAsset Include="Assets\marker3.png" />
     <Content Include="Properties\AndroidManifest.xml" />
     <AndroidResource Include="Resources\drawable\edit_text_style.xml" />
     <AndroidResource Include="Resources\drawable\button_email_style.xml" />
@@ -131,15 +182,48 @@
     <AndroidResource Include="Resources\values\themes.xml" />
     <AndroidResource Include="Resources\menu\actionbar_main.xml" />
     <AndroidResource Include="Resources\drawable\tescarfav.ico" />
+    <AndroidResource Include="Resources\drawable-hdpi\button_down.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\button_on.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\button_style.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ground_overlay.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_en.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_gcoding.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_geo.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_marka.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_markb.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_markc.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_markd.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_marke.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_markf.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_markg.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_markh.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_marki.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_markj.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_st.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\next_.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\next_down_.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\popup.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\popup_down.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\popup_left.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\popup_middle.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\popup_right.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\popup_side.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\pre_.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\pre_down_.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BaiduMap300Binding\BaiduMap300Binding.csproj">
+      <Project>{529e1a08-f437-43c6-8b08-5736fc166e8c}</Project>
+      <Name>BaiduMap300Binding</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{1386282b-7a13-4e34-9663-12854688eb7b}</Project>
       <Name>Entity</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Maps\Maps.csproj">
-      <Project>{fcb0e22a-88eb-4e53-bd20-ca63a8a0eaa0}</Project>
-      <Name>Maps</Name>
+    <ProjectReference Include="..\IJavaObjectEx\IJavaObjectEx.csproj">
+      <Project>{cb380599-1dcd-4495-be9d-754a9218df9a}</Project>
+      <Name>IJavaObjectEx</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

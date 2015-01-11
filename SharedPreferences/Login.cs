@@ -67,7 +67,7 @@ namespace SharedPreferences
                 {
                     mButton.Enabled = true;
                     mProgressBar.Visibility = ViewStates.Invisible;
-                    Intent intent = new Intent(this, typeof(MainActivity));
+                    Intent intent = new Intent(this, typeof(DdriveActivity));
                     this.StartActivity(intent);
                     this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);    
                 }
