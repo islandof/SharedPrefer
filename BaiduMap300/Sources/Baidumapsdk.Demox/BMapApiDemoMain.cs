@@ -8,9 +8,9 @@ using Android.Views;
 using Android.Widget;
 using Com.Baidu.Mapapi;
 
-namespace SharedPreferences.Maps
+namespace Baidumapsdk.Demox
 {
-    [Activity(ConfigurationChanges = ConfigChanges.Orientation, Label = "BaiduMapSDKDemo",ScreenOrientation = ScreenOrientation.Sensor)]
+    [Activity(ConfigurationChanges = ConfigChanges.Orientation, Label = "BaiduMapSDKDemo", MainLauncher = true, ScreenOrientation = ScreenOrientation.Sensor)]
     public class BMapApiDemoMain : Activity
     {
         private static readonly string LTAG = typeof(BMapApiDemoMain).Name; // new BMapApiDemoMain().Class.SimpleName;

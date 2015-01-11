@@ -12,10 +12,11 @@ using Android.OS;
 using Android.Views.InputMethods;
 using Entity;
 using Newtonsoft.Json;
+using SharedPreferences.Maps;
 
 namespace SharedPreferences
 {
-    [Activity(Label = "Login", Icon = "@drawable/xs")]
+    [Activity(Label = "Login", MainLauncher = true, Icon = "@drawable/xs")]
     public class Login : Activity
     {
         RelativeLayout mRelativeLayout;
@@ -67,7 +68,7 @@ namespace SharedPreferences
                 {
                     mButton.Enabled = true;
                     mProgressBar.Visibility = ViewStates.Invisible;
-                    Intent intent = new Intent(this, typeof(DdriveActivity));
+                    Intent intent = new Intent(this, typeof(BMapApiDemoMain));
                     this.StartActivity(intent);
                     this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);    
                 }

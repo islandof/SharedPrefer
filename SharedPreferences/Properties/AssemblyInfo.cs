@@ -6,7 +6,6 @@ using Android.App;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-using Android.Renderscripts;
 
 [assembly: AssemblyTitle("SharedPreferences")]
 [assembly: AssemblyDescription("")]
@@ -31,4 +30,6 @@ using Android.Renderscripts;
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
-[assembly: MetaData("com.baidu.lbsapi.API_KEY", Value = "0V4lKBqLL2G1IL9vKAeaU3i2")]
+//[assembly: MetaData("com.baidu.lbsapi.API_KEY", Value = "0V4lKBqLL2G1IL9vKAeaU3i2")]
+[assembly: UsesPermission(Android.Manifest.Permission.Internet)]
+[assembly: UsesPermission(Android.Manifest.Permission.WriteExternalStorage)]

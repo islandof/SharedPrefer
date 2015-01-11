@@ -161,7 +161,9 @@
     <AndroidAsset Include="Assets\marker1.png" />
     <AndroidAsset Include="Assets\marker2.png" />
     <AndroidAsset Include="Assets\marker3.png" />
-    <Content Include="Properties\AndroidManifest.xml" />
+    <Content Include="Properties\AndroidManifest.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <AndroidResource Include="Resources\drawable\edit_text_style.xml" />
     <AndroidResource Include="Resources\drawable\button_email_style.xml" />
     <AndroidResource Include="Resources\drawable\checkbox_style.xml">
