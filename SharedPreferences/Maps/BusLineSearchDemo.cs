@@ -13,7 +13,7 @@ using Com.Baidu.Mapapi.Search.Poi;
 using Java.Lang;
 using System.Collections.Generic;
 
-namespace SharedPreferences.Maps
+namespace SharedPreferences
 {
     /**
      * 此demo用来展示如何进行公交线路详情检索，并使用RouteOverlay在地图上绘制 同时展示如何浏览路线节点并弹出泡泡

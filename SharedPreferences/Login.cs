@@ -12,11 +12,12 @@ using Android.OS;
 using Android.Views.InputMethods;
 using Entity;
 using Newtonsoft.Json;
-using SharedPreferences.Maps;
+//using Baidumapsdk.Demox;
+//using SharedPreferences.Maps;
 
 namespace SharedPreferences
 {
-    [Activity(Label = "Login", MainLauncher = true, Icon = "@drawable/xs")]
+    [Activity(Label = "Login", Icon = "@drawable/xs")]
     public class Login : Activity
     {
         RelativeLayout mRelativeLayout;

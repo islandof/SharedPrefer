@@ -7,7 +7,7 @@ using Com.Baidu.Mapapi.Model;
 using System;
 using System.Collections.Generic;
 
-namespace SharedPreferences.Maps
+namespace SharedPreferences
 {
     /**
      * 此demo用来展示如何在地图上用GraphicsOverlay添加点、线、多边形、圆 同时展示如何在地图上用TextOverlay添加文字

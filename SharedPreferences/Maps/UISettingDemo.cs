@@ -5,7 +5,7 @@ using Android.Views;
 using Android.Widget;
 using Com.Baidu.Mapapi.Map;
 
-namespace SharedPreferences.Maps
+namespace SharedPreferences
 {
     /**
      * 演示地图UI控制功能

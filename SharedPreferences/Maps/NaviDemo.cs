@@ -7,7 +7,7 @@ using Com.Baidu.Mapapi.Model;
 using Com.Baidu.Mapapi.Navi;
 using Java.Lang;
 
-namespace SharedPreferences.Maps
+namespace SharedPreferences
 {
     /**
      * 在一个Activity中展示多个地图

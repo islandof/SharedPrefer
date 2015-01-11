@@ -8,7 +8,7 @@ using Com.Baidu.Mapapi.Model;
 using Java.Lang;
 using System.IO;
 
-namespace SharedPreferences.Maps
+namespace SharedPreferences
 {
     /**
      * 演示地图缩放，旋转，视角控制

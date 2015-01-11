@@ -58,27 +58,69 @@
   <ItemGroup>
     <Compile Include="Common.cs" />
     <Compile Include="DdriveActivity.cs" />
-    <Compile Include="Maps\BaseMapDemo.cs" />
-    <Compile Include="Maps\BMapApiDemoMain.cs" />
-    <Compile Include="Maps\BusLineSearchDemo.cs" />
-    <Compile Include="Maps\CloudSearchActivity.cs" />
-    <Compile Include="Maps\CloudSearchDemo.cs" />
-    <Compile Include="Maps\DemoApplication.cs" />
-    <Compile Include="Maps\GeoCoderDemo.cs" />
-    <Compile Include="Maps\GeometryDemo.cs" />
-    <Compile Include="Maps\LayersDemo.cs" />
-    <Compile Include="Maps\LocationOverlayDemo.cs" />
-    <Compile Include="Maps\MapControlDemo.cs" />
-    <Compile Include="Maps\MapFragmentDemo.cs" />
-    <Compile Include="Maps\MutiMapViewDemo.cs" />
-    <Compile Include="Maps\NaviDemo.cs" />
-    <Compile Include="Maps\OfflineDemo.cs" />
-    <Compile Include="Maps\OverlayDemo.cs" />
-    <Compile Include="Maps\PoiSearchDemo.cs" />
-    <Compile Include="Maps\RoutePlanDemo.cs" />
-    <Compile Include="Maps\ShareDemo.cs" />
-    <Compile Include="Maps\ShareDemoActivity.cs" />
-    <Compile Include="Maps\UISettingDemo.cs" />
+    <Compile Include="Maps\BaseMapDemo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Maps\BMapApiDemoMain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Maps\BusLineSearchDemo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Maps\CloudSearchActivity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Maps\CloudSearchDemo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Maps\DemoApplication.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Maps\GeoCoderDemo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Maps\GeometryDemo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Maps\LayersDemo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Maps\LocationOverlayDemo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Maps\MapControlDemo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Maps\MapFragmentDemo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Maps\MutiMapViewDemo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Maps\NaviDemo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Maps\OfflineDemo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Maps\OverlayDemo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Maps\PoiSearchDemo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Maps\RoutePlanDemo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Maps\ShareDemo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Maps\ShareDemoActivity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Maps\UISettingDemo.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="SlidingTabScrollView.cs" />
     <Compile Include="SlidingTabsFragment.cs" />
     <Compile Include="SlidingTabStrip.cs" />
@@ -95,33 +137,13 @@
     <Compile Include="TestcasesAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Libs\armeabi-v7a\libBaiduMapSDK_v3_0_0.so" />
-    <None Include="Libs\armeabi-v7a\liblocSDK3.so" />
-    <None Include="Libs\armeabi\libBaiduMapSDK_v3_0_0.so" />
-    <None Include="Libs\armeabi\liblocSDK3.so" />
+    <AndroidNativeLibrary Include="Libs\armeabi-v7a\libBaiduMapSDK_v3_0_0.so" />
+    <AndroidNativeLibrary Include="Libs\armeabi-v7a\liblocSDK3.so" />
+    <AndroidNativeLibrary Include="Libs\armeabi\libBaiduMapSDK_v3_0_0.so" />
+    <AndroidNativeLibrary Include="Libs\armeabi\liblocSDK3.so" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
-    <AndroidResource Include="Resources\layout\TestCase.axml">
-      <SubType>AndroidResource</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\row_testcase.axml">
-      <SubType>AndroidResource</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\Ddrive.axml">
-      <SubType>AndroidResource</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\row_testcase11.axml">
-      <SubType>AndroidResource</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\TestCase1.axml">
-      <SubType>AndroidResource</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\row_testcase12.axml">
-      <SubType>AndroidResource</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\fragment_sample.axml" />
-    <AndroidResource Include="Resources\layout\pager_item.axml" />
     <AndroidResource Include="Resources\layout\activity_busline.axml" />
     <AndroidResource Include="Resources\layout\activity_cloud_search_demo.axml" />
     <AndroidResource Include="Resources\layout\activity_fragment.axml" />
@@ -145,6 +167,26 @@
     <AndroidResource Include="Resources\layout\demo_info_item.axml" />
     <AndroidResource Include="Resources\layout\main.axml" />
     <AndroidResource Include="Resources\layout\offline_localmap_list.axml" />
+    <AndroidResource Include="Resources\layout\TestCase.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\row_testcase.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Ddrive.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\row_testcase11.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\TestCase1.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\row_testcase12.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_sample.axml" />
+    <AndroidResource Include="Resources\layout\pager_item.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Login.axml" />
@@ -161,6 +203,7 @@
     <AndroidAsset Include="Assets\marker1.png" />
     <AndroidAsset Include="Assets\marker2.png" />
     <AndroidAsset Include="Assets\marker3.png" />
+    <Content Include="ic_launcher-web.png" />
     <Content Include="Properties\AndroidManifest.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -223,16 +266,6 @@
       <Project>{1386282b-7a13-4e34-9663-12854688eb7b}</Project>
       <Name>Entity</Name>
     </ProjectReference>
-    <ProjectReference Include="..\IJavaObjectEx\IJavaObjectEx.csproj">
-      <Project>{cb380599-1dcd-4495-be9d-754a9218df9a}</Project>
-      <Name>IJavaObjectEx</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <XamarinComponentReference Include="xamandroidsupportv4-18">
-      <Visible>False</Visible>
-      <Version>21.0.3.0</Version>
-    </XamarinComponentReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

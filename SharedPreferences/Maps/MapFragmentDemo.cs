@@ -4,7 +4,7 @@ using Android.OS;
 using Android.Support.V4.App;
 using Com.Baidu.Mapapi.Map;
 
-namespace SharedPreferences.Maps
+namespace SharedPreferences
 {
     [Android.App.Activity(ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden, Label = "@string/demo_name_map_fragment", ScreenOrientation = ScreenOrientation.Sensor)]
     public class MapFragmentDemo : FragmentActivity

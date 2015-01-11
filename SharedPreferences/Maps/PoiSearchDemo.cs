@@ -11,7 +11,7 @@ using Com.Baidu.Mapapi.Search.Poi;
 using Com.Baidu.Mapapi.Search.Sug;
 using Java.Lang;
 
-namespace SharedPreferences.Maps
+namespace SharedPreferences
 {
     /**
      * ÑİÊ¾poiËÑË÷¹¦ÄÜ 

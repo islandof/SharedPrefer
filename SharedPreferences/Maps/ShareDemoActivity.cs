@@ -12,7 +12,7 @@ using Com.Baidu.Mapapi.Search.Poi;
 using Com.Baidu.Mapapi.Search.Share;
 using Java.Lang;
 
-namespace SharedPreferences.Maps
+namespace SharedPreferences
 {
     /**
      * ÑİÊ¾poiËÑË÷¹¦ÄÜ 

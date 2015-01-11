@@ -3,7 +3,7 @@ using Android.Content;
 using Android.OS;
 using Android.Views;
 
-namespace SharedPreferences.Maps
+namespace SharedPreferences
 {
     [Activity(Label = "@string/demo_name_share")]
     public class ShareDemo : Activity

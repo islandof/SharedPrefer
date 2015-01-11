@@ -11,7 +11,7 @@ using Com.Baidu.Mapapi.Search.Route;
 using Java.Lang;
 using System.Reflection;
 
-namespace SharedPreferences.Maps
+namespace SharedPreferences
 {
     /**
      * 此demo用来展示如何进行驾车、步行、公交路线搜索并在地图使用RouteOverlay、TransitOverlay绘制

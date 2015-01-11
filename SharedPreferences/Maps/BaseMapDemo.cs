@@ -5,7 +5,7 @@ using Android.OS;
 using Com.Baidu.Mapapi.Map;
 using Com.Baidu.Mapapi.Model;
 
-namespace SharedPreferences.Maps
+namespace SharedPreferences
 {
     /**
      * 演示MapView的基本用法

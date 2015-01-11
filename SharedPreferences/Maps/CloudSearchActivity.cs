@@ -7,7 +7,7 @@ using Com.Baidu.Mapapi.Cloud;
 using Com.Baidu.Mapapi.Map;
 using Com.Baidu.Mapapi.Model;
 
-namespace SharedPreferences.Maps
+namespace SharedPreferences
 {
     [Activity(ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden, Label = "@string/demo_name_basemap", ScreenOrientation = ScreenOrientation.Sensor)]
     public class CloudSearchActivity : Activity, ICloudListener

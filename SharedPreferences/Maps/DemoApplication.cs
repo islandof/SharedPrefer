@@ -3,7 +3,7 @@ using Android.Runtime;
 using Com.Baidu.Mapapi;
 using System;
 
-namespace SharedPreferences.Maps
+namespace SharedPreferences
 {
     [Application]
     public class DemoApplication : Application

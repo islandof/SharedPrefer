@@ -4,7 +4,7 @@ using Android.Support.V4.App;
 using Com.Baidu.Mapapi.Map;
 using Com.Baidu.Mapapi.Model;
 
-namespace SharedPreferences.Maps
+namespace SharedPreferences
 {
     /**
      * 在一个Activity中展示多个地图
