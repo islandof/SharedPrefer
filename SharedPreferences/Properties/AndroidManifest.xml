@@ -3,7 +3,7 @@
 	<uses-sdk />
 	<!--<application android:label="SharedPreferences" android:icon="@drawable/Icon">-->
 	<application android:debuggable="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name">
-		<meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="0V4lKBqLL2G1IL9vKAeaU3i2" />
+		<meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="nhd0gj1LI4a9zKQCxMymHwdL" />
 		<service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote"></service>
 		<activity android:name="com.baidu.mapapi.search.poi.PlaceCaterActivity" android:configChanges="orientation|keyboardHidden" android:label="@string/demo_name_poi" android:screenOrientation="sensor"></activity>
 	</application>

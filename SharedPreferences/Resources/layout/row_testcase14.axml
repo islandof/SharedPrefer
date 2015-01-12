@@ -15,32 +15,32 @@
         android:gravity="center"
         android:textColor="#333333" />
     <TextView
-        android:id="@+id/txtAla10"
-        android:text="Ala11"
+        android:id="@+id/txtAla30"
+        android:text="Ala15"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:layout_weight="20"
         android:gravity="center"
         android:textColor="#333333" />
     <TextView
-        android:id="@+id/txtAla11"
-        android:text="Ala13"
+        android:id="@+id/txtAla31"
+        android:text="Ala16"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:layout_weight="20"
         android:gravity="center"
         android:textColor="#333333" />
     <TextView
-        android:id="@+id/txtAla12"
-        android:text="Ala13"
+        android:id="@+id/txtAla32"
+        android:text="Ala17"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:layout_weight="20"
         android:gravity="center"
         android:textColor="#333333" />
     <TextView
-        android:id="@+id/txtAla13"
-        android:text="Ala14"
+        android:id="@+id/txtAla33"
+        android:text="Ala18"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:layout_weight="20"

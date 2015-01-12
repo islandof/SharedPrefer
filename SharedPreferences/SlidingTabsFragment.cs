@@ -22,12 +22,18 @@ namespace SharedPreferences
         private List<testCase1> mTestcase1;
         private static ListView mListView;
         private static Testcase1sAdapter mAdapter1;
-        private static Testcase2sAdapter mAdapter2;
-        public SlidingTabsFragment(List<testCase1> mItemList, Testcase1sAdapter adapter1, Testcase2sAdapter adapter2)
+        //private static Testcase2sAdapter mAdapter2;
+        //public SlidingTabsFragment(List<testCase1> mItemList, Testcase1sAdapter adapter1, Testcase2sAdapter adapter2)
+        //{
+        //    mTestcase1 = mItemList;
+        //    mAdapter1 = adapter1;
+        //    mAdapter2 = adapter2;
+        //}
+
+        public SlidingTabsFragment(List<testCase1> mItemList, Testcase1sAdapter adapter1)
         {
             mTestcase1 = mItemList;
             mAdapter1 = adapter1;
-            mAdapter2 = adapter2;
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -54,8 +60,7 @@ namespace SharedPreferences
                 items.Add("危险驾驶2");
                 items.Add("危险驾驶3");
                 items.Add("危险驾驶4");
-                items.Add("危险驾驶5");
-                items.Add("危险驾驶6");
+                items.Add("危险驾驶5");             
             }
 
             public override int Count
@@ -82,26 +87,53 @@ namespace SharedPreferences
                 
                 //TextView txtTitle = view.FindViewById<TextView>(Resource.Id.item_title);
                 int pos = position + 1;
+                mAdapter1.Frameint = position;
+                Testcase1sAdapter adapter = mAdapter1;
                 //txtTitle.Text = pos.ToString();
-                if (pos%2 == 1)
+                switch ((position+1) % 6)
                 {
-                    txtrow1.Text = "车牌";
-                    txtrow2.Text = "急加油";
-                    txtrow3.Text = "快速变道";
-                    txtrow4.Text = "弯道加速";
-                    txtrow5.Text = "碰撞";
-                    mListView.Adapter = mAdapter1;
-                    
-                }
-                else
-                {
-                    txtrow1.Text = "车牌";
-                    txtrow2.Text = "频繁变道";
-                    txtrow3.Text = "烂路高速行驶";
-                    txtrow4.Text = "急转弯";
-                    txtrow5.Text = "翻车";
-                    mListView.Adapter = mAdapter2;
-                }
+                    case 1:
+                        txtrow1.Text = "车牌";
+                        txtrow2.Text = "急刹车";
+                        txtrow3.Text = "急加油";
+                        txtrow4.Text = "快速变道";
+                        txtrow5.Text = "弯道加速";                        
+                        break;
+                    case 2:
+                        txtrow1.Text = "车牌";
+                        txtrow2.Text = "碰撞";
+                        txtrow3.Text = "频繁变道";
+                        txtrow4.Text = "烂路高速行驶";
+                        txtrow5.Text = "急转弯";
+                        
+                        break;
+                    case 3:
+                        txtrow1.Text = "车牌";
+                        txtrow2.Text = "翻车";
+                        txtrow3.Text = "异常震动";
+                        txtrow4.Text = "车门异常";
+                        txtrow5.Text = "胎压和手刹异常";
+                        
+                        break;
+                    case 4:
+                        txtrow1.Text = "车牌";
+                        txtrow2.Text = "超速报警";
+                        txtrow3.Text = "水温报警";
+                        txtrow4.Text = "转速报警";
+                        txtrow5.Text = "电压报警";
+                        
+                        break;
+                    case 5:
+                        txtrow1.Text = "车牌";
+                        txtrow2.Text = "故障报警";
+                        txtrow3.Text = "转弯";
+                        txtrow4.Text = "";
+                        txtrow5.Text = "";
+                        
+                        break;
+
+                }                      
+                mListView.Adapter = adapter;
                 return view;
             }
 

@@ -132,7 +132,6 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Testcase1.cs" />
-    <Compile Include="Testcase2sAdapter.cs" />
     <Compile Include="Testcase1sAdapter.cs" />
     <Compile Include="TestcasesAdapter.cs" />
   </ItemGroup>
@@ -187,6 +186,16 @@
     </AndroidResource>
     <AndroidResource Include="Resources\layout\fragment_sample.axml" />
     <AndroidResource Include="Resources\layout\pager_item.axml" />
+    <AndroidResource Include="Resources\layout\row_testcase13.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\row_testcase14.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\row_testcase15.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\action_bar.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Login.axml" />
@@ -256,6 +265,11 @@
     <AndroidResource Include="Resources\drawable-hdpi\popup_side.png" />
     <AndroidResource Include="Resources\drawable-hdpi\pre_.png" />
     <AndroidResource Include="Resources\drawable-hdpi\pre_down_.png" />
+    <AndroidResource Include="Resources\drawable\ic_action_dial_pad.png" />
+    <AndroidResource Include="Resources\drawable\ic_action_favorite.png" />
+    <AndroidResource Include="Resources\drawable\ic_action_group.png" />
+    <AndroidResource Include="Resources\drawable\ic_action_phone.png" />
+    <AndroidResource Include="Resources\drawable\selector.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BaiduMap300Binding\BaiduMap300Binding.csproj">
@@ -266,6 +280,15 @@
       <Project>{1386282b-7a13-4e34-9663-12854688eb7b}</Project>
       <Name>Entity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="xamandroidsupportv4-18">
+      <Visible>False</Visible>
+      <Version>21.0.3.0</Version>
+    </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\layout-mp\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

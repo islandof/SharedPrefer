@@ -31,7 +31,7 @@
             android:textColor="#000"
             android:textSize="16sp" />
         <TextView
-            android:text="急加油"
+            android:text="急刹车"
             android:id="@+id/txtrow2"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
@@ -40,7 +40,7 @@
             android:textColor="#000"
             android:textSize="16sp" />
         <TextView
-            android:text="快速变道"
+            android:text="急加油"
             android:id="@+id/txtrow3"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
@@ -49,7 +49,7 @@
             android:textColor="#000"
             android:textSize="16sp" />
         <TextView
-            android:text="弯道加速"
+            android:text="快速变道"
             android:id="@+id/txtrow4"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
@@ -58,7 +58,7 @@
             android:textColor="#000"
             android:textSize="16sp" />
         <TextView
-            android:text="碰撞"
+            android:text="弯道加速"
             android:id="@+id/txtrow5"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"

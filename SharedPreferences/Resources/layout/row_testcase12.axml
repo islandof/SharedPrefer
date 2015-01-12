@@ -15,7 +15,7 @@
         android:gravity="center"
         android:textColor="#333333" />
     <TextView
-        android:id="@+id/txtAla15"
+        android:id="@+id/txtAla14"
         android:text="Ala15"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
         android:gravity="center"
         android:textColor="#333333" />
     <TextView
-        android:id="@+id/txtAla16"
+        android:id="@+id/txtAla15"
         android:text="Ala16"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
@@ -31,7 +31,7 @@
         android:gravity="center"
         android:textColor="#333333" />
     <TextView
-        android:id="@+id/txtAla17"
+        android:id="@+id/txtAla16"
         android:text="Ala17"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
@@ -39,7 +39,7 @@
         android:gravity="center"
         android:textColor="#333333" />
     <TextView
-        android:id="@+id/txtAla18"
+        android:id="@+id/txtAla17"
         android:text="Ala18"
         android:layout_height="match_parent"
         android:layout_width="match_parent"

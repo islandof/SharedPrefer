@@ -10,7 +10,7 @@ using Com.Baidu.Mapapi;
 
 namespace SharedPreferences
 {
-    [Activity(ConfigurationChanges = ConfigChanges.Orientation, MainLauncher = true, Label = "VehicleMonitor", ScreenOrientation = ScreenOrientation.Sensor)]
+    [Activity(ConfigurationChanges = ConfigChanges.Orientation, Label = "MapsDemo", ScreenOrientation = ScreenOrientation.Sensor)]
     public class BMapApiDemoMain : Activity
     {
         private static readonly string LTAG = typeof(BMapApiDemoMain).Name; // new BMapApiDemoMain().Class.SimpleName;
@@ -73,7 +73,7 @@ namespace SharedPreferences
 
             // ×¢²á SDK ¹ã²¥¼àÌýÕß
             IntentFilter iFilter = new IntentFilter();
-            iFilter.AddAction(SDKInitializer.SdkBroadtcastActionStringPermissionCheckError);
+            //iFilter.AddAction(SDKInitializer.SdkBroadtcastActionStringPermissionCheckError);
             iFilter.AddAction(SDKInitializer.SdkBroadcastActionStringNetworkError);
             mReceiver = new SDKReceiver(this);
             RegisterReceiver(mReceiver, iFilter);

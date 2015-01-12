@@ -8,6 +8,7 @@ namespace Entity
     public class testCase1
     {
         public string chepaino { get; set; }
+        public string Ala10 { get; set; }
         public string Ala11 { get; set; }
         public string Ala12 { get; set; }
         public string Ala13 { get; set; }
