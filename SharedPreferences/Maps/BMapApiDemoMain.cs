@@ -56,7 +56,7 @@ namespace SharedPreferences
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.main);
+            SetContentView(Resource.Layout.mapsmain);
             TextView text = FindViewById<TextView>(Resource.Id.text_Info);
             text.SetTextColor(Color.Yellow);
             text.Text = "欢迎使用百度地图Android SDK v" + VersionInfo.ApiVersion;

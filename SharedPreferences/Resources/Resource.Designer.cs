@@ -725,7 +725,7 @@ namespace SharedPreferences
 			public const int Login = 2130903064;
 			
 			// aapt resource value: 0x7f030019
-			public const int main = 2130903065;
+			public const int mapsmain = 2130903065;
 			
 			// aapt resource value: 0x7f03001a
 			public const int offline_localmap_list = 2130903066;

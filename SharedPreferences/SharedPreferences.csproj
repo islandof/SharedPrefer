@@ -164,7 +164,7 @@
     <AndroidResource Include="Resources\layout\activity_uisetting.axml" />
     <AndroidResource Include="Resources\layout\custom_text_view.axml" />
     <AndroidResource Include="Resources\layout\demo_info_item.axml" />
-    <AndroidResource Include="Resources\layout\main.axml" />
+    <AndroidResource Include="Resources\layout\mapsmain.axml" />
     <AndroidResource Include="Resources\layout\offline_localmap_list.axml" />
     <AndroidResource Include="Resources\layout\TestCase.axml">
       <SubType>AndroidResource</SubType>
