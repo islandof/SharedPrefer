@@ -58,7 +58,7 @@ namespace SharedPreferences
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             View row = convertView;
-            if (mRowLayoutList.Length > 0)
+            if (mRowLayoutList != null)
             {
                 
                 row = LayoutInflater.From(mContext).Inflate(mRowLayoutList[Frameint], parent, false);

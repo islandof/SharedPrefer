@@ -4,6 +4,7 @@ using System.Net;
 using System.Text;
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
@@ -13,7 +14,7 @@ using Newtonsoft.Json;
 
 namespace SharedPreferences
 {
-    [Activity(Label = "XamarinDemo", MainLauncher = true, Icon = "@drawable/xs")]
+    [Activity(Label = "XamarinDemo", MainLauncher = true, Icon = "@drawable/xs", ScreenOrientation = ScreenOrientation.Sensor)]
     public class DdriveActivity : Activity
     {
         private WebClient mClient;
@@ -25,18 +26,9 @@ namespace SharedPreferences
         {
             base.OnCreate(bundle);
 
-            ActionBar.SetCustomView(Resource.Layout.action_bar);
-            ActionBar.SetDisplayShowCustomEnabled(true);
-            ActionBar.SetDisplayShowHomeEnabled(false);
-            FindViewById<ImageView>(Resource.Id.imageView1).Click += (s, e) =>
-            {
-                Intent intent = new Intent(this, typeof(BMapApiDemoMain));
-                this.StartActivity(intent);
-                this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
-            };
+            ShowActionBar();
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Ddrive);
-
             
             mListView = FindViewById<ListView>(Resource.Id.listView);
             //mSearch = FindViewById<EditText>(Resource.Id.etSearch1);
@@ -47,6 +39,37 @@ namespace SharedPreferences
             mClient.DownloadDataAsync(mUrl);
             mClient.DownloadDataCompleted += mClient_DownloadDataCompleted;
 
+        }
+
+        void ShowActionBar()
+        {
+            ActionBar.SetCustomView(Resource.Layout.action_bar);
+            ActionBar.SetDisplayShowCustomEnabled(true);
+            ActionBar.SetDisplayShowHomeEnabled(false);
+            FindViewById<ImageView>(Resource.Id.imageView1).Click += (s, e) =>
+            {
+                Intent intent = new Intent(this, typeof(Login));
+                this.StartActivity(intent);
+                this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
+            };
+            FindViewById<ImageView>(Resource.Id.imageView2).Click += (s, e) =>
+            {
+                Intent intent = new Intent(this, typeof(Testcase));
+                this.StartActivity(intent);
+                this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
+            };
+            FindViewById<ImageView>(Resource.Id.imageView3).Click += (s, e) =>
+            {
+                Intent intent = new Intent(this, typeof(Testcase1));
+                this.StartActivity(intent);
+                this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
+            };
+            FindViewById<ImageView>(Resource.Id.imageView4).Click += (s, e) =>
+            {
+                Intent intent = new Intent(this, typeof(BMapApiDemoMain));
+                this.StartActivity(intent);
+                this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
+            };
         }
 
         void mClient_DownloadDataCompleted(object sender, DownloadDataCompletedEventArgs e)
@@ -92,11 +115,11 @@ namespace SharedPreferences
              }
          }
 
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            MenuInflater.Inflate(Resource.Menu.actionbar_main, menu);
-            return base.OnCreateOptionsMenu(menu);
-        }
+        //public override bool OnCreateOptionsMenu(IMenu menu)
+        //{
+        //    MenuInflater.Inflate(Resource.Menu.actionbar_main, menu);
+        //    return base.OnCreateOptionsMenu(menu);
+        //}
        
     }
 }

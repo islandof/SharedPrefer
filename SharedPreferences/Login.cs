@@ -4,6 +4,7 @@ using System.Net;
 using System.Text;
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.Opengl;
 using Android.Runtime;
 using Android.Views;
@@ -17,7 +18,7 @@ using Newtonsoft.Json;
 
 namespace SharedPreferences
 {
-    [Activity(Label = "Login", Icon = "@drawable/xs")]
+    [Activity(Label = "Login", Icon = "@drawable/xs", ScreenOrientation = ScreenOrientation.Sensor)]
     public class Login : Activity
     {
         RelativeLayout mRelativeLayout;
@@ -32,6 +33,7 @@ namespace SharedPreferences
         {
             base.OnCreate(bundle);
 
+            ShowActionBar();
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Login);
 
@@ -43,6 +45,37 @@ namespace SharedPreferences
             mButton.Click += mButton_Click;
             mRelativeLayout.Click += mRelativeLayout_Click;
 
+        }
+
+        void ShowActionBar()
+        {
+            ActionBar.SetCustomView(Resource.Layout.action_bar);
+            ActionBar.SetDisplayShowCustomEnabled(true);
+            ActionBar.SetDisplayShowHomeEnabled(false);
+            FindViewById<ImageView>(Resource.Id.imageView1).Click += (s, e) =>
+            {
+                Intent intent = new Intent(this, typeof(Login));
+                this.StartActivity(intent);
+                this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
+            };
+            FindViewById<ImageView>(Resource.Id.imageView2).Click += (s, e) =>
+            {
+                Intent intent = new Intent(this, typeof(Testcase));
+                this.StartActivity(intent);
+                this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
+            };
+            FindViewById<ImageView>(Resource.Id.imageView3).Click += (s, e) =>
+            {
+                Intent intent = new Intent(this, typeof(Testcase1));
+                this.StartActivity(intent);
+                this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
+            };
+            FindViewById<ImageView>(Resource.Id.imageView4).Click += (s, e) =>
+            {
+                Intent intent = new Intent(this, typeof(BMapApiDemoMain));
+                this.StartActivity(intent);
+                this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
+            };
         }
 
         void mButton_Click(object sender, EventArgs e)

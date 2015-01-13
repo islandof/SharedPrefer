@@ -6,6 +6,7 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -16,7 +17,7 @@ using Newtonsoft.Json;
 
 namespace SharedPreferences
 {
-    [Activity(Label = "Testcase1")]
+    [Activity(Label = "Testcase1", Icon = "@drawable/xs", ScreenOrientation = ScreenOrientation.Sensor)]
     public class Testcase1 : Activity
     {
         private List<testCase1> mTestcase1;
@@ -31,6 +32,7 @@ namespace SharedPreferences
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+            ShowActionBar();
             SetContentView(Resource.Layout.TestCase1);
             mListView = FindViewById<ListView>(Resource.Id.listView);
             mSearch = FindViewById<EditText>(Resource.Id.etSearch1);
@@ -43,6 +45,37 @@ namespace SharedPreferences
             mClient.DownloadDataAsync(mUrl);
             mClient.DownloadDataCompleted += mClient_DownloadDataCompleted;
             // Create your application here
+        }
+
+        void ShowActionBar()
+        {
+            ActionBar.SetCustomView(Resource.Layout.action_bar);
+            ActionBar.SetDisplayShowCustomEnabled(true);
+            ActionBar.SetDisplayShowHomeEnabled(false);
+            FindViewById<ImageView>(Resource.Id.imageView1).Click += (s, e) =>
+            {
+                Intent intent = new Intent(this, typeof(Login));
+                this.StartActivity(intent);
+                this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
+            };
+            FindViewById<ImageView>(Resource.Id.imageView2).Click += (s, e) =>
+            {
+                Intent intent = new Intent(this, typeof(Testcase));
+                this.StartActivity(intent);
+                this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
+            };
+            FindViewById<ImageView>(Resource.Id.imageView3).Click += (s, e) =>
+            {
+                Intent intent = new Intent(this, typeof(Testcase1));
+                this.StartActivity(intent);
+                this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
+            };
+            FindViewById<ImageView>(Resource.Id.imageView4).Click += (s, e) =>
+            {
+                Intent intent = new Intent(this, typeof(BMapApiDemoMain));
+                this.StartActivity(intent);
+                this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
+            };
         }
 
         void mClient_DownloadDataCompleted(object sender, DownloadDataCompletedEventArgs e)

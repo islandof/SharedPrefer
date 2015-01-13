@@ -212,7 +212,6 @@
     <AndroidAsset Include="Assets\marker1.png" />
     <AndroidAsset Include="Assets\marker2.png" />
     <AndroidAsset Include="Assets\marker3.png" />
-    <Content Include="ic_launcher-web.png" />
     <Content Include="Properties\AndroidManifest.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -230,10 +229,8 @@
     <AndroidResource Include="Resources\drawable\ic_action_download.png" />
     <AndroidResource Include="Resources\drawable\ic_navigation_drawer.png" />
     <AndroidResource Include="Resources\menu\action_bar.xml" />
-    <AndroidResource Include="Resources\values\theme.xml" />
     <AndroidResource Include="Resources\drawable\ic_action_overflow.png" />
     <AndroidResource Include="Resources\drawable\xs.png" />
-    <AndroidResource Include="Resources\values\themes.xml" />
     <AndroidResource Include="Resources\menu\actionbar_main.xml" />
     <AndroidResource Include="Resources\drawable\tescarfav.ico" />
     <AndroidResource Include="Resources\drawable-hdpi\button_down.png" />
@@ -287,9 +284,7 @@
       <Version>21.0.3.0</Version>
     </XamarinComponentReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\layout-mp\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
      Other similar extension points exist, see Microsoft.Common.targets.

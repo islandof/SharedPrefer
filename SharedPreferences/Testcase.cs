@@ -6,6 +6,7 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -16,7 +17,7 @@ using Newtonsoft.Json;
 
 namespace SharedPreferences
 {
-    [Activity(Label = "Activity2")]
+    [Activity(Label = "Activity2", Icon = "@drawable/xs", ScreenOrientation = ScreenOrientation.Sensor)]
     public class Testcase : Activity
     {
         private List<user_info> mUserinfo;
@@ -31,7 +32,7 @@ namespace SharedPreferences
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-
+            ShowActionBar();
             // Create your application here
             SetContentView(Resource.Layout.TestCase);
             mListView = FindViewById<ListView>(Resource.Id.listView);
@@ -57,6 +58,37 @@ namespace SharedPreferences
             //mListView.Adapter = mAdapter;
         }
 
+        void ShowActionBar()
+        {
+            ActionBar.SetCustomView(Resource.Layout.action_bar);
+            ActionBar.SetDisplayShowCustomEnabled(true);
+            ActionBar.SetDisplayShowHomeEnabled(false);
+            FindViewById<ImageView>(Resource.Id.imageView1).Click += (s, e) =>
+            {
+                Intent intent = new Intent(this, typeof(Login));
+                this.StartActivity(intent);
+                this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
+            };
+            FindViewById<ImageView>(Resource.Id.imageView2).Click += (s, e) =>
+            {
+                Intent intent = new Intent(this, typeof(Testcase));
+                this.StartActivity(intent);
+                this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
+            };
+            FindViewById<ImageView>(Resource.Id.imageView3).Click += (s, e) =>
+            {
+                Intent intent = new Intent(this, typeof(Testcase1));
+                this.StartActivity(intent);
+                this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
+            };
+            FindViewById<ImageView>(Resource.Id.imageView4).Click += (s, e) =>
+            {
+                Intent intent = new Intent(this, typeof(BMapApiDemoMain));
+                this.StartActivity(intent);
+                this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
+            };
+        }
+
         void mSearch_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
         {
 
@@ -71,11 +103,11 @@ namespace SharedPreferences
 
         }
 
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            MenuInflater.Inflate(Resource.Menu.actionbar, menu);
-            return base.OnCreateOptionsMenu(menu);
-        }
+        //public override bool OnCreateOptionsMenu(IMenu menu)
+        //{
+        //    MenuInflater.Inflate(Resource.Menu.actionbar, menu);
+        //    return base.OnCreateOptionsMenu(menu);
+        //}
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
