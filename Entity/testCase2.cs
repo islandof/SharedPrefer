@@ -19,5 +19,7 @@ namespace Entity
 		public string zhalantype { get; set; }
 
 		public string condition { get; set; }
+
+		public string zhalanname { get; set; }
 	}
 }
