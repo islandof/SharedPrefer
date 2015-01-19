@@ -50,7 +50,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Carposition.cs" />
     <Compile Include="Common.cs" />
+    <Compile Include="SijiList.cs" />
+    <Compile Include="Testcase3sAdapter.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Maps\BaseMapDemo.cs">
       <SubType>Code</SubType>
@@ -189,6 +192,12 @@
     <AndroidResource Include="Resources\layout\ZhalanAlarmL.axml" />
     <AndroidResource Include="Resources\layout\Mapsmain.axml" />
     <AndroidResource Include="Resources\layout\MainMonitor.axml" />
+    <AndroidResource Include="Resources\layout\row_contact.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\SijiList.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Login.axml" />
@@ -272,6 +281,7 @@
     <AndroidResource Include="Resources\drawable-hdpi\ic_tab_speakers_unselected.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_tab_whats_on_selected.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_tab_whats_on_unselected.png" />
+    <AndroidResource Include="Resources\drawable\ic_action_person.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BaiduMap300Binding\BaiduMap300Binding.csproj">

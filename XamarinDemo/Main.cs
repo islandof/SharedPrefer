@@ -14,7 +14,7 @@ using XamarinDemo.Maps;
 
 namespace XamarinDemo
 {
-	[Activity (Label = "主界面", MainLauncher = true, ScreenOrientation = ScreenOrientation.Sensor)]
+	[Activity (Label = "主界面", ScreenOrientation = ScreenOrientation.Sensor)]
 	public class Main : TabActivity
 	{
 

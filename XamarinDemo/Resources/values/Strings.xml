@@ -77,4 +77,16 @@
   <string name="title_activity_panorama_poi_selector">通过POI进入全景图</string>
   <string name="title_activity_panorama_geo_selector">通过地理坐标进入全景图</string>
   <string name="title_activity_panorama_demo">全景图功能</string>
+  <string name="monitor_name_mainmonitor">监控界面</string>
+  <string name="monitor_title_mainmonitor">监控主界面</string>
+  <string name="monitor_desc_mainmonitor">监控菜单项</string>
+  <string name="monitor_name_ddrivel">危险驾驶</string>
+  <string name="monitor_title_ddrivel">危险驾驶</string>
+  <string name="monitor_desc_ddrivel">危险驾驶</string>
+  <string name="monitor_name_zhalanalarml">栅栏报警</string>
+  <string name="monitor_title_zhalanalarml">栅栏报警</string>
+  <string name="monitor_desc_zhalanalarml">栅栏报警</string>
+  <string name="monitor_name_carposition">位置查看</string>
+  <string name="monitor_title_carposition">位置查看</string>
+  <string name="monitor_desc_carposition">位置查看</string>
 </resources>

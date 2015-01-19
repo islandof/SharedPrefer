@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="testCase3.cs" />
     <Compile Include="testCase2.cs" />
     <Compile Include="testCase1.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />

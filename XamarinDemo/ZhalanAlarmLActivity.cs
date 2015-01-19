@@ -62,11 +62,11 @@ namespace XamarinDemo
 //			}				
 		}
 
-		//public override bool OnCreateOptionsMenu(IMenu menu)
-		//{
-		//    MenuInflater.Inflate(Resource.Menu.actionbar, menu);
-		//    return base.OnCreateOptionsMenu(menu);
-		//}
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.actionbar, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
 
 		public override bool OnOptionsItemSelected (IMenuItem item)
 		{
