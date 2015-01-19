@@ -3,7 +3,7 @@ using Android.Content;
 using Android.OS;
 using Android.Views;
 
-namespace XamarinDemo
+namespace XamarinDemo.Maps
 {
     [Activity(Label = "@string/title_activity_cloud_search_demo")]
     public class CloudSearchDemo : Activity

@@ -7,7 +7,7 @@ using Android.Widget;
 using Com.Baidu.Mapapi.Map;
 using Com.Baidu.Mapapi.Model;
 
-namespace XamarinDemo
+namespace XamarinDemo.Maps
 {
     /**
      * 演示覆盖物的用法

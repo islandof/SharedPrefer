@@ -12,7 +12,7 @@ using Com.Baidu.Mapapi.Search.Poi;
 using Com.Baidu.Mapapi.Search.Share;
 using Java.Lang;
 
-namespace XamarinDemo
+namespace XamarinDemo.Maps
 {
     /**
      * 演示poi搜索功能 

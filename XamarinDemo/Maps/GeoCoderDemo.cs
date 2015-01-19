@@ -9,7 +9,7 @@ using Com.Baidu.Mapapi.Search.Core;
 using Com.Baidu.Mapapi.Search.Geocode;
 using Java.Lang;
 
-namespace XamarinDemo
+namespace XamarinDemo.Maps
 {
     /**
      * 此demo用来展示如何进行地理编码搜索（用地址检索坐标）、反地理编码搜索（用坐标检索地址）

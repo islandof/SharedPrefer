@@ -9,7 +9,7 @@ using Android.Widget;
 using Com.Baidu.Mapapi;
 using XamarinDemo.Maps;
 
-namespace XamarinDemo
+namespace XamarinDemo.Maps
 {
 	[Activity (ConfigurationChanges = ConfigChanges.Orientation, Label = "MapsDemo", ScreenOrientation = ScreenOrientation.Sensor)]
 	public class BMapApiDemoMain : Activity

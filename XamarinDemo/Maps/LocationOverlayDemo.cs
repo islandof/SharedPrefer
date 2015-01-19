@@ -6,7 +6,7 @@ using Com.Baidu.Location;
 using Com.Baidu.Mapapi.Map;
 using Com.Baidu.Mapapi.Model;
 
-namespace XamarinDemo
+namespace XamarinDemo.Maps
 {
     /**
      * 此demo用来展示如何结合定位SDK实现定位，并使用MyLocationOverlay绘制定位位置 同时展示如何使用自定义图标绘制并点击时弹出泡泡

@@ -3,7 +3,7 @@ using Android.Runtime;
 using Com.Baidu.Mapapi;
 using System;
 
-namespace XamarinDemo
+namespace XamarinDemo.Maps
 {
     [Application]
     public class DemoApplication : Application

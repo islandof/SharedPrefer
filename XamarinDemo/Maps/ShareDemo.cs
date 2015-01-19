@@ -3,7 +3,7 @@ using Android.Content;
 using Android.OS;
 using Android.Views;
 
-namespace XamarinDemo
+namespace XamarinDemo.Maps
 {
     [Activity(Label = "@string/demo_name_share")]
     public class ShareDemo : Activity

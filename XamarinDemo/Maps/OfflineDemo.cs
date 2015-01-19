@@ -9,7 +9,7 @@ using Com.Baidu.Mapapi.Map.Offline;
 using Java.Lang;
 using System.Collections.Generic;
 
-namespace XamarinDemo
+namespace XamarinDemo.Maps
 {
     [Activity(ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden, Label = "@string/demo_name_offline", ScreenOrientation = ScreenOrientation.Sensor)]
     public class OfflineDemo : Activity, IMKOfflineMapListener

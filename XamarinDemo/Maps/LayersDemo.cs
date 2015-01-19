@@ -5,7 +5,7 @@ using Android.Views;
 using Android.Widget;
 using Com.Baidu.Mapapi.Map;
 
-namespace XamarinDemo
+namespace XamarinDemo.Maps
 {
     /**
      * 演示地图图层显示的控制方法
