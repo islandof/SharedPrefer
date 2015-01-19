@@ -46,9 +46,10 @@ namespace XamarinDemo
 		}
 
 		private static readonly DemoInfo<Activity>[] demos = {
-			new DemoInfo<Activity> (Resource.String.monitor_name_ddrivel, Resource.String.monitor_desc_ddrivel, new DdriveLActivity()),
-			new DemoInfo<Activity> (Resource.String.monitor_name_zhalanalarml, Resource.String.monitor_desc_zhalanalarml, new ZhalanAlarmLActivity()),
-			new DemoInfo<Activity> (Resource.String.monitor_name_carposition, Resource.String.monitor_desc_carposition, new Carposition())
+			new DemoInfo<Activity> (Resource.String.monitor_name_ddrivel, Resource.String.monitor_desc_ddrivel, new DdriveLActivity ()),
+			new DemoInfo<Activity> (Resource.String.monitor_name_zhalanalarml, Resource.String.monitor_desc_zhalanalarml, new ZhalanAlarmLActivity ()),
+			new DemoInfo<Activity> (Resource.String.monitor_name_carposition, Resource.String.monitor_desc_carposition, new Carposition ()),
+			new DemoInfo<Activity> (Resource.String.monitor_name_siji, Resource.String.monitor_desc_siji, new SijiList ())
 		};
 
 		protected override void OnResume ()
@@ -95,7 +96,7 @@ namespace XamarinDemo
 		private class DemoInfo<T> : Java.Lang.Object where T : Activity
 		{
 			public readonly int title;
-		    public readonly int image;
+			public readonly int image;
 			public readonly int desc;
 			public readonly T demoClass;
 

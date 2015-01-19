@@ -14,7 +14,7 @@ using XamarinDemo.Maps;
 
 namespace XamarinDemo
 {
-	[Activity (Label = "主界面", ScreenOrientation = ScreenOrientation.Sensor)]
+	[Activity (Label = "主界面", MainLauncher = true, ScreenOrientation = ScreenOrientation.Sensor)]
 	public class Main : TabActivity
 	{
 
@@ -47,7 +47,7 @@ namespace XamarinDemo
 		protected void retrieveset ()
 		{
 			//retreive 
-			var prefs = Application.Context.GetSharedPreferences("VehicleMonitor", FileCreationMode.Private);              
+			var prefs = Application.Context.GetSharedPreferences ("VehicleMonitor", FileCreationMode.Private);              
 			var somePref = prefs.GetInt ("UserId", 0);
 
 			//Show a toast

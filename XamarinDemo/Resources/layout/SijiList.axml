@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:id="@+id/llContainer1">
+        android:id="@+id/llContainer">
         <View
             android:layout_height="2dp"
             android:layout_width="match_parent"
@@ -21,10 +21,10 @@
             android:dividerHeight="1dp" />
     </LinearLayout>
     <EditText
-        android:id="@+id/etSearch1"
+        android:id="@+id/etSearch"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:background="@drawable/edit_text_style"
-        android:hint="Search Friends"
+        android:hint="Search driver"
         android:textColor="#000" />
 </FrameLayout>

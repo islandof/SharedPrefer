@@ -46,8 +46,14 @@ namespace XamarinDemo
 			//mProgressBar.Visibility = ViewStates.Visible;
 			mClient.DownloadDataAsync (mUrl);
 			mClient.DownloadDataCompleted += mClient_DownloadDataCompleted;
+			mListView.ItemClick += mListView_ItemClick;
 		}
 
+		void mListView_ItemClick (object sender, AdapterView.ItemClickEventArgs e)
+		{
+			//			System.Console.WriteLine (mTestCase3s [e.Position].lianxidianhua);
+			Toast.MakeText (this, mZhalanAlarm [e.Position].zhalanname, ToastLength.Long).Show ();
+		}
 
 		void mSearch_TextChanged (object sender, Android.Text.TextChangedEventArgs e)
 		{
@@ -62,11 +68,11 @@ namespace XamarinDemo
 //			}				
 		}
 
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            MenuInflater.Inflate(Resource.Menu.actionbar, menu);
-            return base.OnCreateOptionsMenu(menu);
-        }
+		public override bool OnCreateOptionsMenu (IMenu menu)
+		{
+			MenuInflater.Inflate (Resource.Menu.actionbar, menu);
+			return base.OnCreateOptionsMenu (menu);
+		}
 
 		public override bool OnOptionsItemSelected (IMenuItem item)
 		{

@@ -1,13 +1,15 @@
-﻿<Properties StartupItem="SharedPreferences/SharedPreferences.csproj" GitUserInfo="UsingGIT">
+﻿<Properties StartupItem="XamarinDemo/XamarinDemo.csproj" GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.api15android4.0nexus4" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SharedPreferences/Common.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="XamarinDemo/SijiList.cs">
     <Files>
-      <File FileName="SharedPreferences/ZhalanAlarmLActivity.cs" Line="1" Column="1" />
-      <File FileName="SharedPreferences/Maps/BMapApiDemoMain.cs" Line="1" Column="1" />
-      <File FileName="SharedPreferences/Main.cs" Line="1" Column="1" />
-      <File FileName="SharedPreferences/MainMonitor.cs" Line="1" Column="1" />
-      <File FileName="SharedPreferences/Common.cs" Line="6" Column="6" />
-      <File FileName="SharedPreferences/Testcase2sAdapter.cs" Line="23" Column="23" />
+      <File FileName="Entity/testCase3.cs" Line="1" Column="1" />
+      <File FileName="XamarinDemo/SijiList.cs" Line="4" Column="4" />
+      <File FileName="XamarinDemo/SlidingTabStrip.cs" Line="1" Column="1" />
+      <File FileName="XamarinDemo/DdriveLActivity.cs" Line="66" Column="66" />
+      <File FileName="XamarinDemo/ZhalanAlarmLActivity.cs" Line="1" Column="1" />
+      <File FileName="XamarinDemo/UserLActivity.cs" Line="1" Column="1" />
+      <File FileName="BaiduMap300Binding/obj/Debug/generated/src/Com.Baidu.Mapapi.SDKInitializer.cs" Line="1" Column="1" />
+      <File FileName="XamarinDemo/Main.cs" Line="46" Column="46" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -15,4 +17,5 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.SharedPreferences MonoForAntroid.PreferredDevice="Nexus 4" />
+  <MonoDevelop.Ide.ItemProperties.XamarinDemo MonoForAntroid.PreferredDevice="Nexus 4" />
 </Properties>
