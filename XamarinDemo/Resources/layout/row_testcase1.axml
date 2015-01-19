@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="30dp"
+    android:weightSum="100"
+    android:paddingLeft="5dp"
+    android:paddingTop="2dp">
+    <TextView
+        android:id="@+id/txtchepaino"
+        android:text="Ala11"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_weight="20"
+        android:gravity="center"
+        android:textColor="#333333" />
+    <TextView
+        android:id="@+id/txtAla10"
+        android:text="Ala11"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_weight="20"
+        android:gravity="center"
+        android:textColor="#333333" />
+    <TextView
+        android:id="@+id/txtAla11"
+        android:text="Ala13"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_weight="20"
+        android:gravity="center"
+        android:textColor="#333333" />
+    <TextView
+        android:id="@+id/txtAla12"
+        android:text="Ala13"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_weight="20"
+        android:gravity="center"
+        android:textColor="#333333" />
+    <TextView
+        android:id="@+id/txtAla13"
+        android:text="Ala14"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_weight="20"
+        android:gravity="center"
+        android:textColor="#333333" />
+</LinearLayout>
