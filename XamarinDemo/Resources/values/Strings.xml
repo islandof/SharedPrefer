@@ -89,4 +89,7 @@
   <string name="monitor_name_carposition">位置查看</string>
   <string name="monitor_title_carposition">位置查看</string>
   <string name="monitor_desc_carposition">位置查看</string>
+  <string name="monitor_name_siji">司机列表</string>
+  <string name="monitor_title_siji">司机列表</string>
+  <string name="monitor_desc_siji">司机列表</string>
 </resources>

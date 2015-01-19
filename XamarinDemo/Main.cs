@@ -26,7 +26,7 @@ namespace XamarinDemo
 
 			CreateTab (typeof(MainMonitor), "Monitor", "监控中心", Resource.Drawable.ic_tab_whats_on);
 			CreateTab (typeof(BMapApiDemoMain), "carmanage", "车辆管理", Resource.Drawable.ic_tab_speakers);
-			CreateTab (typeof(DdriveLActivity), "siji", "司机管理", Resource.Drawable.ic_tab_sessions);
+			CreateTab (typeof(SijiList), "siji", "司机管理", Resource.Drawable.ic_tab_sessions);
 			CreateTab (typeof(ZhalanAlarmLActivity), "author", "权限管理", Resource.Drawable.ic_tab_my_schedule);
 			// Create your application here
 		}
