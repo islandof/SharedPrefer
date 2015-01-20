@@ -282,6 +282,8 @@
     <AndroidResource Include="Resources\drawable-hdpi\ic_tab_whats_on_selected.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_tab_whats_on_unselected.png" />
     <AndroidResource Include="Resources\drawable\ic_action_person.png" />
+    <AndroidResource Include="Resources\drawable\gray_car.gif" />
+    <AndroidResource Include="Resources\drawable\green_car.gif" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BaiduMap300Binding\BaiduMap300Binding.csproj">
