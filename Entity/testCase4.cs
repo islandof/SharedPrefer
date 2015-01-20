@@ -26,7 +26,9 @@ namespace Entity
 
         public string sijiname { get; set; }
 
-        public string currentstatus { get; set; }
+	    public string pailiangvalue { get; set; }
+
+	    public string currentstatus { get; set; }
         
 	}
 }

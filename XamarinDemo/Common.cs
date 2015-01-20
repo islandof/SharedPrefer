@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Android.Content;
 using Android.Views.InputMethods;
+using Android.Views;
 
 namespace XamarinDemo
 {
@@ -33,5 +34,6 @@ namespace XamarinDemo
 		//    mIsAnimating = true;
 		//    mSearch.Animate().AlphaBy(-1.0f).SetDuration(300).Start();
 		//}
+        
 	}
 }

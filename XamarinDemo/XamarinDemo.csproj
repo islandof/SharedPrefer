@@ -52,6 +52,8 @@
   <ItemGroup>
     <Compile Include="Carposition.cs" />
     <Compile Include="Common.cs" />
+    <Compile Include="CarManage.cs" />
+    <Compile Include="QicheList.cs" />
     <Compile Include="SijiList.cs" />
     <Compile Include="Testcase3sAdapter.cs" />
     <Compile Include="Main.cs" />
@@ -141,6 +143,9 @@
     <AndroidNativeLibrary Include="Libs\armeabi\libBaiduMapSDK_v3_0_0.so" />
     <AndroidNativeLibrary Include="Libs\armeabi\liblocSDK3.so" />
     <None Include="packages.config" />
+    <None Include="Resources\layout\QicheList.axml">
+      <SubType>AndroidResource</SubType>
+    </None>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\activity_busline.axml" />

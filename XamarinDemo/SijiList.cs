@@ -55,13 +55,8 @@ namespace XamarinDemo
 			RunOnUiThread (() => {
 				try {
 					string json = Encoding.UTF8.GetString (e.Result);
-					//mUserinfo = JsonConvert.DeserializeObject<List<user_info>>(json);
-					//var fRows = new FormatRows { rows = new List<user_info>() };
 					var fRows = JsonConvert.DeserializeObject<FormatRows> (json);
 					mTestCase3s = JsonConvert.DeserializeObject<List<testCase3>> (fRows.rows.ToString ());
-					//Action<ImageView> action = PicSelected;
-					//mAdapter = new UserinfosAdapter(this, Resource.Layout.row_userinfo, mUserinfo, action);
-					//mListView.Adapter = mAdapter;
 					mAdapter = new TestCase3sAdapter (this, Resource.Layout.row_contact, mTestCase3s);
 					mListView.Adapter = mAdapter;
 
