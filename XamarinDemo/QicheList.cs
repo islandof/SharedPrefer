@@ -41,7 +41,7 @@ namespace XamarinDemo
             mContainer = FindViewById<LinearLayout>(Resource.Id.llContainer);
             mSearch.Alpha = 0;
             mSearch.TextChanged += mSearch_TextChanged;
-            Toast.MakeText(this, " ˝æ›º”‘ÿ÷–...", ToastLength.Long).Show();
+            Toast.MakeText(this, "Êï∞ÊçÆÂä†ËΩΩ‰∏≠...", ToastLength.Long).Show();
             mClient = new WebClient();
             mUrl = new Uri("http://cloud.tescar.cn/Vehicle/GetSijiData?isspec=1");
             mClient.DownloadDataAsync(mUrl);

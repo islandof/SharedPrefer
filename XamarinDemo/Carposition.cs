@@ -19,7 +19,7 @@ using Object = Java.Lang.Object;
 namespace XamarinDemo
 {
     /**
-     * ÑİÊ¾¸²¸ÇÎïµÄÓÃ·¨
+     * æ¼”ç¤ºè¦†ç›–ç‰©çš„ç”¨æ³•
      */
 
     [Activity(ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden,
@@ -27,14 +27,14 @@ namespace XamarinDemo
     public class Carposition : Activity
     {
         /**
-        * MapView ÊÇµØÍ¼Ö÷¿Ø¼ş
+        * MapView æ˜¯åœ°å›¾ä¸»æ§ä»¶
         */
         private static readonly LatLng GEO_SHENGZHENG = new LatLng(22.560, 114.064);
 
         private readonly BitmapDescriptor bd = BitmapDescriptorFactory
             .FromResource(Resource.Drawable.icon_gcoding);
 
-        // ³õÊ¼»¯È«¾Ö bitmap ĞÅÏ¢£¬²»ÓÃÊ±¼°Ê± Recycle
+        // åˆå§‹åŒ–å…¨å±€ bitmap ä¿¡æ¯ï¼Œä¸ç”¨æ—¶åŠæ—¶ Recycle
         private readonly BitmapDescriptor bdA = BitmapDescriptorFactory
             .FromResource(Resource.Drawable.icon_marka);
 
@@ -75,7 +75,7 @@ namespace XamarinDemo
             mBaiduMap = mMapView.Map;
             MapStatusUpdate msu = MapStatusUpdateFactory.NewLatLng(GEO_SHENGZHENG);
             mBaiduMap.SetMapStatus(msu);
-            Toast.MakeText(this, "Êı¾İ¼ÓÔØÖĞ...", ToastLength.Long).Show();
+            Toast.MakeText(this, "æ•°æ®åŠ è½½ä¸­...", ToastLength.Long).Show();
             mClient = new WebClient();
             mUrl = new Uri("http://cloud.tescar.cn/Vehicle/GetQicheData?isspec=1");
             mClient.DownloadDataAsync(mUrl);
@@ -128,7 +128,7 @@ namespace XamarinDemo
                     }
                 }
             }
-            #region ×¢ÊÍ
+            #region æ³¨é‡Š
             //LatLng llA = new LatLng(22.540, 114.044);
             //LatLng llB = new LatLng(22.560, 114.064);
             //LatLng llA = new LatLng(22.540, 114.044);
@@ -166,7 +166,7 @@ namespace XamarinDemo
         }
 
         /**
-         * Çå³ıËùÓĞOverlay
+         * æ¸…é™¤æ‰€æœ‰Overlay
          * 
          * @param view
          */
@@ -178,7 +178,7 @@ namespace XamarinDemo
         }
 
         /**
-         * ÖØĞÂÌí¼ÓOverlay
+         * é‡æ–°æ·»åŠ Overlay
          * 
          * @param view
          */
@@ -192,24 +192,24 @@ namespace XamarinDemo
 
         protected override void OnPause()
         {
-            // MapViewµÄÉúÃüÖÜÆÚÓëActivityÍ¬²½£¬µ±activity¹ÒÆğÊ±Ğèµ÷ÓÃMapView.OnPause()
+            // MapViewçš„ç”Ÿå‘½å‘¨æœŸä¸ActivityåŒæ­¥ï¼Œå½“activityæŒ‚èµ·æ—¶éœ€è°ƒç”¨MapView.OnPause()
             mMapView.OnPause();
             base.OnPause();
         }
 
         protected override void OnResume()
         {
-            // MapViewµÄÉúÃüÖÜÆÚÓëActivityÍ¬²½£¬µ±activity»Ö¸´Ê±Ğèµ÷ÓÃMapView.OnResume()
+            // MapViewçš„ç”Ÿå‘½å‘¨æœŸä¸ActivityåŒæ­¥ï¼Œå½“activityæ¢å¤æ—¶éœ€è°ƒç”¨MapView.OnResume()
             mMapView.OnResume();
             base.OnResume();
         }
 
         protected override void OnDestroy()
         {
-            // MapViewµÄÉúÃüÖÜÆÚÓëActivityÍ¬²½£¬µ±activityÏú»ÙÊ±Ğèµ÷ÓÃMapView.destroy()
+            // MapViewçš„ç”Ÿå‘½å‘¨æœŸä¸ActivityåŒæ­¥ï¼Œå½“activityé”€æ¯æ—¶éœ€è°ƒç”¨MapView.destroy()
             mMapView.OnDestroy();
             base.OnDestroy();
-            // »ØÊÕ bitmap ×ÊÔ´
+            // å›æ”¶ bitmap èµ„æº
             bdA.Recycle();
             bdB.Recycle();
             bdC.Recycle();
@@ -290,24 +290,24 @@ namespace XamarinDemo
             {
                 var button = new Button(overlayDemo.ApplicationContext);
                 button.SetBackgroundResource(Resource.Drawable.popup);
-                LatLng ll = marker.Position; // ³£Á¿
+                LatLng ll = marker.Position; // å¸¸é‡
                 Point p = overlayDemo.mBaiduMap.Projection.ToScreenLocation(ll);
                 p.Y -= 47;
                 LatLng llInfo = overlayDemo.mBaiduMap.Projection.FromScreenLocation(p);
                 InfoWindow.IOnInfoWindowClickListener listener = null;
                 if (marker.Equals(overlayDemo.mMarkerA) || marker.Equals(overlayDemo.mMarkerD))
                 {
-                    button.Text = "¸ü¸ÄÎ»ÖÃ";
+                    button.Text = "æ›´æ”¹ä½ç½®";
                     listener = new IOnInfoWindowClickListenerImplA(this, ll, marker);
                 }
                 else if (marker.Equals(overlayDemo.mMarkerB))
                 {
-                    button.Text = "¸ü¸ÄÍ¼±ê";
+                    button.Text = "æ›´æ”¹å›¾æ ‡";
                     listener = new IOnInfoWindowClickListenerImplB(this, marker);
                 }
                 else if (marker.Equals(overlayDemo.mMarkerC))
                 {
-                    button.Text = "É¾³ı";
+                    button.Text = "åˆ é™¤";
                     listener = new IOnInfoWindowClickListenerImplC(this, marker);
                 }
                 overlayDemo.mInfoWindow = new InfoWindow(button, llInfo, listener);
