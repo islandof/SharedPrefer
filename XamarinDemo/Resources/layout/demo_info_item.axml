@@ -1,41 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
-    android:layout_width="fill_parent"
-    android:layout_height="60dp"
-    android:weightSum="100"
-    android:background="#F1F1F1">
-    <ImageView
-        android:id="@+id/imgPic"
-        android:src="@drawable/ic_action_favorite"
-        android:layout_width="0dp"
-        android:layout_weight="25"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="#3B5998"
-        android:adjustViewBounds="true"
-        android:scaleType="centerCrop" />
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="65">
-        <TextView
-            android:id="@+id/title"
-            android:text="title"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="65"
-            android:gravity="center"
-            android:textSize="18sp"
-            android:textColor="#000" />
-        <TextView
-            android:id="@+id/desc"
-            android:text="description"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="65"
-            android:gravity="center"
-            android:textSize="18sp"
-            android:textColor="#000" />
-    </LinearLayout>
+        android:layout_marginTop="3dp"
+        android:text="demo busLineName"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:text="demo desc"
+        android:textSize="12sp" />
 </LinearLayout>
