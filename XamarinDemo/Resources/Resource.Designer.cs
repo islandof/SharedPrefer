@@ -279,8 +279,8 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f080021
 			public const int boundsSearch = 2131230753;
 			
-			// aapt resource value: 0x7f08005d
-			public const int btnLogin = 2131230813;
+			// aapt resource value: 0x7f08005e
+			public const int btnLogin = 2131230814;
 			
 			// aapt resource value: 0x7f080033
 			public const int button = 2131230771;
@@ -291,8 +291,8 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f08001a
 			public const int button2 = 2131230746;
 			
-			// aapt resource value: 0x7f08005e
-			public const int checkBox1 = 2131230814;
+			// aapt resource value: 0x7f08005f
+			public const int checkBox1 = 2131230815;
 			
 			// aapt resource value: 0x7f08000c
 			public const int city = 2131230732;
@@ -324,14 +324,14 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f080038
 			public const int del = 2131230776;
 			
-			// aapt resource value: 0x7f080057
-			public const int desc = 2131230807;
+			// aapt resource value: 0x7f080058
+			public const int desc = 2131230808;
 			
 			// aapt resource value: 0x7f080022
 			public const int detailsSearch = 2131230754;
 			
-			// aapt resource value: 0x7f080065
-			public const int display = 2131230821;
+			// aapt resource value: 0x7f080066
+			public const int display = 2131230822;
 			
 			// aapt resource value: 0x7f080078
 			public const int downloads = 2131230840;
@@ -369,8 +369,8 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f08000a
 			public const int imageView4 = 2131230730;
 			
-			// aapt resource value: 0x7f08006c
-			public const int imgPic = 2131230828;
+			// aapt resource value: 0x7f080056
+			public const int imgPic = 2131230806;
 			
 			// aapt resource value: 0x7f080016
 			public const int lat = 2131230742;
@@ -387,8 +387,8 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f080009
 			public const int linearLayout4 = 2131230729;
 			
-			// aapt resource value: 0x7f080062
-			public const int listView = 2131230818;
+			// aapt resource value: 0x7f080063
+			public const int listView = 2131230819;
 			
 			// aapt resource value: 0x7f080074
 			public const int llContainer = 2131230836;
@@ -408,8 +408,8 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f080017
 			public const int lon = 2131230743;
 			
-			// aapt resource value: 0x7f08005a
-			public const int mainView = 2131230810;
+			// aapt resource value: 0x7f08005b
+			public const int mainView = 2131230811;
 			
 			// aapt resource value: 0x7f080013
 			public const int map = 2131230739;
@@ -474,23 +474,23 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f080011
 			public const int pre = 2131230737;
 			
-			// aapt resource value: 0x7f080060
-			public const int progressBar1 = 2131230816;
+			// aapt resource value: 0x7f080061
+			public const int progressBar1 = 2131230817;
 			
 			// aapt resource value: 0x7f080023
 			public const int radioGroup = 2131230755;
 			
-			// aapt resource value: 0x7f080064
-			public const int ratio = 2131230820;
+			// aapt resource value: 0x7f080065
+			public const int ratio = 2131230821;
 			
 			// aapt resource value: 0x7f08001f
 			public const int regionSearch = 2131230751;
 			
-			// aapt resource value: 0x7f08005f
-			public const int relativeLayout1 = 2131230815;
+			// aapt resource value: 0x7f080060
+			public const int relativeLayout1 = 2131230816;
 			
-			// aapt resource value: 0x7f080066
-			public const int remove = 2131230822;
+			// aapt resource value: 0x7f080067
+			public const int remove = 2131230823;
 			
 			// aapt resource value: 0x7f080042
 			public const int resert = 2131230786;
@@ -528,8 +528,8 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f08000d
 			public const int searchkey = 2131230733;
 			
-			// aapt resource value: 0x7f080058
-			public const int sliding_tabs = 2131230808;
+			// aapt resource value: 0x7f080059
+			public const int sliding_tabs = 2131230809;
 			
 			// aapt resource value: 0x7f080036
 			public const int start = 2131230774;
@@ -555,14 +555,14 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f08000b
 			public const int textView4 = 2131230731;
 			
-			// aapt resource value: 0x7f080061
-			public const int text_Info = 2131230817;
+			// aapt resource value: 0x7f080062
+			public const int text_Info = 2131230818;
 			
 			// aapt resource value: 0x7f080051
 			public const int textcache = 2131230801;
 			
-			// aapt resource value: 0x7f080056
-			public const int title = 2131230806;
+			// aapt resource value: 0x7f080057
+			public const int title = 2131230807;
 			
 			// aapt resource value: 0x7f08001e
 			public const int traffice = 2131230750;
@@ -588,35 +588,35 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f08006e
 			public const int txtNumber = 2131230830;
 			
-			// aapt resource value: 0x7f08005c
-			public const int txtPwd = 2131230812;
+			// aapt resource value: 0x7f08005d
+			public const int txtPwd = 2131230813;
 			
-			// aapt resource value: 0x7f08005b
-			public const int txtUser = 2131230811;
+			// aapt resource value: 0x7f08005c
+			public const int txtUser = 2131230812;
 			
 			// aapt resource value: 0x7f08006f
 			public const int txtchepaino = 2131230831;
 			
-			// aapt resource value: 0x7f080067
-			public const int txtrow1 = 2131230823;
-			
 			// aapt resource value: 0x7f080068
-			public const int txtrow2 = 2131230824;
+			public const int txtrow1 = 2131230824;
 			
 			// aapt resource value: 0x7f080069
-			public const int txtrow3 = 2131230825;
+			public const int txtrow2 = 2131230825;
 			
 			// aapt resource value: 0x7f08006a
-			public const int txtrow4 = 2131230826;
+			public const int txtrow3 = 2131230826;
 			
 			// aapt resource value: 0x7f08006b
-			public const int txtrow5 = 2131230827;
+			public const int txtrow4 = 2131230827;
 			
-			// aapt resource value: 0x7f080063
-			public const int update = 2131230819;
+			// aapt resource value: 0x7f08006c
+			public const int txtrow5 = 2131230828;
 			
-			// aapt resource value: 0x7f080059
-			public const int viewpager = 2131230809;
+			// aapt resource value: 0x7f080064
+			public const int update = 2131230820;
+			
+			// aapt resource value: 0x7f08005a
+			public const int viewpager = 2131230810;
 			
 			// aapt resource value: 0x7f080047
 			public const int walk = 2131230791;
