@@ -54,7 +54,10 @@
     <Compile Include="Common.cs" />
     <Compile Include="CarManage.cs" />
     <Compile Include="QicheList.cs" />
+    <Compile Include="ZhalanareaList.cs" />
     <Compile Include="SijiList.cs" />
+    <Compile Include="Testcase5sAdapter.cs" />
+    <Compile Include="Testcase4sAdapter.cs" />
     <Compile Include="Testcase3sAdapter.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Maps\BaseMapDemo.cs">

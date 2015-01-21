@@ -26,7 +26,7 @@ namespace XamarinDemo
 		private LinearLayout mContainer;
 		private bool mAnimatedDown;
 		private bool mIsAnimating;
-		private TestCase3sAdapter mAdapter;
+		private Testcase3sAdapter mAdapter;
 		private WebClient mClient;
 		private Uri mUrl;
 		static readonly List<string> phoneNumbers = new List<string> ();
@@ -57,7 +57,7 @@ namespace XamarinDemo
 					string json = Encoding.UTF8.GetString (e.Result);
 					var fRows = JsonConvert.DeserializeObject<FormatRows> (json);
 					mTestCase3s = JsonConvert.DeserializeObject<List<testCase3>> (fRows.rows.ToString ());
-					mAdapter = new TestCase3sAdapter (this, Resource.Layout.row_contact, mTestCase3s);
+					mAdapter = new Testcase3sAdapter (this, Resource.Layout.row_contact, mTestCase3s);
 					mListView.Adapter = mAdapter;
 
 				} catch (Exception ex) {
@@ -75,7 +75,7 @@ namespace XamarinDemo
 				                                      || userinfo.ownercompanyname.Contains (mSearch.Text, StringComparison.OrdinalIgnoreCase)
 				                                  select userinfo).ToList<testCase3> ();
 
-				mAdapter = new TestCase3sAdapter (this, Resource.Layout.row_contact, searchedDriver);
+				mAdapter = new Testcase3sAdapter (this, Resource.Layout.row_contact, searchedDriver);
 				mListView.Adapter = mAdapter;
 			}
             

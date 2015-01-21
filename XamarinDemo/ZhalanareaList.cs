@@ -6,69 +6,94 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
-using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
-using Android.Views.InputMethods;
 using Android.Widget;
 using Entity;
 using Newtonsoft.Json;
 
+using Android.Views.InputMethods;
+
 namespace XamarinDemo
 {
-	[Activity (Label = "Activity2", Icon = "@drawable/xs", ScreenOrientation = ScreenOrientation.Sensor)]
-	public class UserLActivity : Activity
+	[Activity (Label = "司机列表")]
+    public class ZhalanareaList : Activity
 	{
-		private List<user_info> mUserinfo;
+		private List<testCase5> mDataList;
 		private ListView mListView;
 		private EditText mSearch;
 		private LinearLayout mContainer;
 		private bool mAnimatedDown;
 		private bool mIsAnimating;
-		private TestcasesAdapter mAdapter;
+        private Testcase5sAdapter mAdapter;
 		private WebClient mClient;
 		private Uri mUrl;
+		static readonly List<string> phoneNumbers = new List<string> ();
 
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
-			// Create your application here
-			SetContentView (Resource.Layout.TestCase);
+			SetContentView (Resource.Layout.SijiList);
 			mListView = FindViewById<ListView> (Resource.Id.listView);
+
+			mListView.ItemClick += mListView_ItemClick;
 			mSearch = FindViewById<EditText> (Resource.Id.etSearch);
 			mContainer = FindViewById<LinearLayout> (Resource.Id.llContainer);
 			mSearch.Alpha = 0;
 			mSearch.TextChanged += mSearch_TextChanged;
 			Toast.MakeText (this, "数据加载中...", ToastLength.Long).Show ();
 			mClient = new WebClient ();
-			mUrl = new Uri ("http://cloud.tescar.cn/manage/getuserinfodata?isspec=1");
+            mUrl = new Uri("http://cloud.tescar.cn/Vehicle/GetZhalanareaData?isspec=1");
 			mClient.DownloadDataAsync (mUrl);
 			mClient.DownloadDataCompleted += mClient_DownloadDataCompleted;
+			// Create your application here
 		}
 
+		void mClient_DownloadDataCompleted (object sender, DownloadDataCompletedEventArgs e)
+		{
+			RunOnUiThread (() => {
+				try {
+					string json = Encoding.UTF8.GetString (e.Result);
+					var fRows = JsonConvert.DeserializeObject<FormatRows> (json);
+					mDataList = JsonConvert.DeserializeObject<List<testCase5>> (fRows.rows.ToString ());
+                    mAdapter = new Testcase5sAdapter(this, Resource.Layout.row_contact, mDataList);
+					mListView.Adapter = mAdapter;
+
+				} catch (Exception ex) {
+					Toast.MakeText (this, ex.ToString (), ToastLength.Long).Show ();
+				}
+
+			});
+		}
 
 		void mSearch_TextChanged (object sender, Android.Text.TextChangedEventArgs e)
 		{
-			if (mUserinfo != null) {
-				List<user_info> searchedFriends = (from userinfo in mUserinfo
-				                                   where userinfo.USER_NAME.Contains (mSearch.Text, StringComparison.OrdinalIgnoreCase) || userinfo.ROLE_NAME.Contains (mSearch.Text, StringComparison.OrdinalIgnoreCase)
-				                                       || userinfo.USER_EMAIL.Contains (mSearch.Text, StringComparison.OrdinalIgnoreCase)
-				                                   select userinfo).ToList<user_info> ();
+			if (mDataList != null) {
+                //List<testCase3> searchedDriver = (from userinfo in mDataList
+                //                                  where userinfo.lianxidianhua.Contains (mSearch.Text, StringComparison.OrdinalIgnoreCase) || userinfo.sijiname.Contains (mSearch.Text, StringComparison.OrdinalIgnoreCase)
+                //                                      || userinfo.ownercompanyname.Contains (mSearch.Text, StringComparison.OrdinalIgnoreCase)
+                //                                  select userinfo).ToList<testCase3> ();
 
-				mAdapter = new TestcasesAdapter (this, Resource.Layout.row_testcase, searchedFriends);
-				mListView.Adapter = mAdapter;
+                //mAdapter = new TestCase3sAdapter (this, Resource.Layout.row_contact, searchedDriver);
+                //mListView.Adapter = mAdapter;
 			}
             
 
 
 		}
 
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            MenuInflater.Inflate(Resource.Menu.actionbar, menu);
-            return base.OnCreateOptionsMenu(menu);
-        }
+		void mListView_ItemClick (object sender, AdapterView.ItemClickEventArgs e)
+		{
+			
+		}
+
+		public override bool OnCreateOptionsMenu (IMenu menu)
+		{
+			MenuInflater.Inflate (Resource.Menu.actionbar, menu);
+			return base.OnCreateOptionsMenu (menu);
+		}
+
 
 		public override bool OnOptionsItemSelected (IMenuItem item)
 		{
@@ -105,27 +130,6 @@ namespace XamarinDemo
 			default:
 				return base.OnOptionsItemSelected (item);
 			}
-		}
-
-		void mClient_DownloadDataCompleted (object sender, DownloadDataCompletedEventArgs e)
-		{
-			RunOnUiThread (() => {
-				try {
-					string json = Encoding.UTF8.GetString (e.Result);
-					//mUserinfo = JsonConvert.DeserializeObject<List<user_info>>(json);
-					//var fRows = new FormatRows { rows = new List<user_info>() };
-					var fRows = JsonConvert.DeserializeObject<FormatRows> (json);
-					mUserinfo = JsonConvert.DeserializeObject<List<user_info>> (fRows.rows.ToString ());
-					//Action<ImageView> action = PicSelected;
-					//mAdapter = new UserinfosAdapter(this, Resource.Layout.row_userinfo, mUserinfo, action);
-					//mListView.Adapter = mAdapter;
-					mAdapter = new TestcasesAdapter (this, Resource.Layout.row_testcase, mUserinfo);
-					mListView.Adapter = mAdapter;
-				} catch (Exception ex) {
-					Toast.MakeText (this, ex.ToString (), ToastLength.Long).Show ();
-				}
-
-			});
 		}
 
 		void anim_AnimationEndUp (object sender, Android.Views.Animations.Animation.AnimationEndEventArgs e)

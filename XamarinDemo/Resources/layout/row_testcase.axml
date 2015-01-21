@@ -7,32 +7,24 @@
     android:paddingLeft="5dp"
     android:paddingTop="2dp">
     <TextView
-        android:id="@+id/txtUserName"
-        android:text="UserName"
+        android:id="@+id/txtrow1"
+        android:text="用户名"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:layout_weight="25"
         android:gravity="center"
         android:textColor="#333333" />
     <TextView
-        android:id="@+id/txtDeptName"
-        android:text="RoleName"
+        android:id="@+id/txtrow2"
+        android:text="角色名"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:layout_weight="25"
         android:gravity="center"
         android:textColor="#333333" />
     <TextView
-        android:id="@+id/txtUserPwd"
-        android:text="Pwd"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:layout_weight="25"
-        android:gravity="center"
-        android:textColor="#333333" />
-    <TextView
-        android:id="@+id/txtUserEmail"
-        android:text="CompanyName"
+        android:id="@+id/txtrow3"
+        android:text="公司"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:layout_weight="25"

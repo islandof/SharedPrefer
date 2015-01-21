@@ -8,14 +8,14 @@ using Entity;
 
 namespace XamarinDemo
 {
-	class TestCase3sAdapter : BaseAdapter<testCase3>
+	class Testcase3sAdapter : BaseAdapter<testCase3>
 	{
 		private Context mContext;
 		private int mLayout;
 		private List<testCase3> mtestCase3s;
 		private Action<ImageView> mActionPicSelected;
 
-		public TestCase3sAdapter (Context context, int layout, List<testCase3> contacts)
+		public Testcase3sAdapter (Context context, int layout, List<testCase3> contacts)
 		{
 			mContext = context;
 			mLayout = layout;
@@ -46,7 +46,7 @@ namespace XamarinDemo
 			row.FindViewById<TextView> (Resource.Id.txtName).Text = mtestCase3s [position].ownercompanyname + ":" + mtestCase3s [position].sijiname;
 			row.FindViewById<TextView> (Resource.Id.txtNumber).Text = mtestCase3s [position].lianxidianhua;
 
-			ImageView pic = row.FindViewById<ImageView> (Resource.Id.imgPic);
+            //ImageView pic = row.FindViewById<ImageView> (Resource.Id.imgPic);
 
 			//if (mtestCase3s[position].Image != null)
 			//{

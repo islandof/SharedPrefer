@@ -56,16 +56,13 @@ namespace XamarinDemo
             row.SetBackgroundColor(GetColorFromInteger(mAlternatingColors[position % mAlternatingColors.Length]));
 
             
-            TextView firstName = row.FindViewById<TextView>(Resource.Id.txtUserName);
+            TextView firstName = row.FindViewById<TextView>(Resource.Id.txtrow1);
             firstName.Text = mUserinfos[position].USER_NAME;
 
-            TextView lastName = row.FindViewById<TextView>(Resource.Id.txtDeptName);
+            TextView lastName = row.FindViewById<TextView>(Resource.Id.txtrow2);
             lastName.Text = mUserinfos[position].ROLE_NAME;
 
-            TextView age = row.FindViewById<TextView>(Resource.Id.txtUserPwd);
-            age.Text = mUserinfos[position].USER_PWD;
-
-            TextView gender = row.FindViewById<TextView>(Resource.Id.txtUserEmail);
+            TextView gender = row.FindViewById<TextView>(Resource.Id.txtrow3);
             gender.Text = mUserinfos[position].companyname;
 
             if ((position % 2) == 1)
@@ -73,7 +70,6 @@ namespace XamarinDemo
                 //Green background, set text white
                 firstName.SetTextColor(Color.White);
                 lastName.SetTextColor(Color.White);
-                age.SetTextColor(Color.White);
                 gender.SetTextColor(Color.White);
             }
 
@@ -82,7 +78,6 @@ namespace XamarinDemo
                 //White background, set text black
                 firstName.SetTextColor(Color.Black);
                 lastName.SetTextColor(Color.Black);
-                age.SetTextColor(Color.Black);
                 gender.SetTextColor(Color.Black);
             }
 

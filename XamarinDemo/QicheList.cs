@@ -19,13 +19,13 @@ namespace XamarinDemo
     [Activity(Label = "QicheList")]
     public class QicheList : Activity
     {
-        private List<testCase3> mTestCase3s;
+        private List<testCase4> mDataList;
         private ListView mListView;
         private EditText mSearch;
         private LinearLayout mContainer;
         private bool mAnimatedDown;
         private bool mIsAnimating;
-        private TestCase3sAdapter mAdapter;
+        private Testcase4sAdapter mAdapter;
         private WebClient mClient;
         private Uri mUrl;
         static readonly List<string> phoneNumbers = new List<string>();
@@ -43,7 +43,7 @@ namespace XamarinDemo
             mSearch.TextChanged += mSearch_TextChanged;
             Toast.MakeText(this, "数据加载中...", ToastLength.Long).Show();
             mClient = new WebClient();
-            mUrl = new Uri("http://cloud.tescar.cn/Vehicle/GetSijiData?isspec=1");
+            mUrl = new Uri("http://cloud.tescar.cn/Vehicle/GetqicheData?isspec=1");
             mClient.DownloadDataAsync(mUrl);
             mClient.DownloadDataCompleted += mClient_DownloadDataCompleted;
             // Create your application here
@@ -57,8 +57,8 @@ namespace XamarinDemo
                 {
                     string json = Encoding.UTF8.GetString(e.Result);
                     var fRows = JsonConvert.DeserializeObject<FormatRows>(json);
-                    mTestCase3s = JsonConvert.DeserializeObject<List<testCase3>>(fRows.rows.ToString());
-                    mAdapter = new TestCase3sAdapter(this, Resource.Layout.row_contact, mTestCase3s);
+                    mDataList = JsonConvert.DeserializeObject<List<testCase4>>(fRows.rows.ToString());
+                    mAdapter = new Testcase4sAdapter(this, Resource.Layout.row_contact, mDataList);
                     mListView.Adapter = mAdapter;
 
                 }
@@ -72,15 +72,15 @@ namespace XamarinDemo
 
         void mSearch_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
         {
-            if (mTestCase3s != null)
+            if (mDataList!= null)
             {
-                List<testCase3> searchedDriver = (from userinfo in mTestCase3s
-                                                  where userinfo.lianxidianhua.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase) || userinfo.sijiname.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase)
-                                                      || userinfo.ownercompanyname.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase)
-                                                  select userinfo).ToList<testCase3>();
+                //List<testCase3> searchedDriver = (from userinfo in mTestCase3s
+                //                                  where userinfo.lianxidianhua.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase) || userinfo.sijiname.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase)
+                //                                      || userinfo.ownercompanyname.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase)
+                //                                  select userinfo).ToList<testCase3>();
 
-                mAdapter = new TestCase3sAdapter(this, Resource.Layout.row_contact, searchedDriver);
-                mListView.Adapter = mAdapter;
+                //mAdapter = new TestCase3sAdapter(this, Resource.Layout.row_contact, searchedDriver);
+                //mListView.Adapter = mAdapter;
             }
 
 
@@ -89,25 +89,25 @@ namespace XamarinDemo
 
         void mListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            var callDialog = new AlertDialog.Builder(this);
-            callDialog.SetMessage("Call " + mTestCase3s[e.Position].lianxidianhua + "?");
-            callDialog.SetNeutralButton("Call", delegate
-            {
-                // add dialed number to list of called numbers.
-                phoneNumbers.Add(mTestCase3s[e.Position].lianxidianhua);
+            //var callDialog = new AlertDialog.Builder(this);
+            //callDialog.SetMessage("Call " + mDataList[e.Position].lianxidianhua + "?");
+            //callDialog.SetNeutralButton("Call", delegate
+            //{
+            //    // add dialed number to list of called numbers.
+            //    phoneNumbers.Add(mTestCase3s[e.Position].lianxidianhua);
 
-                // Create intent to dial phone
-                var callIntent = new Intent(Intent.ActionCall);
-                callIntent.SetData(Android.Net.Uri.Parse("tel:" + mTestCase3s[e.Position].lianxidianhua));
-                StartActivity(callIntent);
-            });
-            callDialog.SetNegativeButton("Cancel", delegate
-            {
-            });
+            //    // Create intent to dial phone
+            //    var callIntent = new Intent(Intent.ActionCall);
+            //    callIntent.SetData(Android.Net.Uri.Parse("tel:" + mTestCase3s[e.Position].lianxidianhua));
+            //    StartActivity(callIntent);
+            //});
+            //callDialog.SetNegativeButton("Cancel", delegate
+            //{
+            //});
 
-            // Show the alert dialog to the user and wait for response.
-            callDialog.Show();
-            Toast.MakeText(this, mTestCase3s[e.Position].lianxidianhua, ToastLength.Long).Show();
+            //// Show the alert dialog to the user and wait for response.
+            //callDialog.Show();
+            //Toast.MakeText(this, mTestCase3s[e.Position].lianxidianhua, ToastLength.Long).Show();
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)

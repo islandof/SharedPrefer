@@ -333,8 +333,8 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f080065
 			public const int display = 2131230821;
 			
-			// aapt resource value: 0x7f08007c
-			public const int downloads = 2131230844;
+			// aapt resource value: 0x7f080078
+			public const int downloads = 2131230840;
 			
 			// aapt resource value: 0x7f080045
 			public const int drive = 2131230789;
@@ -342,11 +342,11 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f080044
 			public const int end = 2131230788;
 			
-			// aapt resource value: 0x7f080079
-			public const int etSearch = 2131230841;
+			// aapt resource value: 0x7f080075
+			public const int etSearch = 2131230837;
 			
-			// aapt resource value: 0x7f08007b
-			public const int etSearch1 = 2131230843;
+			// aapt resource value: 0x7f080077
+			public const int etSearch1 = 2131230839;
 			
 			// aapt resource value: 0x7f080015
 			public const int geocode = 2131230741;
@@ -390,11 +390,11 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f080062
 			public const int listView = 2131230818;
 			
-			// aapt resource value: 0x7f080078
-			public const int llContainer = 2131230840;
+			// aapt resource value: 0x7f080074
+			public const int llContainer = 2131230836;
 			
-			// aapt resource value: 0x7f08007a
-			public const int llContainer1 = 2131230842;
+			// aapt resource value: 0x7f080076
+			public const int llContainer1 = 2131230838;
 			
 			// aapt resource value: 0x7f08003b
 			public const int localButton = 2131230779;
@@ -429,8 +429,8 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f080043
 			public const int map_next_data = 2131230787;
 			
-			// aapt resource value: 0x7f08007d
-			public const int menu = 2131230845;
+			// aapt resource value: 0x7f080079
+			public const int menu = 2131230841;
 			
 			// aapt resource value: 0x7f080032
 			public const int navi_info = 2131230770;
@@ -570,20 +570,17 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f080046
 			public const int transit = 2131230790;
 			
-			// aapt resource value: 0x7f080074
-			public const int txtAla10 = 2131230836;
-			
-			// aapt resource value: 0x7f080075
-			public const int txtAla11 = 2131230837;
-			
-			// aapt resource value: 0x7f080076
-			public const int txtAla12 = 2131230838;
-			
-			// aapt resource value: 0x7f080077
-			public const int txtAla13 = 2131230839;
-			
 			// aapt resource value: 0x7f080070
-			public const int txtDeptName = 2131230832;
+			public const int txtAla10 = 2131230832;
+			
+			// aapt resource value: 0x7f080071
+			public const int txtAla11 = 2131230833;
+			
+			// aapt resource value: 0x7f080072
+			public const int txtAla12 = 2131230834;
+			
+			// aapt resource value: 0x7f080073
+			public const int txtAla13 = 2131230835;
 			
 			// aapt resource value: 0x7f08006d
 			public const int txtName = 2131230829;
@@ -597,17 +594,8 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f08005b
 			public const int txtUser = 2131230811;
 			
-			// aapt resource value: 0x7f080072
-			public const int txtUserEmail = 2131230834;
-			
 			// aapt resource value: 0x7f08006f
-			public const int txtUserName = 2131230831;
-			
-			// aapt resource value: 0x7f080071
-			public const int txtUserPwd = 2131230833;
-			
-			// aapt resource value: 0x7f080073
-			public const int txtchepaino = 2131230835;
+			public const int txtchepaino = 2131230831;
 			
 			// aapt resource value: 0x7f080067
 			public const int txtrow1 = 2131230823;
