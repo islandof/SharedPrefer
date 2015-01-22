@@ -16,7 +16,7 @@ using Newtonsoft.Json;
 
 namespace XamarinDemo
 {
-    [Activity(Label = "QicheList")]
+    [Activity(Label = "汽车列表")]
     public class QicheList : Activity
     {
         private List<testCase4> mDataList;
@@ -27,8 +27,7 @@ namespace XamarinDemo
         private bool mIsAnimating;
         private Testcase4sAdapter mAdapter;
         private WebClient mClient;
-        private Uri mUrl;
-        static readonly List<string> phoneNumbers = new List<string>();
+        private Uri mUrl;        
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -58,7 +57,7 @@ namespace XamarinDemo
                     string json = Encoding.UTF8.GetString(e.Result);
                     var fRows = JsonConvert.DeserializeObject<FormatRows>(json);
                     mDataList = JsonConvert.DeserializeObject<List<testCase4>>(fRows.rows.ToString());
-                    mAdapter = new Testcase4sAdapter(this, Resource.Layout.row_contact, mDataList);
+                    mAdapter = new Testcase4sAdapter(this, Resource.Layout.row_testcase2, mDataList);
                     mListView.Adapter = mAdapter;
 
                 }
@@ -74,13 +73,16 @@ namespace XamarinDemo
         {
             if (mDataList!= null)
             {
-                //List<testCase3> searchedDriver = (from userinfo in mTestCase3s
-                //                                  where userinfo.lianxidianhua.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase) || userinfo.sijiname.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase)
-                //                                      || userinfo.ownercompanyname.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase)
-                //                                  select userinfo).ToList<testCase3>();
+                if (mDataList != null)
+                {
+                    List<testCase4> searchedData = (from data in mDataList
+                                                    where data.ownercompanyname.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase) || data.chepaino.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase)
+                                                    || data.sijiname.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase)
+                                                    select data).ToList<testCase4>();
 
-                //mAdapter = new TestCase3sAdapter(this, Resource.Layout.row_contact, searchedDriver);
-                //mListView.Adapter = mAdapter;
+                    mAdapter = new Testcase4sAdapter(this, Resource.Layout.row_testcase2, searchedData);
+                    mListView.Adapter = mAdapter;
+                }
             }
 
 

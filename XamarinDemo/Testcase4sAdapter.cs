@@ -53,6 +53,9 @@ namespace XamarinDemo
 			row.SetBackgroundColor (GetColorFromInteger (mAlternatingColors [position % mAlternatingColors.Length]));
 
 			row.FindViewById<TextView> (Resource.Id.txtchepaino).Text = mTestCase4s [position].chepaino;
+            row.FindViewById<TextView>(Resource.Id.txtrow1).Text = mTestCase4s[position].brandname + "-" + mTestCase4s[position].stylename;
+            row.FindViewById<TextView>(Resource.Id.txtrow2).Text = mTestCase4s[position].pailiangvalue;
+            row.FindViewById<TextView>(Resource.Id.txtrow3).Text = mTestCase4s[position].sijiname;
             //row.FindViewById<TextView> (Resource.Id.txtrow1).Text = mTestCase2s [position].dthappen.Replace ("T", "").Substring (0, 12);
             //row.FindViewById<TextView> (Resource.Id.txtrow2).Text = mTestCase2s [position].zhalanname;
             //var strrow3 = "";

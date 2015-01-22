@@ -112,23 +112,24 @@ namespace XamarinDemo
             {
                 if (!(string.IsNullOrEmpty(item.currentlocationx) || string.IsNullOrEmpty(item.currentlocationy)))
                 {
-                    if (item.currentstatus == "0")
-                    {
-                        Extensions.JavaCast<Marker>(
-                            mBaiduMap.AddOverlay(
-                                new MarkerOptions().InvokePosition(new LatLng(double.Parse(item.currentlocationy),
-                                    double.Parse(item.currentlocationx))).InvokeIcon(bdoff).InvokeZIndex(9)));
-                    }
-                    else
-                    {
-                        Extensions.JavaCast<Marker>(
-                            mBaiduMap.AddOverlay(
-                                new MarkerOptions().InvokePosition(new LatLng(double.Parse(item.currentlocationy),
-                                    double.Parse(item.currentlocationx))).InvokeIcon(bdon).InvokeZIndex(9)));
-                    }
+                    Extensions.JavaCast<Marker>(
+                        mBaiduMap.AddOverlay(
+                            new MarkerOptions().InvokePosition(new LatLng(double.Parse(item.currentlocationy),
+                                double.Parse(item.currentlocationx)))
+                                .InvokeIcon(item.currentstatus == "0" ? bdoff : bdon)
+                                .InvokeZIndex(9)));
+
+                    mBaiduMap.AddOverlay(new TextOptions().InvokeBgColor(Color.ParseColor("#AAFFFF00").ToArgb())
+                        .InvokeFontSize(20)
+                        .InvokeFontColor(Color.ParseColor("#FFFF00FF").ToArgb())
+                        .InvokeText(item.chepaino).InvokeZIndex(10)
+                        .InvokePosition(new LatLng(double.Parse(item.currentlocationy),
+                            double.Parse(item.currentlocationx))));
                 }
             }
+
             #region 注释
+
             //LatLng llA = new LatLng(22.540, 114.044);
             //LatLng llB = new LatLng(22.560, 114.064);
             //LatLng llA = new LatLng(22.540, 114.044);
@@ -162,6 +163,7 @@ namespace XamarinDemo
             //MapStatusUpdate u = MapStatusUpdateFactory
             //        .NewLatLng (bounds.Center);
             //mBaiduMap.SetMapStatus (u);
+
             #endregion
         }
 

@@ -34,7 +34,7 @@ namespace XamarinDemo
 			//mProgressBar = FindViewById<ProgressBar> (Resource.Id.progressBar1);
 			//mSearch = FindViewById<EditText>(Resource.Id.etSearch1);
 			//mContainer = FindViewById<LinearLayout>(Resource.Id.llContainer1);
-			//LoadXamarin();
+			
 			Toast.MakeText (this, "数据加载中...", ToastLength.Long).Show ();
 			mClient = new WebClient ();
 			mUrl = new Uri ("http://cloud.tescar.cn/vehicle/GetTboxalarmintimeData?isspec=1");

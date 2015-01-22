@@ -17,7 +17,7 @@ using Android.Views.InputMethods;
 
 namespace XamarinDemo
 {
-	[Activity (Label = "司机列表")]
+	[Activity (Label = "栅栏列表")]
     public class ZhalanareaList : Activity
 	{
 		private List<testCase5> mDataList;
@@ -28,8 +28,7 @@ namespace XamarinDemo
 		private bool mIsAnimating;
         private Testcase5sAdapter mAdapter;
 		private WebClient mClient;
-		private Uri mUrl;
-		static readonly List<string> phoneNumbers = new List<string> ();
+		private Uri mUrl;		
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -57,7 +56,7 @@ namespace XamarinDemo
 					string json = Encoding.UTF8.GetString (e.Result);
 					var fRows = JsonConvert.DeserializeObject<FormatRows> (json);
 					mDataList = JsonConvert.DeserializeObject<List<testCase5>> (fRows.rows.ToString ());
-                    mAdapter = new Testcase5sAdapter(this, Resource.Layout.row_contact, mDataList);
+                    mAdapter = new Testcase5sAdapter(this, Resource.Layout.row_testcase, mDataList);
 					mListView.Adapter = mAdapter;
 
 				} catch (Exception ex) {
@@ -70,22 +69,22 @@ namespace XamarinDemo
 		void mSearch_TextChanged (object sender, Android.Text.TextChangedEventArgs e)
 		{
 			if (mDataList != null) {
-                //List<testCase3> searchedDriver = (from userinfo in mDataList
-                //                                  where userinfo.lianxidianhua.Contains (mSearch.Text, StringComparison.OrdinalIgnoreCase) || userinfo.sijiname.Contains (mSearch.Text, StringComparison.OrdinalIgnoreCase)
-                //                                      || userinfo.ownercompanyname.Contains (mSearch.Text, StringComparison.OrdinalIgnoreCase)
-                //                                  select userinfo).ToList<testCase3> ();
+                List<testCase5> searchedData = (from data in mDataList
+                                                  where data.areaname.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase) || data.condition.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase)
+                                                  select data).ToList<testCase5>();
 
-                //mAdapter = new TestCase3sAdapter (this, Resource.Layout.row_contact, searchedDriver);
-                //mListView.Adapter = mAdapter;
+                mAdapter = new Testcase5sAdapter(this, Resource.Layout.row_testcase, searchedData);
+                mListView.Adapter = mAdapter;
 			}
-            
-
+           
 
 		}
 
 		void mListView_ItemClick (object sender, AdapterView.ItemClickEventArgs e)
 		{
-			
+			Intent intent = new Intent(this,typeof(AreaDetail));
+		    intent.PutExtra("area", JsonConvert.SerializeObject(mDataList[e.Position]));
+            this.StartActivity(intent);
 		}
 
 		public override bool OnCreateOptionsMenu (IMenu menu)

@@ -264,71 +264,71 @@ namespace XamarinDemo
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f08001b
-			public const int RadioGroup = 2131230747;
+			// aapt resource value: 0x7f08001d
+			public const int RadioGroup = 2131230749;
 			
 			// aapt resource value: 0x7f080049
 			public const int addrshare = 2131230793;
 			
-			// aapt resource value: 0x7f08003e
-			public const int allcitylist = 2131230782;
+			// aapt resource value: 0x7f080040
+			public const int allcitylist = 2131230784;
 			
-			// aapt resource value: 0x7f080010
-			public const int bmapView = 2131230736;
+			// aapt resource value: 0x7f08000e
+			public const int bmapView = 2131230734;
 			
-			// aapt resource value: 0x7f080021
-			public const int boundsSearch = 2131230753;
+			// aapt resource value: 0x7f080023
+			public const int boundsSearch = 2131230755;
 			
 			// aapt resource value: 0x7f08005d
 			public const int btnLogin = 2131230813;
 			
-			// aapt resource value: 0x7f080033
-			public const int button = 2131230771;
+			// aapt resource value: 0x7f080035
+			public const int button = 2131230773;
 			
-			// aapt resource value: 0x7f080019
-			public const int button1 = 2131230745;
+			// aapt resource value: 0x7f08001b
+			public const int button1 = 2131230747;
 			
-			// aapt resource value: 0x7f08001a
-			public const int button2 = 2131230746;
+			// aapt resource value: 0x7f08001c
+			public const int button2 = 2131230748;
 			
 			// aapt resource value: 0x7f08005e
 			public const int checkBox1 = 2131230814;
 			
-			// aapt resource value: 0x7f08000c
-			public const int city = 2131230732;
+			// aapt resource value: 0x7f08000f
+			public const int city = 2131230735;
 			
-			// aapt resource value: 0x7f080039
-			public const int city_list = 2131230777;
+			// aapt resource value: 0x7f08003b
+			public const int city_list = 2131230779;
 			
-			// aapt resource value: 0x7f080034
-			public const int cityid = 2131230772;
+			// aapt resource value: 0x7f080036
+			public const int cityid = 2131230774;
+			
+			// aapt resource value: 0x7f08003e
+			public const int citylist_layout = 2131230782;
 			
 			// aapt resource value: 0x7f08003c
-			public const int citylist_layout = 2131230780;
+			public const int clButton = 2131230780;
 			
-			// aapt resource value: 0x7f08003a
-			public const int clButton = 2131230778;
-			
-			// aapt resource value: 0x7f080041
-			public const int clear = 2131230785;
+			// aapt resource value: 0x7f08000c
+			public const int clear = 2131230732;
 			
 			// aapt resource value: 0x7f08004e
 			public const int compass = 2131230798;
 			
-			// aapt resource value: 0x7f080025
-			public const int customicon = 2131230757;
+			// aapt resource value: 0x7f080027
+			public const int customicon = 2131230759;
 			
-			// aapt resource value: 0x7f080024
-			public const int defaulticon = 2131230756;
+			// aapt resource value: 0x7f080026
+			public const int defaulticon = 2131230758;
 			
-			// aapt resource value: 0x7f080038
-			public const int del = 2131230776;
+			// aapt resource value: 0x7f08003a
+			public const int del = 2131230778;
 			
 			// aapt resource value: 0x7f080057
 			public const int desc = 2131230807;
 			
-			// aapt resource value: 0x7f080022
-			public const int detailsSearch = 2131230754;
+			// aapt resource value: 0x7f080024
+			public const int detailsSearch = 2131230756;
 			
 			// aapt resource value: 0x7f080065
 			public const int display = 2131230821;
@@ -348,14 +348,14 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f080077
 			public const int etSearch1 = 2131230839;
 			
-			// aapt resource value: 0x7f080015
-			public const int geocode = 2131230741;
+			// aapt resource value: 0x7f080017
+			public const int geocode = 2131230743;
 			
-			// aapt resource value: 0x7f080014
-			public const int geocodekey = 2131230740;
+			// aapt resource value: 0x7f080016
+			public const int geocodekey = 2131230742;
 			
-			// aapt resource value: 0x7f08003d
-			public const int hotcitylist = 2131230781;
+			// aapt resource value: 0x7f08003f
+			public const int hotcitylist = 2131230783;
 			
 			// aapt resource value: 0x7f080001
 			public const int imageView1 = 2131230721;
@@ -372,8 +372,8 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f08006c
 			public const int imgPic = 2131230828;
 			
-			// aapt resource value: 0x7f080016
-			public const int lat = 2131230742;
+			// aapt resource value: 0x7f080018
+			public const int lat = 2131230744;
 			
 			// aapt resource value: 0x7f080000
 			public const int linearLayout1 = 2131230720;
@@ -396,35 +396,35 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f080076
 			public const int llContainer1 = 2131230838;
 			
-			// aapt resource value: 0x7f08003b
-			public const int localButton = 2131230779;
+			// aapt resource value: 0x7f08003d
+			public const int localButton = 2131230781;
 			
-			// aapt resource value: 0x7f08003f
-			public const int localmap_layout = 2131230783;
+			// aapt resource value: 0x7f080041
+			public const int localmap_layout = 2131230785;
 			
-			// aapt resource value: 0x7f080040
-			public const int localmaplist = 2131230784;
+			// aapt resource value: 0x7f080042
+			public const int localmaplist = 2131230786;
 			
-			// aapt resource value: 0x7f080017
-			public const int lon = 2131230743;
+			// aapt resource value: 0x7f080019
+			public const int lon = 2131230745;
 			
 			// aapt resource value: 0x7f08005a
 			public const int mainView = 2131230810;
 			
-			// aapt resource value: 0x7f080013
-			public const int map = 2131230739;
-			
-			// aapt resource value: 0x7f08002e
-			public const int map1 = 2131230766;
-			
-			// aapt resource value: 0x7f08002f
-			public const int map2 = 2131230767;
+			// aapt resource value: 0x7f080015
+			public const int map = 2131230741;
 			
 			// aapt resource value: 0x7f080030
-			public const int map3 = 2131230768;
+			public const int map1 = 2131230768;
 			
 			// aapt resource value: 0x7f080031
-			public const int map4 = 2131230769;
+			public const int map2 = 2131230769;
+			
+			// aapt resource value: 0x7f080032
+			public const int map3 = 2131230770;
+			
+			// aapt resource value: 0x7f080033
+			public const int map4 = 2131230771;
 			
 			// aapt resource value: 0x7f080043
 			public const int map_next_data = 2131230787;
@@ -432,29 +432,29 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f080079
 			public const int menu = 2131230841;
 			
-			// aapt resource value: 0x7f080032
-			public const int navi_info = 2131230770;
+			// aapt resource value: 0x7f080034
+			public const int navi_info = 2131230772;
 			
-			// aapt resource value: 0x7f080020
-			public const int nearbySearch = 2131230752;
+			// aapt resource value: 0x7f080022
+			public const int nearbySearch = 2131230754;
+			
+			// aapt resource value: 0x7f080014
+			public const int next = 2131230740;
 			
 			// aapt resource value: 0x7f080012
-			public const int next = 2131230738;
+			public const int nextline = 2131230738;
 			
-			// aapt resource value: 0x7f08000f
-			public const int nextline = 2131230735;
-			
-			// aapt resource value: 0x7f08001c
-			public const int normal = 2131230748;
+			// aapt resource value: 0x7f08001e
+			public const int normal = 2131230750;
 			
 			// aapt resource value: 0x7f08004d
 			public const int overlook = 2131230797;
 			
-			// aapt resource value: 0x7f08002b
-			public const int overlookangle = 2131230763;
+			// aapt resource value: 0x7f08002d
+			public const int overlookangle = 2131230765;
 			
-			// aapt resource value: 0x7f08002a
-			public const int overlookbutton = 2131230762;
+			// aapt resource value: 0x7f08002c
+			public const int overlookbutton = 2131230764;
 			
 			// aapt resource value: 0x7f080048
 			public const int poishore = 2131230792;
@@ -471,20 +471,20 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f080053
 			public const int popright = 2131230803;
 			
-			// aapt resource value: 0x7f080011
-			public const int pre = 2131230737;
+			// aapt resource value: 0x7f080013
+			public const int pre = 2131230739;
 			
 			// aapt resource value: 0x7f080060
 			public const int progressBar1 = 2131230816;
 			
-			// aapt resource value: 0x7f080023
-			public const int radioGroup = 2131230755;
+			// aapt resource value: 0x7f080025
+			public const int radioGroup = 2131230757;
 			
 			// aapt resource value: 0x7f080064
 			public const int ratio = 2131230820;
 			
-			// aapt resource value: 0x7f08001f
-			public const int regionSearch = 2131230751;
+			// aapt resource value: 0x7f080021
+			public const int regionSearch = 2131230753;
 			
 			// aapt resource value: 0x7f08005f
 			public const int relativeLayout1 = 2131230815;
@@ -492,20 +492,20 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f080066
 			public const int remove = 2131230822;
 			
-			// aapt resource value: 0x7f080042
-			public const int resert = 2131230786;
+			// aapt resource value: 0x7f08000d
+			public const int resert = 2131230733;
 			
-			// aapt resource value: 0x7f080018
-			public const int reversegeocode = 2131230744;
+			// aapt resource value: 0x7f08001a
+			public const int reversegeocode = 2131230746;
 			
 			// aapt resource value: 0x7f08004c
 			public const int rotate = 2131230796;
 			
-			// aapt resource value: 0x7f080029
-			public const int rotateangle = 2131230761;
+			// aapt resource value: 0x7f08002b
+			public const int rotateangle = 2131230763;
 			
-			// aapt resource value: 0x7f080028
-			public const int rotatebutton = 2131230760;
+			// aapt resource value: 0x7f08002a
+			public const int rotatebutton = 2131230762;
 			
 			// aapt resource value: 0x7f080055
 			public const int sample_content_fragment = 2131230805;
@@ -513,35 +513,35 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f080054
 			public const int sample_main_layout = 2131230804;
 			
-			// aapt resource value: 0x7f08002d
-			public const int savescreen = 2131230765;
+			// aapt resource value: 0x7f08002f
+			public const int savescreen = 2131230767;
 			
-			// aapt resource value: 0x7f080035
-			public const int scan = 2131230773;
+			// aapt resource value: 0x7f080037
+			public const int scan = 2131230775;
 			
 			// aapt resource value: 0x7f08004b
 			public const int scroll = 2131230795;
 			
-			// aapt resource value: 0x7f08000e
-			public const int search = 2131230734;
+			// aapt resource value: 0x7f080011
+			public const int search = 2131230737;
 			
-			// aapt resource value: 0x7f08000d
-			public const int searchkey = 2131230733;
+			// aapt resource value: 0x7f080010
+			public const int searchkey = 2131230736;
 			
 			// aapt resource value: 0x7f080058
 			public const int sliding_tabs = 2131230808;
 			
-			// aapt resource value: 0x7f080036
-			public const int start = 2131230774;
+			// aapt resource value: 0x7f080038
+			public const int start = 2131230776;
 			
-			// aapt resource value: 0x7f08002c
-			public const int state = 2131230764;
+			// aapt resource value: 0x7f08002e
+			public const int state = 2131230766;
 			
-			// aapt resource value: 0x7f08001d
-			public const int statellite = 2131230749;
+			// aapt resource value: 0x7f08001f
+			public const int statellite = 2131230751;
 			
-			// aapt resource value: 0x7f080037
-			public const int stop = 2131230775;
+			// aapt resource value: 0x7f080039
+			public const int stop = 2131230777;
 			
 			// aapt resource value: 0x7f080002
 			public const int textView1 = 2131230722;
@@ -564,8 +564,8 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f080056
 			public const int title = 2131230806;
 			
-			// aapt resource value: 0x7f08001e
-			public const int traffice = 2131230750;
+			// aapt resource value: 0x7f080020
+			public const int traffice = 2131230752;
 			
 			// aapt resource value: 0x7f080046
 			public const int transit = 2131230790;
@@ -624,11 +624,11 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f08004a
 			public const int zoom = 2131230794;
 			
-			// aapt resource value: 0x7f080026
-			public const int zoombutton = 2131230758;
+			// aapt resource value: 0x7f080028
+			public const int zoombutton = 2131230760;
 			
-			// aapt resource value: 0x7f080027
-			public const int zoomlevel = 2131230759;
+			// aapt resource value: 0x7f080029
+			public const int zoomlevel = 2131230761;
 			
 			static Id()
 			{
@@ -647,118 +647,127 @@ namespace XamarinDemo
 			public const int action_bar = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int activity_busline = 2130903041;
+			public const int activity_areadetail = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int activity_cloud_search_demo = 2130903042;
+			public const int activity_busline = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int activity_fragment = 2130903043;
+			public const int activity_cloud_search_demo = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int activity_geocoder = 2130903044;
+			public const int activity_fragment = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int activity_geometry = 2130903045;
+			public const int activity_geocoder = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int activity_layers = 2130903046;
+			public const int activity_geometry = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int activity_lbssearch = 2130903047;
+			public const int activity_layers = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int activity_location = 2130903048;
+			public const int activity_lbssearch = 2130903048;
 			
 			// aapt resource value: 0x7f030009
-			public const int activity_main = 2130903049;
+			public const int activity_location = 2130903049;
 			
 			// aapt resource value: 0x7f03000a
-			public const int activity_mapcontrol = 2130903050;
+			public const int activity_main = 2130903050;
 			
 			// aapt resource value: 0x7f03000b
-			public const int activity_multimap = 2130903051;
+			public const int activity_mapcontrol = 2130903051;
 			
 			// aapt resource value: 0x7f03000c
-			public const int activity_navi_demo = 2130903052;
+			public const int activity_multimap = 2130903052;
 			
 			// aapt resource value: 0x7f03000d
-			public const int activity_offline = 2130903053;
+			public const int activity_navi_demo = 2130903053;
 			
 			// aapt resource value: 0x7f03000e
-			public const int activity_overlay = 2130903054;
+			public const int activity_offline = 2130903054;
 			
 			// aapt resource value: 0x7f03000f
-			public const int activity_poisearch = 2130903055;
+			public const int activity_overlay = 2130903055;
 			
 			// aapt resource value: 0x7f030010
-			public const int activity_routeplan = 2130903056;
+			public const int activity_poisearch = 2130903056;
 			
 			// aapt resource value: 0x7f030011
-			public const int activity_share_demo = 2130903057;
+			public const int activity_routeplan = 2130903057;
 			
 			// aapt resource value: 0x7f030012
-			public const int activity_share_demo_activity = 2130903058;
+			public const int activity_share_demo = 2130903058;
 			
 			// aapt resource value: 0x7f030013
-			public const int activity_uisetting = 2130903059;
+			public const int activity_share_demo_activity = 2130903059;
 			
 			// aapt resource value: 0x7f030014
-			public const int custom_text_view = 2130903060;
+			public const int activity_uisetting = 2130903060;
 			
 			// aapt resource value: 0x7f030015
-			public const int Ddrive = 2130903061;
+			public const int custom_text_view = 2130903061;
 			
 			// aapt resource value: 0x7f030016
-			public const int demo_info_item = 2130903062;
+			public const int Ddrive = 2130903062;
 			
 			// aapt resource value: 0x7f030017
-			public const int fragment_sample = 2130903063;
+			public const int demo_info_item = 2130903063;
 			
 			// aapt resource value: 0x7f030018
-			public const int Login = 2130903064;
+			public const int fragment_sample = 2130903064;
 			
 			// aapt resource value: 0x7f030019
-			public const int Main = 2130903065;
+			public const int Login = 2130903065;
 			
 			// aapt resource value: 0x7f03001a
-			public const int MainMonitor = 2130903066;
+			public const int Main = 2130903066;
 			
 			// aapt resource value: 0x7f03001b
-			public const int Mapsmain = 2130903067;
+			public const int MainMonitor = 2130903067;
 			
 			// aapt resource value: 0x7f03001c
-			public const int offline_localmap_list = 2130903068;
+			public const int Mapsmain = 2130903068;
 			
 			// aapt resource value: 0x7f03001d
-			public const int pager_item = 2130903069;
+			public const int offline_localmap_list = 2130903069;
 			
 			// aapt resource value: 0x7f03001e
-			public const int row_contact = 2130903070;
+			public const int pager_item = 2130903070;
 			
 			// aapt resource value: 0x7f03001f
-			public const int row_testcase = 2130903071;
+			public const int row_contact = 2130903071;
 			
 			// aapt resource value: 0x7f030020
-			public const int row_testcase1 = 2130903072;
+			public const int row_testcase = 2130903072;
 			
 			// aapt resource value: 0x7f030021
-			public const int row_testcase2 = 2130903073;
+			public const int row_testcase1 = 2130903073;
 			
 			// aapt resource value: 0x7f030022
-			public const int SijiList = 2130903074;
+			public const int row_testcase2 = 2130903074;
 			
 			// aapt resource value: 0x7f030023
-			public const int test = 2130903075;
+			public const int row_testcase3 = 2130903075;
 			
 			// aapt resource value: 0x7f030024
-			public const int TestCase = 2130903076;
+			public const int SijiList = 2130903076;
 			
 			// aapt resource value: 0x7f030025
-			public const int TestCase1 = 2130903077;
+			public const int test = 2130903077;
 			
 			// aapt resource value: 0x7f030026
-			public const int ZhalanAlarmL = 2130903078;
+			public const int TestCase = 2130903078;
+			
+			// aapt resource value: 0x7f030027
+			public const int TestCase1 = 2130903079;
+			
+			// aapt resource value: 0x7f030028
+			public const int ZhalanAlarmL = 2130903080;
+			
+			// aapt resource value: 0x7f030029
+			public const int ZhalanareaList = 2130903081;
 			
 			static Layout()
 			{
@@ -972,11 +981,17 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f050044
 			public const int monitor_desc_mainmonitor = 2131034180;
 			
+			// aapt resource value: 0x7f050053
+			public const int monitor_desc_qiche = 2131034195;
+			
 			// aapt resource value: 0x7f050050
 			public const int monitor_desc_siji = 2131034192;
 			
 			// aapt resource value: 0x7f05004a
 			public const int monitor_desc_zhalanalarml = 2131034186;
+			
+			// aapt resource value: 0x7f050056
+			public const int monitor_desc_zhalanarea = 2131034198;
 			
 			// aapt resource value: 0x7f05004b
 			public const int monitor_name_carposition = 2131034187;
@@ -987,11 +1002,17 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f050042
 			public const int monitor_name_mainmonitor = 2131034178;
 			
+			// aapt resource value: 0x7f050051
+			public const int monitor_name_qiche = 2131034193;
+			
 			// aapt resource value: 0x7f05004e
 			public const int monitor_name_siji = 2131034190;
 			
 			// aapt resource value: 0x7f050048
 			public const int monitor_name_zhalanalarml = 2131034184;
+			
+			// aapt resource value: 0x7f050054
+			public const int monitor_name_zhalanarea = 2131034196;
 			
 			// aapt resource value: 0x7f05004c
 			public const int monitor_title_carposition = 2131034188;
@@ -1002,11 +1023,17 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f050043
 			public const int monitor_title_mainmonitor = 2131034179;
 			
+			// aapt resource value: 0x7f050052
+			public const int monitor_title_qiche = 2131034194;
+			
 			// aapt resource value: 0x7f05004f
 			public const int monitor_title_siji = 2131034191;
 			
 			// aapt resource value: 0x7f050049
 			public const int monitor_title_zhalanalarml = 2131034185;
+			
+			// aapt resource value: 0x7f050055
+			public const int monitor_title_zhalanarea = 2131034197;
 			
 			// aapt resource value: 0x7f050034
 			public const int navi_tip = 2131034164;

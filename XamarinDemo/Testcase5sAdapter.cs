@@ -52,7 +52,18 @@ namespace XamarinDemo
 
 			row.SetBackgroundColor (GetColorFromInteger (mAlternatingColors [position % mAlternatingColors.Length]));
 
-			//row.FindViewById<TextView> (Resource.Id.txtchepaino).Text = mTestCase5s [position].chepaino;
+            row.FindViewById<TextView>(Resource.Id.txtrow1).Text = mDataList[position].areaname;
+            var strrow3 = "";
+            if (mDataList[position].condition == "1")
+            {
+                strrow3 += "进栅栏";
+            }
+            else
+            {
+                strrow3 += "出栅栏";
+            }
+            row.FindViewById<TextView>(Resource.Id.txtrow2).Text = strrow3;
+            row.FindViewById<TextView>(Resource.Id.txtrow3).Text = "百度地图";
             //row.FindViewById<TextView> (Resource.Id.txtrow1).Text = mTestCase2s [position].dthappen.Replace ("T", "").Substring (0, 12);
             //row.FindViewById<TextView> (Resource.Id.txtrow2).Text = mTestCase2s [position].zhalanname;
             //var strrow3 = "";

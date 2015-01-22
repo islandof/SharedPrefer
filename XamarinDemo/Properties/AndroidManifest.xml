@@ -3,7 +3,7 @@
 	<uses-sdk />
 	<!--<application android:label="XamarinDemo" android:icon="@drawable/Icon">-->
 	<application android:debuggable="true" android:icon="@drawable/xs" android:label="@string/app_name">
-		<meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="nhd0gj1LI4a9zKQCxMymHwdL" />
+		<meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="qvhAOqm4EV9BPf7qbH2K484V" />
 		<service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote"></service>
 		<activity android:name="com.baidu.mapapi.search.poi.PlaceCaterActivity" android:configChanges="orientation|keyboardHidden" android:label="@string/demo_name_poi" android:screenOrientation="sensor"></activity>
 	</application>

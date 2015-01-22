@@ -15,34 +15,26 @@
             android:background="#E2E2E2"
             android:weightSum="100">
             <TextView
-                android:text="车牌号"
+                android:text="栅栏名字"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:layout_weight="25"
+                android:layout_weight="33"
                 android:gravity="center_horizontal"
                 android:textColor="#000"
                 android:textSize="16sp" />
             <TextView
-                android:text="车型"
+                android:text="条件"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:layout_weight="25"
+                android:layout_weight="33"
                 android:gravity="center_horizontal"
                 android:textColor="#000"
                 android:textSize="16sp" />
             <TextView
-                android:text="排量"
+                android:text="地图"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:layout_weight="25"
-                android:gravity="center_horizontal"
-                android:textColor="#000"
-                android:textSize="16sp" />
-            <TextView
-                android:text="司机"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:layout_weight="25"
+                android:layout_weight="34"
                 android:gravity="center_horizontal"
                 android:textColor="#000"
                 android:textSize="16sp" />
@@ -64,6 +56,6 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:background="@drawable/edit_text_style"
-        android:hint="Search Cars"
+        android:hint="Search users"
         android:textColor="#000" />
 </FrameLayout>

@@ -17,7 +17,7 @@ using Newtonsoft.Json;
 
 namespace XamarinDemo
 {
-	[Activity (Label = "Activity2", Icon = "@drawable/xs", ScreenOrientation = ScreenOrientation.Sensor)]
+	[Activity (Label = "用户列表", ScreenOrientation = ScreenOrientation.Sensor)]
 	public class UserLActivity : Activity
 	{
 		private List<user_info> mUserinfo;

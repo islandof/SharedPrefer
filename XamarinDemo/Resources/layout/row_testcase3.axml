@@ -7,27 +7,39 @@
     android:paddingLeft="5dp"
     android:paddingTop="2dp">
     <TextView
-        android:id="@+id/txtrow1"
-        android:text="用户名"
+        android:id="@+id/txtchepaino"
+        android:text="车牌"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_weight="33"
+        android:layout_weight="25"
         android:gravity="center"
-        android:textColor="#333333" />
+        android:textColor="#333333"
+        android:textSize="12sp" />
+    <TextView
+        android:id="@+id/txtrow1"
+        android:text="发生时间"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_weight="25"
+        android:gravity="center"
+        android:textColor="#333333"
+        android:textSize="12sp" />
     <TextView
         android:id="@+id/txtrow2"
-        android:text="角色名"
+        android:text="栅栏名字"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_weight="33"
+        android:layout_weight="25"
         android:gravity="center"
-        android:textColor="#333333" />
+        android:textColor="#333333"
+        android:textSize="12sp" />
     <TextView
         android:id="@+id/txtrow3"
-        android:text="公司"
+        android:text="条件"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_weight="34"
+        android:layout_weight="25"
         android:gravity="center"
-        android:textColor="#333333" />
+        android:textColor="#333333"
+        android:textSize="12sp" />
 </LinearLayout>

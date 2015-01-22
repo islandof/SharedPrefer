@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AreaDetail.cs" />
     <Compile Include="Carposition.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="CarManage.cs" />
@@ -146,6 +147,7 @@
     <AndroidNativeLibrary Include="Libs\armeabi\libBaiduMapSDK_v3_0_0.so" />
     <AndroidNativeLibrary Include="Libs\armeabi\liblocSDK3.so" />
     <None Include="packages.config" />
+    <AndroidResource Include="Resources\layout\activity_areadetail.axml" />
     <None Include="Resources\layout\QicheList.axml">
       <SubType>AndroidResource</SubType>
     </None>
@@ -207,6 +209,12 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\test.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\row_testcase3.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ZhalanareaList.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>

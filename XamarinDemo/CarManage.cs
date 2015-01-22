@@ -15,7 +15,7 @@ using XamarinDemo.Maps;
 
 namespace XamarinDemo
 {
-    [Activity(Label = "CarManage")]			
+    [Activity(Label = "汽车管理模块")]			
 	public class CarManage: Activity
 	{
 		protected override void OnCreate (Bundle bundle)
@@ -46,10 +46,8 @@ namespace XamarinDemo
 		}
 
 		private static readonly DemoInfo<Activity>[] demos = {
-			new DemoInfo<Activity> (Resource.String.monitor_name_ddrivel, Resource.String.monitor_desc_ddrivel, new DdriveLActivity ()),
-			new DemoInfo<Activity> (Resource.String.monitor_name_zhalanalarml, Resource.String.monitor_desc_zhalanalarml, new ZhalanAlarmLActivity ()),
-			new DemoInfo<Activity> (Resource.String.monitor_name_carposition, Resource.String.monitor_desc_carposition, new Carposition ()),
-			new DemoInfo<Activity> (Resource.String.monitor_name_siji, Resource.String.monitor_desc_siji, new SijiList ())
+			new DemoInfo<Activity> (Resource.String.monitor_name_qiche, Resource.String.monitor_desc_qiche, new QicheList()),
+            new DemoInfo<Activity> (Resource.String.monitor_name_zhalanarea, Resource.String.monitor_desc_zhalanarea, new ZhalanareaList())
 		};
 
 		protected override void OnResume ()

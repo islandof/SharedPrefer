@@ -17,10 +17,10 @@ using Newtonsoft.Json;
 
 namespace XamarinDemo
 {
-	[Activity (Label = "ZhalanAlarmLActivity")]			
+	[Activity (Label = "栅栏报警列表")]			
 	public class ZhalanAlarmLActivity : Activity
 	{
-		private List<testCase2> mZhalanAlarm;
+		private List<testCase2> mDataList;
 		private ListView mListView;
 		private EditText mSearch;
 		private LinearLayout mContainer;
@@ -52,20 +52,40 @@ namespace XamarinDemo
 		void mListView_ItemClick (object sender, AdapterView.ItemClickEventArgs e)
 		{
 			//			System.Console.WriteLine (mTestCase3s [e.Position].lianxidianhua);
-			Toast.MakeText (this, mZhalanAlarm [e.Position].zhalanname, ToastLength.Long).Show ();
+			Toast.MakeText (this, mDataList [e.Position].zhalanname, ToastLength.Long).Show ();
 		}
+
+        void mClient_DownloadDataCompleted(object sender, DownloadDataCompletedEventArgs e)
+        {
+            RunOnUiThread(() =>
+            {
+                try
+                {
+
+                    string json = Encoding.UTF8.GetString(e.Result);
+                    var fRows = JsonConvert.DeserializeObject<FormatRows>(json);
+                    mDataList = JsonConvert.DeserializeObject<List<testCase2>>(fRows.rows.ToString());
+                    mAdapter = new Testcase2sAdapter(this, Resource.Layout.row_testcase2, mDataList);
+                    mListView.Adapter = mAdapter;
+                }
+                catch (Exception ex)
+                {
+                    Toast.MakeText(this, ex.ToString(), ToastLength.Long).Show();
+                }
+            });
+        }
 
 		void mSearch_TextChanged (object sender, Android.Text.TextChangedEventArgs e)
 		{
-//			if (mZhalanAlarm != null) {
-//				List<user_info> searchedFriends = (from userinfo in mUserinfo
-//				                                   where userinfo.USER_NAME.Contains (mSearch.Text, StringComparison.OrdinalIgnoreCase) || userinfo.ROLE_NAME.Contains (mSearch.Text, StringComparison.OrdinalIgnoreCase)
-//				                                       || userinfo.USER_PWD.Contains (mSearch.Text, StringComparison.OrdinalIgnoreCase) || userinfo.USER_EMAIL.Contains (mSearch.Text, StringComparison.OrdinalIgnoreCase)
-//				                                   select userinfo).ToList<user_info> ();
-//
-//				mAdapter = new TestcasesAdapter (this, Resource.Layout.row_testcase, searchedFriends);
-//				mListView.Adapter = mAdapter;
-//			}				
+                if (mDataList != null) {
+                List<testCase2> searchedData = (from data in mDataList
+                                                where data.ownercompanyname.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase) || data.chepaino.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase)
+                                                  select data).ToList<testCase2>();
+                
+                mAdapter = new Testcase2sAdapter(this, Resource.Layout.row_testcase2, searchedData);
+                mListView.Adapter = mAdapter;
+			}
+           
 		}
 
 		public override bool OnCreateOptionsMenu (IMenu menu)
@@ -111,21 +131,7 @@ namespace XamarinDemo
 			}
 		}
 
-		void mClient_DownloadDataCompleted (object sender, DownloadDataCompletedEventArgs e)
-		{
-			RunOnUiThread (() => {
-				try {
 
-					string json = Encoding.UTF8.GetString (e.Result);
-					var fRows = JsonConvert.DeserializeObject<FormatRows> (json);
-					mZhalanAlarm = JsonConvert.DeserializeObject<List<testCase2>> (fRows.rows.ToString ());
-					mAdapter = new Testcase2sAdapter (this, Resource.Layout.row_testcase2, mZhalanAlarm);
-					mListView.Adapter = mAdapter;
-				} catch (Exception ex) {				
-					Toast.MakeText (this, ex.ToString (), ToastLength.Long).Show ();
-				}
-			});
-		}
 
 		void anim_AnimationEndUp (object sender, Android.Views.Animations.Animation.AnimationEndEventArgs e)
 		{
