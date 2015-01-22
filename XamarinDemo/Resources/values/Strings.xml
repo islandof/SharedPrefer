@@ -98,4 +98,7 @@
   <string name="monitor_name_zhalanarea">位置栅栏</string>
   <string name="monitor_title_zhalanarea">位置栅栏</string>
   <string name="monitor_desc_zhalanarea">位置栅栏详情</string>
+  <string name="monitor_name_cartracelist">轨迹查询</string>
+  <string name="monitor_title_cartracelist">轨迹查询</string>
+  <string name="monitor_desc_cartracelist">每辆车最近的轨迹查询</string>
 </resources>

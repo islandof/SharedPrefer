@@ -50,10 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarTrace.cs" />
     <Compile Include="AreaDetail.cs" />
     <Compile Include="Carposition.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="CarManage.cs" />
+    <Compile Include="CartraceList.cs" />
     <Compile Include="QicheList.cs" />
     <Compile Include="ZhalanareaList.cs" />
     <Compile Include="SijiList.cs" />
@@ -148,6 +150,9 @@
     <AndroidNativeLibrary Include="Libs\armeabi\liblocSDK3.so" />
     <None Include="packages.config" />
     <AndroidResource Include="Resources\layout\activity_areadetail.axml" />
+    <AndroidResource Include="Resources\layout\CarTrace.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
     <None Include="Resources\layout\QicheList.axml">
       <SubType>AndroidResource</SubType>
     </None>

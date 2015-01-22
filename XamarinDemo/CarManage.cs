@@ -47,7 +47,8 @@ namespace XamarinDemo
 
 		private static readonly DemoInfo<Activity>[] demos = {
 			new DemoInfo<Activity> (Resource.String.monitor_name_qiche, Resource.String.monitor_desc_qiche, new QicheList()),
-            new DemoInfo<Activity> (Resource.String.monitor_name_zhalanarea, Resource.String.monitor_desc_zhalanarea, new ZhalanareaList())
+            new DemoInfo<Activity> (Resource.String.monitor_name_zhalanarea, Resource.String.monitor_desc_zhalanarea, new ZhalanareaList()),
+            new DemoInfo<Activity> (Resource.String.monitor_name_cartracelist, Resource.String.monitor_desc_cartracelist, new CartraceList())
 		};
 
 		protected override void OnResume ()

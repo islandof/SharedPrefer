@@ -707,67 +707,70 @@ namespace XamarinDemo
 			public const int activity_uisetting = 2130903060;
 			
 			// aapt resource value: 0x7f030015
-			public const int custom_text_view = 2130903061;
+			public const int CarTrace = 2130903061;
 			
 			// aapt resource value: 0x7f030016
-			public const int Ddrive = 2130903062;
+			public const int custom_text_view = 2130903062;
 			
 			// aapt resource value: 0x7f030017
-			public const int demo_info_item = 2130903063;
+			public const int Ddrive = 2130903063;
 			
 			// aapt resource value: 0x7f030018
-			public const int fragment_sample = 2130903064;
+			public const int demo_info_item = 2130903064;
 			
 			// aapt resource value: 0x7f030019
-			public const int Login = 2130903065;
+			public const int fragment_sample = 2130903065;
 			
 			// aapt resource value: 0x7f03001a
-			public const int Main = 2130903066;
+			public const int Login = 2130903066;
 			
 			// aapt resource value: 0x7f03001b
-			public const int MainMonitor = 2130903067;
+			public const int Main = 2130903067;
 			
 			// aapt resource value: 0x7f03001c
-			public const int Mapsmain = 2130903068;
+			public const int MainMonitor = 2130903068;
 			
 			// aapt resource value: 0x7f03001d
-			public const int offline_localmap_list = 2130903069;
+			public const int Mapsmain = 2130903069;
 			
 			// aapt resource value: 0x7f03001e
-			public const int pager_item = 2130903070;
+			public const int offline_localmap_list = 2130903070;
 			
 			// aapt resource value: 0x7f03001f
-			public const int row_contact = 2130903071;
+			public const int pager_item = 2130903071;
 			
 			// aapt resource value: 0x7f030020
-			public const int row_testcase = 2130903072;
+			public const int row_contact = 2130903072;
 			
 			// aapt resource value: 0x7f030021
-			public const int row_testcase1 = 2130903073;
+			public const int row_testcase = 2130903073;
 			
 			// aapt resource value: 0x7f030022
-			public const int row_testcase2 = 2130903074;
+			public const int row_testcase1 = 2130903074;
 			
 			// aapt resource value: 0x7f030023
-			public const int row_testcase3 = 2130903075;
+			public const int row_testcase2 = 2130903075;
 			
 			// aapt resource value: 0x7f030024
-			public const int SijiList = 2130903076;
+			public const int row_testcase3 = 2130903076;
 			
 			// aapt resource value: 0x7f030025
-			public const int test = 2130903077;
+			public const int SijiList = 2130903077;
 			
 			// aapt resource value: 0x7f030026
-			public const int TestCase = 2130903078;
+			public const int test = 2130903078;
 			
 			// aapt resource value: 0x7f030027
-			public const int TestCase1 = 2130903079;
+			public const int TestCase = 2130903079;
 			
 			// aapt resource value: 0x7f030028
-			public const int ZhalanAlarmL = 2130903080;
+			public const int TestCase1 = 2130903080;
 			
 			// aapt resource value: 0x7f030029
-			public const int ZhalanareaList = 2130903081;
+			public const int ZhalanAlarmL = 2130903081;
+			
+			// aapt resource value: 0x7f03002a
+			public const int ZhalanareaList = 2130903082;
 			
 			static Layout()
 			{
@@ -975,6 +978,9 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f05004d
 			public const int monitor_desc_carposition = 2131034189;
 			
+			// aapt resource value: 0x7f050059
+			public const int monitor_desc_cartracelist = 2131034201;
+			
 			// aapt resource value: 0x7f050047
 			public const int monitor_desc_ddrivel = 2131034183;
 			
@@ -996,6 +1002,9 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f05004b
 			public const int monitor_name_carposition = 2131034187;
 			
+			// aapt resource value: 0x7f050057
+			public const int monitor_name_cartracelist = 2131034199;
+			
 			// aapt resource value: 0x7f050045
 			public const int monitor_name_ddrivel = 2131034181;
 			
@@ -1016,6 +1025,9 @@ namespace XamarinDemo
 			
 			// aapt resource value: 0x7f05004c
 			public const int monitor_title_carposition = 2131034188;
+			
+			// aapt resource value: 0x7f050058
+			public const int monitor_title_cartracelist = 2131034200;
 			
 			// aapt resource value: 0x7f050046
 			public const int monitor_title_ddrivel = 2131034182;
