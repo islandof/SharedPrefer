@@ -57,6 +57,10 @@
     <Compile Include="CarManage.cs" />
     <Compile Include="CartraceList.cs" />
     <Compile Include="QicheList.cs" />
+    <Compile Include="Testcase789sAdapter.cs" />
+    <Compile Include="ZhalandaisuList.cs" />
+    <Compile Include="ZhalanchaosuList.cs" />
+    <Compile Include="ZhalantimeList.cs" />
     <Compile Include="ZhalanareaList.cs" />
     <Compile Include="SijiList.cs" />
     <Compile Include="Testcase5sAdapter.cs" />
@@ -220,6 +224,15 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\ZhalanareaList.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ZhalantimeList.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ZhalanchaosuList.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ZhalandaisuList.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>

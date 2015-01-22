@@ -23,7 +23,7 @@ namespace XamarinDemo
      */
 
     [Activity(ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden,
-        Label = "@string/monitor_name_carposition", ScreenOrientation = ScreenOrientation.Sensor)]
+        Label = "轨迹查询", ScreenOrientation = ScreenOrientation.Sensor)]
     public class CarTrace : Activity
     {
         /**

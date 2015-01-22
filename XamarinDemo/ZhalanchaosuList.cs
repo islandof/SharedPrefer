@@ -17,23 +17,23 @@ using Android.Views.InputMethods;
 
 namespace XamarinDemo
 {
-	[Activity (Label = "位置栅栏列表")]
-    public class ZhalanareaList : Activity
+	[Activity (Label = "超速栅栏列表")]
+    public class ZhalanchaosuList : Activity
 	{
-		private List<testCase5> mDataList;
+		private List<testCase789> mDataList;
 		private ListView mListView;
 		private EditText mSearch;
 		private LinearLayout mContainer;
 		private bool mAnimatedDown;
 		private bool mIsAnimating;
-        private Testcase5sAdapter mAdapter;
+        private Testcase789sAdapter mAdapter;
 		private WebClient mClient;
 		private Uri mUrl;		
 
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
-			SetContentView (Resource.Layout.ZhalanareaList);
+			SetContentView (Resource.Layout.ZhalanchaosuList);
 			mListView = FindViewById<ListView> (Resource.Id.listView);
 
 			mListView.ItemClick += mListView_ItemClick;
@@ -43,7 +43,7 @@ namespace XamarinDemo
 			mSearch.TextChanged += mSearch_TextChanged;
 			Toast.MakeText (this, "数据加载中...", ToastLength.Long).Show ();
 			mClient = new WebClient ();
-            mUrl = new Uri("http://cloud.tescar.cn/Vehicle/GetZhalanareaData?isspec=1");
+            mUrl = new Uri("http://cloud.tescar.cn/Vehicle/GetZhalanchaosuData?isspec=1");
 			mClient.DownloadDataAsync (mUrl);
 			mClient.DownloadDataCompleted += mClient_DownloadDataCompleted;
 			// Create your application here
@@ -55,8 +55,8 @@ namespace XamarinDemo
 				try {
 					string json = Encoding.UTF8.GetString (e.Result);
 					var fRows = JsonConvert.DeserializeObject<FormatRows> (json);
-					mDataList = JsonConvert.DeserializeObject<List<testCase5>> (fRows.rows.ToString ());
-                    mAdapter = new Testcase5sAdapter(this, Resource.Layout.row_testcase, mDataList);
+					mDataList = JsonConvert.DeserializeObject<List<testCase789>> (fRows.rows.ToString ());
+                    mAdapter = new Testcase789sAdapter(this, Resource.Layout.row_testcase3, mDataList,8);
 					mListView.Adapter = mAdapter;
 
 				} catch (Exception ex) {
@@ -69,11 +69,11 @@ namespace XamarinDemo
 		void mSearch_TextChanged (object sender, Android.Text.TextChangedEventArgs e)
 		{
 			if (mDataList != null) {
-                List<testCase5> searchedData = (from data in mDataList
-                                                  where data.areaname.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase) || data.condition.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase)
-                                                  select data).ToList<testCase5>();
+                List<testCase789> searchedData = (from data in mDataList
+                                                  where data.timename.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase) || data.chaosuname.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase) || data.daisuname.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase)
+                                                  select data).ToList<testCase789>();
 
-                mAdapter = new Testcase5sAdapter(this, Resource.Layout.row_testcase, searchedData);
+                mAdapter = new Testcase789sAdapter(this, Resource.Layout.row_testcase, searchedData,8);
                 mListView.Adapter = mAdapter;
 			}
            
@@ -82,9 +82,7 @@ namespace XamarinDemo
 
 		void mListView_ItemClick (object sender, AdapterView.ItemClickEventArgs e)
 		{
-			Intent intent = new Intent(this,typeof(AreaDetail));
-		    intent.PutExtra("area", JsonConvert.SerializeObject(mDataList[e.Position]));
-            this.StartActivity(intent);
+			
 		}
 
 		public override bool OnCreateOptionsMenu (IMenu menu)

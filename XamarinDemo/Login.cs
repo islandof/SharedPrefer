@@ -19,7 +19,7 @@ using Newtonsoft.Json;
 
 namespace XamarinDemo
 {
-	[Activity (Label = "Login", ScreenOrientation = ScreenOrientation.Sensor)]
+    [Activity(Label = "Login", MainLauncher = true, ScreenOrientation = ScreenOrientation.Sensor)]
 	public class Login : Activity
 	{
 		RelativeLayout mRelativeLayout;

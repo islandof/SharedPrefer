@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="testCase789.cs" />
     <Compile Include="testCase6.cs" />
     <Compile Include="testCase5.cs" />
     <Compile Include="testCase4.cs" />

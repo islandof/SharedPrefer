@@ -772,6 +772,15 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f03002a
 			public const int ZhalanareaList = 2130903082;
 			
+			// aapt resource value: 0x7f03002b
+			public const int ZhalanchaosuList = 2130903083;
+			
+			// aapt resource value: 0x7f03002c
+			public const int ZhalandaisuList = 2130903084;
+			
+			// aapt resource value: 0x7f03002d
+			public const int ZhalantimeList = 2130903085;
+			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -978,8 +987,8 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f05004d
 			public const int monitor_desc_carposition = 2131034189;
 			
-			// aapt resource value: 0x7f050059
-			public const int monitor_desc_cartracelist = 2131034201;
+			// aapt resource value: 0x7f050062
+			public const int monitor_desc_cartracelist = 2131034210;
 			
 			// aapt resource value: 0x7f050047
 			public const int monitor_desc_ddrivel = 2131034183;
@@ -999,11 +1008,20 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f050056
 			public const int monitor_desc_zhalanarea = 2131034198;
 			
+			// aapt resource value: 0x7f05005c
+			public const int monitor_desc_zhalanchaosu = 2131034204;
+			
+			// aapt resource value: 0x7f05005f
+			public const int monitor_desc_zhalandaisu = 2131034207;
+			
+			// aapt resource value: 0x7f050059
+			public const int monitor_desc_zhalantime = 2131034201;
+			
 			// aapt resource value: 0x7f05004b
 			public const int monitor_name_carposition = 2131034187;
 			
-			// aapt resource value: 0x7f050057
-			public const int monitor_name_cartracelist = 2131034199;
+			// aapt resource value: 0x7f050060
+			public const int monitor_name_cartracelist = 2131034208;
 			
 			// aapt resource value: 0x7f050045
 			public const int monitor_name_ddrivel = 2131034181;
@@ -1023,11 +1041,20 @@ namespace XamarinDemo
 			// aapt resource value: 0x7f050054
 			public const int monitor_name_zhalanarea = 2131034196;
 			
+			// aapt resource value: 0x7f05005a
+			public const int monitor_name_zhalanchaosu = 2131034202;
+			
+			// aapt resource value: 0x7f05005d
+			public const int monitor_name_zhalandaisu = 2131034205;
+			
+			// aapt resource value: 0x7f050057
+			public const int monitor_name_zhalantime = 2131034199;
+			
 			// aapt resource value: 0x7f05004c
 			public const int monitor_title_carposition = 2131034188;
 			
-			// aapt resource value: 0x7f050058
-			public const int monitor_title_cartracelist = 2131034200;
+			// aapt resource value: 0x7f050061
+			public const int monitor_title_cartracelist = 2131034209;
 			
 			// aapt resource value: 0x7f050046
 			public const int monitor_title_ddrivel = 2131034182;
@@ -1046,6 +1073,15 @@ namespace XamarinDemo
 			
 			// aapt resource value: 0x7f050055
 			public const int monitor_title_zhalanarea = 2131034197;
+			
+			// aapt resource value: 0x7f05005b
+			public const int monitor_title_zhalanchaosu = 2131034203;
+			
+			// aapt resource value: 0x7f05005e
+			public const int monitor_title_zhalandaisu = 2131034206;
+			
+			// aapt resource value: 0x7f050058
+			public const int monitor_title_zhalantime = 2131034200;
 			
 			// aapt resource value: 0x7f050034
 			public const int navi_tip = 2131034164;

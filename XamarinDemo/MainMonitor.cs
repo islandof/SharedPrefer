@@ -49,7 +49,8 @@ namespace XamarinDemo
 			new DemoInfo<Activity> (Resource.String.monitor_name_ddrivel, Resource.String.monitor_desc_ddrivel, new DdriveLActivity ()),
 			new DemoInfo<Activity> (Resource.String.monitor_name_zhalanalarml, Resource.String.monitor_desc_zhalanalarml, new ZhalanAlarmLActivity ()),
 			new DemoInfo<Activity> (Resource.String.monitor_name_carposition, Resource.String.monitor_desc_carposition, new Carposition ()),
-			new DemoInfo<Activity> (Resource.String.monitor_name_siji, Resource.String.monitor_desc_siji, new SijiList ())
+			new DemoInfo<Activity> (Resource.String.monitor_name_siji, Resource.String.monitor_desc_siji, new SijiList ()),
+            new DemoInfo<Activity> (Resource.String.monitor_name_cartracelist, Resource.String.monitor_desc_cartracelist, new CartraceList())
 		};
 
 		protected override void OnResume ()
