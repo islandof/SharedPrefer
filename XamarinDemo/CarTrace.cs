@@ -81,7 +81,7 @@ namespace XamarinDemo
 
             mItem = Intent.GetStringExtra("qicheid");
             if (!string.IsNullOrEmpty(mItem))
-            {            
+            {
                 mClient = new WebClient();
                 mUrl = new Uri("http://cloud.tescar.cn/Vehicle/GetGpsData?isspec=1&qicheid=" + mItem);
                 mClient.DownloadDataAsync(mUrl);
@@ -112,7 +112,7 @@ namespace XamarinDemo
         public void InitOverlay(List<testCase6> data)
         {
             try
-            {                
+            {
                 IList<LatLng> points =
                     data.Select(item => new LatLng(double.Parse(item.locationy), double.Parse(item.locationx))).ToList();
                 if (points.Count > 0)

@@ -5,6 +5,7 @@ using Android.Widget;
 using Com.Baidu.Location;
 using Com.Baidu.Mapapi.Map;
 using Com.Baidu.Mapapi.Model;
+using Java.Lang;
 
 namespace XamarinDemo.Maps
 {
@@ -12,22 +13,24 @@ namespace XamarinDemo.Maps
      * 此demo用来展示如何结合定位SDK实现定位，并使用MyLocationOverlay绘制定位位置 同时展示如何使用自定义图标绘制并点击时弹出泡泡
      * 
      */
-    [Activity(ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden, Label = "@string/demo_name_location", ScreenOrientation = ScreenOrientation.Sensor)]
+
+    [Activity(ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden,
+        Label = "@string/demo_name_location", ScreenOrientation = ScreenOrientation.Sensor)]
     public class LocationOverlayDemo : Activity
     {
         // 定位相关
-        LocationClient mLocClient;
-        public MyLocationListenner myListener = new MyLocationListenner();
+        private bool isFirstLoc = true; // 是否首次定位
+        private BaiduMap mBaiduMap;
+        private BitmapDescriptor mCurrentMarker;
         private MyLocationConfigeration.LocationMode mCurrentMode;
-        BitmapDescriptor mCurrentMarker;
+        private LocationClient mLocClient;
 
-        MapView mMapView;
-        BaiduMap mBaiduMap;
+        private MapView mMapView;
+        public MyLocationListenner myListener = new MyLocationListenner();
 
         // UI相关
-        RadioGroup.IOnCheckedChangeListener radioButtonListener;
-        Button requestLocButton;
-        bool isFirstLoc = true;// 是否首次定位
+        private RadioGroup.IOnCheckedChangeListener radioButtonListener;
+        private Button requestLocButton;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -44,27 +47,28 @@ namespace XamarinDemo.Maps
                     requestLocButton.Text = "跟随";
                     mCurrentMode = MyLocationConfigeration.LocationMode.Following;
                     mBaiduMap
-                            .SetMyLocationConfigeration(new MyLocationConfigeration(
-                                    mCurrentMode, true, mCurrentMarker));
+                        .SetMyLocationConfigeration(new MyLocationConfigeration(
+                            mCurrentMode, true, mCurrentMarker));
                 }
                 else if (mCurrentMode.Equals(MyLocationConfigeration.LocationMode.Compass))
                 {
                     requestLocButton.Text = "普通";
                     mCurrentMode = MyLocationConfigeration.LocationMode.Normal;
                     mBaiduMap
-                            .SetMyLocationConfigeration(new MyLocationConfigeration(
-                                    mCurrentMode, true, mCurrentMarker));
+                        .SetMyLocationConfigeration(new MyLocationConfigeration(
+                            mCurrentMode, true, mCurrentMarker));
                 }
                 else if (mCurrentMode.Equals(MyLocationConfigeration.LocationMode.Following))
                 {
                     requestLocButton.Text = "罗盘";
                     mCurrentMode = MyLocationConfigeration.LocationMode.Compass;
                     mBaiduMap
-                            .SetMyLocationConfigeration(new MyLocationConfigeration(
-                                    mCurrentMode, true, mCurrentMarker));
+                        .SetMyLocationConfigeration(new MyLocationConfigeration(
+                            mCurrentMode, true, mCurrentMarker));
                 }
 
                 #region [ 坑爹, 本人技术不够, 暂时无法用C#实现, 使用上面的 if/else... ]
+
                 //switch (mCurrentMode)
                 //{
                 //    case MyLocationConfigeration.LocationMode.Normal:
@@ -89,10 +93,11 @@ namespace XamarinDemo.Maps
                 //                        mCurrentMode, true, mCurrentMarker));
                 //        break;
                 //}
+
                 #endregion
             };
 
-            RadioGroup group = this.FindViewById<RadioGroup>(Resource.Id.radioGroup);
+            var group = FindViewById<RadioGroup>(Resource.Id.radioGroup);
             // group.CheckedChange += delegate(object sender, RadioGroup.CheckedChangeEventArgs args) { };
             group.CheckedChange += (sender, args) =>
             {
@@ -103,17 +108,17 @@ namespace XamarinDemo.Maps
                     // 传入null则，恢复默认图标
                     mCurrentMarker = null;
                     mBaiduMap
-                            .SetMyLocationConfigeration(new MyLocationConfigeration(
-                                    mCurrentMode, true, null));
+                        .SetMyLocationConfigeration(new MyLocationConfigeration(
+                            mCurrentMode, true, null));
                 }
                 if (CheckedId == Resource.Id.customicon)
                 {
                     // 修改为自定义marker
                     mCurrentMarker = BitmapDescriptorFactory
-                            .FromResource(Resource.Drawable.icon_geo);
+                        .FromResource(Resource.Drawable.icon_geo);
                     mBaiduMap
-                            .SetMyLocationConfigeration(new MyLocationConfigeration(
-                                    mCurrentMode, true, mCurrentMarker));
+                        .SetMyLocationConfigeration(new MyLocationConfigeration(
+                            mCurrentMode, true, mCurrentMarker));
                 }
             };
 
@@ -125,8 +130,8 @@ namespace XamarinDemo.Maps
             // 定位初始化
             mLocClient = new LocationClient(this);
             mLocClient.RegisterLocationListener(myListener);
-            LocationClientOption option = new LocationClientOption();
-            option.OpenGps = true;// 打开gps
+            var option = new LocationClientOption();
+            option.OpenGps = true; // 打开gps
             option.CoorType = "bd09ll"; // 设置坐标类型
             option.ScanSpan = 1000;
             mLocClient.LocOption = option;
@@ -136,44 +141,6 @@ namespace XamarinDemo.Maps
         /**
 	     * 定位SDK监听函数
 	     */
-        public class MyLocationListenner : Java.Lang.Object, IBDLocationListener
-        {
-            LocationOverlayDemo locationOverlayDemo;
-
-            public MyLocationListenner()
-            {
-            }
-
-            public MyLocationListenner(LocationOverlayDemo locationOverlayDemo)
-            {
-                this.locationOverlayDemo = locationOverlayDemo;
-            }
-
-            public void OnReceiveLocation(BDLocation location)
-            {
-                // map view 销毁后不在处理新接收的位置
-                if (location == null || locationOverlayDemo.mMapView == null)
-                    return;
-                MyLocationData locData = new MyLocationData.Builder()
-                        .Accuracy(location.Radius)
-                    // 此处设置开发者获取到的方向信息，顺时针0-360
-                        .Direction(100).Latitude(location.Latitude)
-                        .Longitude(location.Longitude).Build();
-                locationOverlayDemo.mBaiduMap.SetMyLocationData(locData);
-                if (locationOverlayDemo.isFirstLoc)
-                {
-                    locationOverlayDemo.isFirstLoc = false;
-                    LatLng ll = new LatLng(location.Latitude,
-                            location.Longitude);
-                    MapStatusUpdate u = MapStatusUpdateFactory.NewLatLng(ll);
-                    locationOverlayDemo.mBaiduMap.AnimateMapStatus(u);
-                }
-            }
-
-            public void OnReceivePoi(BDLocation poiLocation)
-            {
-            }
-        }
 
         protected override void OnPause()
         {
@@ -196,6 +163,45 @@ namespace XamarinDemo.Maps
             mMapView.OnDestroy();
             mMapView = null;
             base.OnDestroy();
+        }
+
+        public class MyLocationListenner : Object, IBDLocationListener
+        {
+            private readonly LocationOverlayDemo locationOverlayDemo;
+
+            public MyLocationListenner()
+            {
+            }
+
+            public MyLocationListenner(LocationOverlayDemo locationOverlayDemo)
+            {
+                this.locationOverlayDemo = locationOverlayDemo;
+            }
+
+            public void OnReceiveLocation(BDLocation location)
+            {
+                // map view 销毁后不在处理新接收的位置
+                if (location == null || locationOverlayDemo.mMapView == null)
+                    return;
+                MyLocationData locData = new MyLocationData.Builder()
+                    .Accuracy(location.Radius)
+                    // 此处设置开发者获取到的方向信息，顺时针0-360
+                    .Direction(100).Latitude(location.Latitude)
+                    .Longitude(location.Longitude).Build();
+                locationOverlayDemo.mBaiduMap.SetMyLocationData(locData);
+                if (locationOverlayDemo.isFirstLoc)
+                {
+                    locationOverlayDemo.isFirstLoc = false;
+                    var ll = new LatLng(location.Latitude,
+                        location.Longitude);
+                    MapStatusUpdate u = MapStatusUpdateFactory.NewLatLng(ll);
+                    locationOverlayDemo.mBaiduMap.AnimateMapStatus(u);
+                }
+            }
+
+            public void OnReceivePoi(BDLocation poiLocation)
+            {
+            }
         }
     }
 }

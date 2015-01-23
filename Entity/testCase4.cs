@@ -1,18 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 namespace Entity
 {
-	public class testCase4
-	{
-
+    public class testCase4
+    {
         public string qicheid { get; set; }
 
-		public string ownercompanyname { get; set; }
+        public string ownercompanyname { get; set; }
 
-		public string chepaino { get; set; }
+        public string chepaino { get; set; }
 
         public string brandname { get; set; }
 
@@ -26,9 +20,8 @@ namespace Entity
 
         public string sijiname { get; set; }
 
-	    public string pailiangvalue { get; set; }
+        public string pailiangvalue { get; set; }
 
-	    public string currentstatus { get; set; }
-        
-	}
+        public string currentstatus { get; set; }
+    }
 }

@@ -1,17 +1,20 @@
+using Android.App;
 using Android.Content.PM;
 using Android.Content.Res;
 using Android.OS;
 using Android.Support.V4.App;
 using Com.Baidu.Mapapi.Map;
+using FragmentManager = Android.Support.V4.App.FragmentManager;
 
 namespace XamarinDemo.Maps
 {
-    [Android.App.Activity(ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden, Label = "@string/demo_name_map_fragment", ScreenOrientation = ScreenOrientation.Sensor)]
+    [Activity(ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden,
+        Label = "@string/demo_name_map_fragment", ScreenOrientation = ScreenOrientation.Sensor)]
     public class MapFragmentDemo : FragmentActivity
     {
 #pragma warning disable 0169, 0414
-        private static readonly string LTAG = typeof(MapFragmentDemo).Name;// new MapFragmentDemo().Class.SimpleName
-        SupportMapFragment map;
+        private static readonly string LTAG = typeof (MapFragmentDemo).Name; // new MapFragmentDemo().Class.SimpleName
+        private SupportMapFragment map;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -20,7 +23,7 @@ namespace XamarinDemo.Maps
             SetContentView(Resource.Layout.activity_fragment);
             MapStatus ms = new MapStatus.Builder().Overlook(-20).Zoom(15).Build();
             BaiduMapOptions bo = new BaiduMapOptions().MapStatus(ms)
-                    .CompassEnabled(false).ZoomControlsEnabled(false);
+                .CompassEnabled(false).ZoomControlsEnabled(false);
             map = SupportMapFragment.NewInstance(bo);
             FragmentManager manager = SupportFragmentManager;
             manager.BeginTransaction().Add(Resource.Id.map, map, "map_fragment").Commit();
@@ -70,6 +73,5 @@ namespace XamarinDemo.Maps
         {
             base.OnConfigurationChanged(newConfig);
         }
-
     }
 }

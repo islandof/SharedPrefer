@@ -1,23 +1,26 @@
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
 using Com.Baidu.Mapapi.Map;
+using Java.Interop;
 
 namespace XamarinDemo.Maps
 {
     /**
      * 演示地图UI控制功能
      */
-    [Activity(ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden, Label = "@string/demo_name_ui", ScreenOrientation = ScreenOrientation.Sensor)]
+
+    [Activity(ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden,
+        Label = "@string/demo_name_ui", ScreenOrientation = ScreenOrientation.Sensor)]
     public class UISettingDemo : Activity
     {
         /**
          * MapView 是地图主控件
          */
-        private MapView mMapView;
         private BaiduMap mBaiduMap;
+        private MapView mMapView;
         private UiSettings mUiSettings;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -39,10 +42,11 @@ namespace XamarinDemo.Maps
          * 
          * @param v
          */
-        [Java.Interop.Export]
+
+        [Export]
         public void SetZoomEnable(View v)
         {
-            mUiSettings.ZoomGesturesEnabled = ((CheckBox)v).Checked;
+            mUiSettings.ZoomGesturesEnabled = ((CheckBox) v).Checked;
         }
 
         /**
@@ -50,10 +54,11 @@ namespace XamarinDemo.Maps
          * 
          * @param v
          */
-        [Java.Interop.Export]
+
+        [Export]
         public void SetScrollEnable(View v)
         {
-            mUiSettings.ScrollGesturesEnabled = ((CheckBox)v).Checked;
+            mUiSettings.ScrollGesturesEnabled = ((CheckBox) v).Checked;
         }
 
         /**
@@ -61,10 +66,11 @@ namespace XamarinDemo.Maps
          * 
          * @param v
          */
-        [Java.Interop.Export]
+
+        [Export]
         public void SetRotateEnable(View v)
         {
-            mUiSettings.RotateGesturesEnabled = ((CheckBox)v).Checked;
+            mUiSettings.RotateGesturesEnabled = ((CheckBox) v).Checked;
         }
 
         /**
@@ -72,10 +78,11 @@ namespace XamarinDemo.Maps
          * 
          * @param v
          */
-        [Java.Interop.Export]
+
+        [Export]
         public void SetOverlookEnable(View v)
         {
-            mUiSettings.OverlookingGesturesEnabled = ((CheckBox)v).Checked;
+            mUiSettings.OverlookingGesturesEnabled = ((CheckBox) v).Checked;
         }
 
         /**
@@ -83,10 +90,11 @@ namespace XamarinDemo.Maps
          * 
          * @param view
          */
-        [Java.Interop.Export]
+
+        [Export]
         public void SetCompassEnable(View v)
         {
-            mUiSettings.CompassEnabled = ((CheckBox)v).Checked;
+            mUiSettings.CompassEnabled = ((CheckBox) v).Checked;
         }
 
         protected override void OnPause()

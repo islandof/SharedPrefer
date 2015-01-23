@@ -1,13 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 namespace Entity
 {
-	public class testCase789
-	{
-
+    public class testCase789
+    {
         public string timename { get; set; }
 
         public string lianxidianhua { get; set; }
@@ -21,6 +15,6 @@ namespace Entity
         public string daisuname { get; set; }
 
         public string maxsecond { get; set; }
-	    //public string Locations { get; set; }
-	}
+        //public string Locations { get; set; }
+    }
 }

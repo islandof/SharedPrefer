@@ -1,5 +1,7 @@
+﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using Android.Runtime;
 using Android.Support.V4.App;
 using Com.Baidu.Mapapi.Map;
 using Com.Baidu.Mapapi.Model;
@@ -9,7 +11,9 @@ namespace XamarinDemo.Maps
     /**
      * 在一个Activity中展示多个地图
      */
-    [Android.App.Activity(ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden, Label = "@string/demo_name_multimap", ScreenOrientation = ScreenOrientation.Sensor)]
+
+    [Activity(ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden,
+        Label = "@string/demo_name_multimap", ScreenOrientation = ScreenOrientation.Sensor)]
     public class MutiMapViewDemo : FragmentActivity
     {
         private static readonly LatLng GEO_BEIJING = new LatLng(39.945, 116.404);
@@ -27,26 +31,27 @@ namespace XamarinDemo.Maps
         /**
          * 初始化Map
          */
+
         private void InitMap()
         {
             MapStatusUpdate u1 = MapStatusUpdateFactory.NewLatLng(GEO_BEIJING);
-            SupportMapFragment map1 = Android.Runtime.Extensions.JavaCast<SupportMapFragment>(SupportFragmentManager
-                    .FindFragmentById(Resource.Id.map1));
+            var map1 = Extensions.JavaCast<SupportMapFragment>(SupportFragmentManager
+                .FindFragmentById(Resource.Id.map1));
             map1.BaiduMap.SetMapStatus(u1);
 
             MapStatusUpdate u2 = MapStatusUpdateFactory.NewLatLng(GEO_SHANGHAI);
-            SupportMapFragment map2 = Android.Runtime.Extensions.JavaCast<SupportMapFragment>(SupportFragmentManager
-                    .FindFragmentById(Resource.Id.map2));
+            var map2 = Extensions.JavaCast<SupportMapFragment>(SupportFragmentManager
+                .FindFragmentById(Resource.Id.map2));
             map2.BaiduMap.SetMapStatus(u2);
 
             MapStatusUpdate u3 = MapStatusUpdateFactory.NewLatLng(GEO_GUANGZHOU);
-            SupportMapFragment map3 = Android.Runtime.Extensions.JavaCast<SupportMapFragment>(SupportFragmentManager
-                    .FindFragmentById(Resource.Id.map3));
+            var map3 = Extensions.JavaCast<SupportMapFragment>(SupportFragmentManager
+                .FindFragmentById(Resource.Id.map3));
             map3.BaiduMap.SetMapStatus(u3);
 
             MapStatusUpdate u4 = MapStatusUpdateFactory.NewLatLng(GEO_SHENGZHENG);
-            SupportMapFragment map4 = Android.Runtime.Extensions.JavaCast<SupportMapFragment>(SupportFragmentManager
-                    .FindFragmentById(Resource.Id.map4));
+            var map4 = Extensions.JavaCast<SupportMapFragment>(SupportFragmentManager
+                .FindFragmentById(Resource.Id.map4));
             map4.BaiduMap.SetMapStatus(u4);
         }
     }

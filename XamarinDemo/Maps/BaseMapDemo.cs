@@ -1,4 +1,4 @@
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
@@ -10,11 +10,13 @@ namespace XamarinDemo.Maps
     /**
      * 演示MapView的基本用法
      */
-    [Activity(ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden, Label = "@string/demo_name_basemap", ScreenOrientation = ScreenOrientation.Sensor)]
+
+    [Activity(ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden,
+        Label = "@string/demo_name_basemap", ScreenOrientation = ScreenOrientation.Sensor)]
     public class BaseMapDemo : Activity
     {
 #pragma warning disable 0169, 0414
-        private static readonly string LTAG = typeof(BaseMapDemo).Name;// new BaseMapDemo().Class.SimpleName
+        private static readonly string LTAG = typeof (BaseMapDemo).Name; // new BaseMapDemo().Class.SimpleName
         private MapView mMapView;
         private BaiduMap mBaiduMap;
 
@@ -26,10 +28,10 @@ namespace XamarinDemo.Maps
             {
                 // 当用intent参数时，设置中心点为指定点
                 Bundle b = intent.Extras;
-                LatLng p = new LatLng(b.GetDouble("y"), b.GetDouble("x"));
+                var p = new LatLng(b.GetDouble("y"), b.GetDouble("x"));
                 mMapView = new MapView(this,
-                        new BaiduMapOptions().MapStatus(new MapStatus.Builder()
-                                .Target(p).Build()));
+                    new BaiduMapOptions().MapStatus(new MapStatus.Builder()
+                        .Target(p).Build()));
             }
             else
             {

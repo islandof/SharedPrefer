@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -119,13 +119,13 @@ namespace XamarinDemo
                 OverlayOptions ooPolygon = new PolygonOptions().InvokePoints(points)
                     .InvokeStroke(new Stroke(5, Color.ParseColor("#AA00FF00").ToArgb()))
                     .InvokeFillColor(Color.ParseColor("#AAFFFF00").ToArgb());
-                
+
                 mBaiduMap.AddOverlay(ooPolygon);
                 mBaiduMap.AddOverlay(new TextOptions().InvokeBgColor(Color.ParseColor("#AAFFFF00").ToArgb())
-                        .InvokeFontSize(25)
-                        .InvokeFontColor(Color.ParseColor("#FFFF00FF").ToArgb())
-                        .InvokeText(data.areaname).InvokeZIndex(10)
-                        .InvokePosition(points[0]));
+                    .InvokeFontSize(25)
+                    .InvokeFontColor(Color.ParseColor("#FFFF00FF").ToArgb())
+                    .InvokeText(data.areaname).InvokeZIndex(10)
+                    .InvokePosition(points[0]));
                 MapStatusUpdate msu = MapStatusUpdateFactory.NewLatLng(points[0]);
                 mBaiduMap.SetMapStatus(msu);
                 //mBaiduMap.AddOverlay(ooPolyline);

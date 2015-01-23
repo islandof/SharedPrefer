@@ -1,32 +1,25 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
 using Android.Content;
-using Android.OS;
-using Android.Runtime;
+using Android.Graphics;
 using Android.Views;
 using Android.Widget;
-using Android.Graphics;
 using Entity;
 
 namespace XamarinDemo
 {
     public class TestcasesAdapter : BaseAdapter<user_info>
     {
-        private Context mContext;
-        private int mRowLayout;
-        private List<user_info> mUserinfos;
-        private int [] mAlternatingColors;
-        
+        private readonly int[] mAlternatingColors;
+        private readonly Context mContext;
+        private readonly int mRowLayout;
+        private readonly List<user_info> mUserinfos;
+
         public TestcasesAdapter(Context context, int rowLayout, List<user_info> Userinfos)
         {
             mContext = context;
             mRowLayout = rowLayout;
             mUserinfos = Userinfos;
-            mAlternatingColors = new int[] { 0xF2F2F2, 0x009900 };
+            mAlternatingColors = new[] {0xF2F2F2, 0x009900};
         }
 
         public override int Count
@@ -53,19 +46,19 @@ namespace XamarinDemo
                 row = LayoutInflater.From(mContext).Inflate(mRowLayout, parent, false);
             }
 
-            row.SetBackgroundColor(GetColorFromInteger(mAlternatingColors[position % mAlternatingColors.Length]));
+            row.SetBackgroundColor(GetColorFromInteger(mAlternatingColors[position%mAlternatingColors.Length]));
 
-            
-            TextView firstName = row.FindViewById<TextView>(Resource.Id.txtrow1);
+
+            var firstName = row.FindViewById<TextView>(Resource.Id.txtrow1);
             firstName.Text = mUserinfos[position].USER_NAME;
 
-            TextView lastName = row.FindViewById<TextView>(Resource.Id.txtrow2);
+            var lastName = row.FindViewById<TextView>(Resource.Id.txtrow2);
             lastName.Text = mUserinfos[position].ROLE_NAME;
 
-            TextView gender = row.FindViewById<TextView>(Resource.Id.txtrow3);
+            var gender = row.FindViewById<TextView>(Resource.Id.txtrow3);
             gender.Text = mUserinfos[position].companyname;
 
-            if ((position % 2) == 1)
+            if ((position%2) == 1)
             {
                 //Green background, set text white
                 firstName.SetTextColor(Color.White);

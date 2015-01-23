@@ -740,46 +740,49 @@ namespace XamarinDemo
 			public const int pager_item = 2130903071;
 			
 			// aapt resource value: 0x7f030020
-			public const int row_contact = 2130903072;
+			public const int popup_Map = 2130903072;
 			
 			// aapt resource value: 0x7f030021
-			public const int row_testcase = 2130903073;
+			public const int row_contact = 2130903073;
 			
 			// aapt resource value: 0x7f030022
-			public const int row_testcase1 = 2130903074;
+			public const int row_testcase = 2130903074;
 			
 			// aapt resource value: 0x7f030023
-			public const int row_testcase2 = 2130903075;
+			public const int row_testcase1 = 2130903075;
 			
 			// aapt resource value: 0x7f030024
-			public const int row_testcase3 = 2130903076;
+			public const int row_testcase2 = 2130903076;
 			
 			// aapt resource value: 0x7f030025
-			public const int SijiList = 2130903077;
+			public const int row_testcase3 = 2130903077;
 			
 			// aapt resource value: 0x7f030026
-			public const int test = 2130903078;
+			public const int SijiList = 2130903078;
 			
 			// aapt resource value: 0x7f030027
-			public const int TestCase = 2130903079;
+			public const int test = 2130903079;
 			
 			// aapt resource value: 0x7f030028
-			public const int TestCase1 = 2130903080;
+			public const int TestCase = 2130903080;
 			
 			// aapt resource value: 0x7f030029
-			public const int ZhalanAlarmL = 2130903081;
+			public const int TestCase1 = 2130903081;
 			
 			// aapt resource value: 0x7f03002a
-			public const int ZhalanareaList = 2130903082;
+			public const int ZhalanAlarmL = 2130903082;
 			
 			// aapt resource value: 0x7f03002b
-			public const int ZhalanchaosuList = 2130903083;
+			public const int ZhalanareaList = 2130903083;
 			
 			// aapt resource value: 0x7f03002c
-			public const int ZhalandaisuList = 2130903084;
+			public const int ZhalanchaosuList = 2130903084;
 			
 			// aapt resource value: 0x7f03002d
-			public const int ZhalantimeList = 2130903085;
+			public const int ZhalandaisuList = 2130903085;
+			
+			// aapt resource value: 0x7f03002e
+			public const int ZhalantimeList = 2130903086;
 			
 			static Layout()
 			{

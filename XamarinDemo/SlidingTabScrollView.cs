@@ -1,28 +1,23 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.Support.V4.View;
 using Android.Util;
-using XamarinDemo;
+using Android.Views;
+using Android.Widget;
 
 namespace XamarinDemo
 {
     public class SlidingTabScrollView : HorizontalScrollView
     {
-
         private const int TITLE_OFFSET_DIPS = 24;
         private const int TAB_VIEW_PADDING_DIPS = 16;
         private const int TAB_VIEW_TEXT_SIZE_SP = 12;
+        private static SlidingTabStrip mTabStrip;
 
-        private int mTitleOffset;
+        private readonly int mTitleOffset;
+        private int mScrollState;
 
         private int mTabViewLayoutID;
         private int mTabViewTextViewID;
@@ -30,33 +25,28 @@ namespace XamarinDemo
         private ViewPager mViewPager;
         private ViewPager.IOnPageChangeListener mViewPagerPageChangeListener;
 
-        private static SlidingTabStrip mTabStrip;
-
-        private int mScrollState;
-
-        public interface TabColorizer
+        public SlidingTabScrollView(Context context) : this(context, null)
         {
-            int GetIndicatorColor(int position);
-            int GetDividerColor(int position);
         }
 
-        public SlidingTabScrollView(Context context) : this(context, null) { }
+        public SlidingTabScrollView(Context context, IAttributeSet attrs) : this(context, attrs, 0)
+        {
+        }
 
-        public SlidingTabScrollView(Context context, IAttributeSet attrs) : this(context, attrs, 0) { }
-
-        public SlidingTabScrollView (Context context, IAttributeSet attrs, int defaultStyle) : base(context, attrs, defaultStyle)
+        public SlidingTabScrollView(Context context, IAttributeSet attrs, int defaultStyle)
+            : base(context, attrs, defaultStyle)
         {
             //Disable the scroll bar
             HorizontalScrollBarEnabled = false;
 
             //Make sure the tab strips fill the view
             FillViewport = true;
-            this.SetBackgroundColor(Android.Graphics.Color.Rgb(0xE5, 0xE5, 0xE5)); //Gray color
+            SetBackgroundColor(Color.Rgb(0xE5, 0xE5, 0xE5)); //Gray color
 
-            mTitleOffset = (int)(TITLE_OFFSET_DIPS * Resources.DisplayMetrics.Density);
+            mTitleOffset = (int) (TITLE_OFFSET_DIPS*Resources.DisplayMetrics.Density);
 
             mTabStrip = new SlidingTabStrip(context);
-            this.AddView(mTabStrip, LayoutParams.MatchParent, LayoutParams.MatchParent);
+            AddView(mTabStrip, ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.MatchParent);
         }
 
         public TabColorizer CustomTabColorizer
@@ -64,12 +54,12 @@ namespace XamarinDemo
             set { mTabStrip.CustomTabColorizer = value; }
         }
 
-        public int [] SelectedIndicatorColor
+        public int[] SelectedIndicatorColor
         {
             set { mTabStrip.SelectedIndicatorColors = value; }
         }
 
-        public int [] DividerColors
+        public int[] DividerColors
         {
             set { mTabStrip.DividerColors = value; }
         }
@@ -96,7 +86,7 @@ namespace XamarinDemo
             }
         }
 
-        void value_PageScrolled(object sender, ViewPager.PageScrolledEventArgs e)
+        private void value_PageScrolled(object sender, ViewPager.PageScrolledEventArgs e)
         {
             int tabCount = mTabStrip.ChildCount;
 
@@ -110,7 +100,7 @@ namespace XamarinDemo
 
             View selectedTitle = mTabStrip.GetChildAt(e.Position);
 
-            int extraOffset = (selectedTitle != null ? (int)(e.Position * selectedTitle.Width) : 0);
+            int extraOffset = (selectedTitle != null ? e.Position*selectedTitle.Width : 0);
 
             ScrollToTab(e.Position, extraOffset);
 
@@ -118,10 +108,9 @@ namespace XamarinDemo
             {
                 mViewPagerPageChangeListener.OnPageScrolled(e.Position, e.PositionOffset, e.PositionOffsetPixels);
             }
-
         }
 
-        void value_PageScrollStateChanged(object sender, ViewPager.PageScrollStateChangedEventArgs e)
+        private void value_PageScrollStateChanged(object sender, ViewPager.PageScrollStateChangedEventArgs e)
         {
             mScrollState = e.State;
 
@@ -131,13 +120,12 @@ namespace XamarinDemo
             }
         }
 
-        void value_PageSelected(object sender, ViewPager.PageSelectedEventArgs e)
+        private void value_PageSelected(object sender, ViewPager.PageSelectedEventArgs e)
         {
             if (mScrollState == ViewPager.ScrollStateIdle)
             {
                 mTabStrip.OnViewPagerPageChanged(e.Position, 0f);
                 ScrollToTab(e.Position, 0);
-
             }
 
             if (mViewPagerPageChangeListener != null)
@@ -149,46 +137,45 @@ namespace XamarinDemo
         private void PopulateTabStrip()
         {
             PagerAdapter adapter = mViewPager.Adapter;
-            
+
             for (int i = 0; i < adapter.Count; i++)
             {
                 TextView tabView = CreateDefaultTabView(Context);
-                tabView.Text = ((SlidingTabsFragment.SamplePagerAdapter)adapter).GetHeaderTitle(i);
-                tabView.SetTextColor(Android.Graphics.Color.Black);
+                tabView.Text = ((SlidingTabsFragment.SamplePagerAdapter) adapter).GetHeaderTitle(i);
+                tabView.SetTextColor(Color.Black);
                 tabView.Tag = i;
                 tabView.Click += tabView_Click;
                 mTabStrip.AddView(tabView);
             }
-
         }
 
-        void tabView_Click(object sender, EventArgs e)
+        private void tabView_Click(object sender, EventArgs e)
         {
-            TextView clickTab = (TextView)sender;
-            int pageToScrollTo = (int)clickTab.Tag;
+            var clickTab = (TextView) sender;
+            var pageToScrollTo = (int) clickTab.Tag;
             mViewPager.CurrentItem = pageToScrollTo;
         }
 
-        private TextView CreateDefaultTabView(Android.Content.Context context)
+        private TextView CreateDefaultTabView(Context context)
         {
-            TextView textView = new TextView(context);
+            var textView = new TextView(context);
             textView.Gravity = GravityFlags.Center;
             textView.SetTextSize(ComplexUnitType.Sp, TAB_VIEW_TEXT_SIZE_SP);
-            textView.Typeface = Android.Graphics.Typeface.DefaultBold;
+            textView.Typeface = Typeface.DefaultBold;
 
-            if (Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Honeycomb)
+            if (Build.VERSION.SdkInt >= BuildVersionCodes.Honeycomb)
             {
-                TypedValue outValue = new TypedValue();
+                var outValue = new TypedValue();
                 Context.Theme.ResolveAttribute(Android.Resource.Attribute.SelectableItemBackground, outValue, false);
                 textView.SetBackgroundResource(outValue.ResourceId);
             }
 
-            if (Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.IceCreamSandwich)
+            if (Build.VERSION.SdkInt >= BuildVersionCodes.IceCreamSandwich)
             {
                 textView.SetAllCaps(true);
             }
 
-            int padding = (int)(TAB_VIEW_PADDING_DIPS * Resources.DisplayMetrics.Density);
+            var padding = (int) (TAB_VIEW_PADDING_DIPS*Resources.DisplayMetrics.Density);
             textView.SetPadding(padding, padding, padding, padding);
 
             return textView;
@@ -210,7 +197,7 @@ namespace XamarinDemo
 
             if (tabCount == 0 || tabIndex < 0 || tabIndex >= tabCount)
             {
-               //No need to go further, dont scroll
+                //No need to go further, dont scroll
                 return;
             }
 
@@ -219,15 +206,19 @@ namespace XamarinDemo
             {
                 int scrollAmountX = selectedChild.Left + extraOffset;
 
-                if (tabIndex >0 || extraOffset > 0)
+                if (tabIndex > 0 || extraOffset > 0)
                 {
                     scrollAmountX -= mTitleOffset;
                 }
 
-                this.ScrollTo(scrollAmountX, 0);
+                ScrollTo(scrollAmountX, 0);
             }
-
         }
 
+        public interface TabColorizer
+        {
+            int GetIndicatorColor(int position);
+            int GetDividerColor(int position);
+        }
     }
 }

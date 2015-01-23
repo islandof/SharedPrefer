@@ -1,23 +1,26 @@
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
 using Com.Baidu.Mapapi.Map;
+using Java.Interop;
 
 namespace XamarinDemo.Maps
 {
     /**
      * 演示地图图层显示的控制方法
      */
-    [Activity(ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden, Label = "@string/demo_name_layers", ScreenOrientation = ScreenOrientation.Sensor)]
+
+    [Activity(ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden,
+        Label = "@string/demo_name_layers", ScreenOrientation = ScreenOrientation.Sensor)]
     public class LayersDemo : Activity
     {
         /**
           * MapView 是地图主控件
           */
-        private MapView mMapView;
         private BaiduMap mBaiduMap;
+        private MapView mMapView;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -32,10 +35,11 @@ namespace XamarinDemo.Maps
          * 
          * @param view
          */
-        [Java.Interop.Export]
+
+        [Export]
         public void SetMapMode(View view)
         {
-            bool checkedX = ((RadioButton)view).Checked;
+            bool checkedX = ((RadioButton) view).Checked;
             switch (view.Id)
             {
                 case Resource.Id.normal:
@@ -54,10 +58,11 @@ namespace XamarinDemo.Maps
          * 
          * @param view
          */
-        [Java.Interop.Export]
+
+        [Export]
         public void SetTraffic(View view)
         {
-            mBaiduMap.TrafficEnabled = ((CheckBox)view).Checked;
+            mBaiduMap.TrafficEnabled = ((CheckBox) view).Checked;
         }
 
         protected override void OnPause()

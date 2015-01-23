@@ -157,6 +157,9 @@
     <AndroidResource Include="Resources\layout\CarTrace.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\popup_Map.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
     <None Include="Resources\layout\QicheList.axml">
       <SubType>AndroidResource</SubType>
     </None>

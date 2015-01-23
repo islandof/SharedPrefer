@@ -1,59 +1,55 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
 using Android.Content;
-using Android.OS;
-using Android.Runtime;
+using Android.Graphics;
 using Android.Views;
 using Android.Widget;
-using Android.Graphics;
 using Entity;
 
 namespace XamarinDemo
 {
-	public class Testcase5sAdapter : BaseAdapter<testCase5>
-	{
-		private Context mContext;
-		private int mRowLayout;
-		private List<testCase5> mDataList;
-		private int[] mAlternatingColors;
+    public class Testcase5sAdapter : BaseAdapter<testCase5>
+    {
+        private readonly int[] mAlternatingColors;
+        private readonly Context mContext;
+        private readonly List<testCase5> mDataList;
+        private readonly int mRowLayout;
 
-		public Testcase5sAdapter (Context context, int rowLayout, List<testCase5> testCase5S)
-		{
-			mContext = context;
-			mRowLayout = rowLayout;
-			mDataList = testCase5S;
-			mAlternatingColors = new int[] { 0xF2F2F2, 0x009900 };
-		}
+        public Testcase5sAdapter(Context context, int rowLayout, List<testCase5> testCase5S)
+        {
+            mContext = context;
+            mRowLayout = rowLayout;
+            mDataList = testCase5S;
+            mAlternatingColors = new[] {0xF2F2F2, 0x009900};
+        }
 
-		public override int Count {
-			get { return mDataList.Count; }
-		}
+        public override int Count
+        {
+            get { return mDataList.Count; }
+        }
 
-		public override testCase5 this [int position] {
-			get { return mDataList [position]; }
-		}
+        public override testCase5 this[int position]
+        {
+            get { return mDataList[position]; }
+        }
 
-		public override long GetItemId (int position)
-		{
-			return position;
-		}
+        public override long GetItemId(int position)
+        {
+            return position;
+        }
 
-		public override View GetView (int position, View convertView, ViewGroup parent)
-		{
-			View row = convertView;
+        public override View GetView(int position, View convertView, ViewGroup parent)
+        {
+            View row = convertView;
 
-			if (row == null) {
-				row = LayoutInflater.From (mContext).Inflate (mRowLayout, parent, false);
-			}
+            if (row == null)
+            {
+                row = LayoutInflater.From(mContext).Inflate(mRowLayout, parent, false);
+            }
 
-			row.SetBackgroundColor (GetColorFromInteger (mAlternatingColors [position % mAlternatingColors.Length]));
+            row.SetBackgroundColor(GetColorFromInteger(mAlternatingColors[position%mAlternatingColors.Length]));
 
             row.FindViewById<TextView>(Resource.Id.txtrow1).Text = mDataList[position].areaname;
-            var strrow3 = "";
+            string strrow3 = "";
             if (mDataList[position].condition == "1")
             {
                 strrow3 += "进栅栏";
@@ -94,12 +90,12 @@ namespace XamarinDemo
 //				gender.SetTextColor (Color.Black);
 //			}
 
-			return row;
-		}
+            return row;
+        }
 
-		private Color GetColorFromInteger (int color)
-		{
-			return Color.Rgb (Color.GetRedComponent (color), Color.GetGreenComponent (color), Color.GetBlueComponent (color));
-		}
-	}
+        private Color GetColorFromInteger(int color)
+        {
+            return Color.Rgb(Color.GetRedComponent(color), Color.GetGreenComponent(color), Color.GetBlueComponent(color));
+        }
+    }
 }

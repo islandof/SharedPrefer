@@ -1,141 +1,55 @@
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
 using Android.Graphics;
 using Android.OS;
+using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Com.Baidu.Mapapi.Map;
 using Com.Baidu.Mapapi.Model;
+using Java.Interop;
+using Java.Lang;
 
 namespace XamarinDemo.Maps
 {
     /**
      * 演示覆盖物的用法
      */
-    [Activity(ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden, Label = "@string/demo_name_overlay", ScreenOrientation = ScreenOrientation.Sensor)]
+
+    [Activity(ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden,
+        Label = "@string/demo_name_overlay", ScreenOrientation = ScreenOrientation.Sensor)]
     public class OverlayDemo : Activity
     {
         /**
         * MapView 是地图主控件
         */
-        private MapView mMapView;
+
+        // 初始化全局 bitmap 信息，不用时及时 Recycle
+        private readonly BitmapDescriptor bd = BitmapDescriptorFactory
+            .FromResource(Resource.Drawable.icon_gcoding);
+
+        private readonly BitmapDescriptor bdA = BitmapDescriptorFactory
+            .FromResource(Resource.Drawable.icon_marka);
+
+        private readonly BitmapDescriptor bdB = BitmapDescriptorFactory
+            .FromResource(Resource.Drawable.icon_markb);
+
+        private readonly BitmapDescriptor bdC = BitmapDescriptorFactory
+            .FromResource(Resource.Drawable.icon_markc);
+
+        private readonly BitmapDescriptor bdD = BitmapDescriptorFactory
+            .FromResource(Resource.Drawable.icon_markd);
+
+        private readonly BitmapDescriptor bdGround = BitmapDescriptorFactory
+            .FromResource(Resource.Drawable.ground_overlay);
+
         private BaiduMap mBaiduMap;
+        private InfoWindow mInfoWindow;
+        private MapView mMapView;
         private Marker mMarkerA;
         private Marker mMarkerB;
         private Marker mMarkerC;
         private Marker mMarkerD;
-        private InfoWindow mInfoWindow;
-
-        // 初始化全局 bitmap 信息，不用时及时 Recycle
-        BitmapDescriptor bdA = BitmapDescriptorFactory
-                .FromResource(Resource.Drawable.icon_marka);
-        BitmapDescriptor bdB = BitmapDescriptorFactory
-                .FromResource(Resource.Drawable.icon_markb);
-        BitmapDescriptor bdC = BitmapDescriptorFactory
-                .FromResource(Resource.Drawable.icon_markc);
-        BitmapDescriptor bdD = BitmapDescriptorFactory
-                .FromResource(Resource.Drawable.icon_markd);
-        BitmapDescriptor bd = BitmapDescriptorFactory
-                .FromResource(Resource.Drawable.icon_gcoding);
-        BitmapDescriptor bdGround = BitmapDescriptorFactory
-                .FromResource(Resource.Drawable.ground_overlay);
-
-        class IOnMarkerClickListenerImpl : Java.Lang.Object, BaiduMap.IOnMarkerClickListener
-        {
-            public OverlayDemo overlayDemo;
-
-            public IOnMarkerClickListenerImpl(OverlayDemo overlayDemo)
-            {
-                this.overlayDemo = overlayDemo;
-            }
-
-            public bool OnMarkerClick(Marker marker)
-            {
-                Button button = new Button(overlayDemo.ApplicationContext);
-                button.SetBackgroundResource(Resource.Drawable.popup);
-                LatLng ll = marker.Position;// 常量
-                Point p = overlayDemo.mBaiduMap.Projection.ToScreenLocation(ll);
-                p.Y -= 47;
-                LatLng llInfo = overlayDemo.mBaiduMap.Projection.FromScreenLocation(p);
-                InfoWindow.IOnInfoWindowClickListener listener = null;
-                if (marker.Equals(overlayDemo.mMarkerA) || marker.Equals(overlayDemo.mMarkerD))
-                {
-                    button.Text = "更改位置";
-                    listener = new IOnInfoWindowClickListenerImplA(this, ll, marker);
-                }
-                else if (marker.Equals(overlayDemo.mMarkerB))
-                {
-                    button.Text = "更改图标";
-                    listener = new IOnInfoWindowClickListenerImplB(this, marker);
-                }
-                else if (marker.Equals(overlayDemo.mMarkerC))
-                {
-                    button.Text = "删除";
-                    listener = new IOnInfoWindowClickListenerImplC(this, marker);
-                }
-                overlayDemo.mInfoWindow = new InfoWindow(button, llInfo, listener);
-                overlayDemo.mBaiduMap.ShowInfoWindow(overlayDemo.mInfoWindow);
-                return true;
-            }
-        }
-
-        class IOnInfoWindowClickListenerImplA : Java.Lang.Object, InfoWindow.IOnInfoWindowClickListener
-        {
-            IOnMarkerClickListenerImpl iOnMarkerClickListenerImpl;
-            LatLng ll;
-            Marker marker;
-
-            public IOnInfoWindowClickListenerImplA(IOnMarkerClickListenerImpl iOnMarkerClickListenerImpl, LatLng ll, Marker marker)
-            {
-                this.iOnMarkerClickListenerImpl = iOnMarkerClickListenerImpl;
-                this.ll = ll;
-                this.marker = marker;
-            }
-
-            public void OnInfoWindowClick()
-            {
-                LatLng llNew = new LatLng(ll.Latitude + 0.005,
-                       ll.Longitude + 0.005);
-                marker.Position = llNew;
-                iOnMarkerClickListenerImpl.overlayDemo.mBaiduMap.HideInfoWindow();
-            }
-        }
-
-        class IOnInfoWindowClickListenerImplB : Java.Lang.Object, InfoWindow.IOnInfoWindowClickListener
-        {
-            IOnMarkerClickListenerImpl iOnMarkerClickListenerImpl;
-            Marker marker;
-
-            public IOnInfoWindowClickListenerImplB(IOnMarkerClickListenerImpl iOnMarkerClickListenerImpl, Marker marker)
-            {
-                this.iOnMarkerClickListenerImpl = iOnMarkerClickListenerImpl;
-                this.marker = marker;
-            }
-
-            public void OnInfoWindowClick()
-            {
-                marker.Icon = iOnMarkerClickListenerImpl.overlayDemo.bd;
-                iOnMarkerClickListenerImpl.overlayDemo.mBaiduMap.HideInfoWindow();
-            }
-        }
-
-        class IOnInfoWindowClickListenerImplC : Java.Lang.Object, InfoWindow.IOnInfoWindowClickListener
-        {
-            IOnMarkerClickListenerImpl iOnMarkerClickListenerImpl;
-            Marker marker;
-
-            public IOnInfoWindowClickListenerImplC(IOnMarkerClickListenerImpl iOnMarkerClickListenerImpl, Marker marker)
-            {
-                this.iOnMarkerClickListenerImpl = iOnMarkerClickListenerImpl;
-                this.marker = marker;
-            }
-
-            public void OnInfoWindowClick()
-            {
-                marker.Remove();
-                iOnMarkerClickListenerImpl.overlayDemo.mBaiduMap.HideInfoWindow();
-            }
-        }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -153,36 +67,36 @@ namespace XamarinDemo.Maps
         public void InitOverlay()
         {
             // add marker overlay
-            LatLng llA = new LatLng(39.963175, 116.400244);
-            LatLng llB = new LatLng(39.942821, 116.369199);
-            LatLng llC = new LatLng(39.939723, 116.425541);
-            LatLng llD = new LatLng(39.906965, 116.401394);
+            var llA = new LatLng(39.963175, 116.400244);
+            var llB = new LatLng(39.942821, 116.369199);
+            var llC = new LatLng(39.939723, 116.425541);
+            var llD = new LatLng(39.906965, 116.401394);
 
             OverlayOptions ooA = new MarkerOptions().InvokePosition(llA).InvokeIcon(bdA)
-                    .InvokeZIndex(9);
-            mMarkerA = Android.Runtime.Extensions.JavaCast<Marker>(mBaiduMap.AddOverlay(ooA));
+                .InvokeZIndex(9);
+            mMarkerA = Extensions.JavaCast<Marker>(mBaiduMap.AddOverlay(ooA));
             OverlayOptions ooB = new MarkerOptions().InvokePosition(llB).InvokeIcon(bdB)
-                    .InvokeZIndex(5);
-            mMarkerB = Android.Runtime.Extensions.JavaCast<Marker>(mBaiduMap.AddOverlay(ooB));
+                .InvokeZIndex(5);
+            mMarkerB = Extensions.JavaCast<Marker>(mBaiduMap.AddOverlay(ooB));
             OverlayOptions ooC = new MarkerOptions().InvokePosition(llC).InvokeIcon(bdC)
-                    .Perspective(false).Anchor(0.5f, 0.5f).InvokeRotate(30).InvokeZIndex(7);
-            mMarkerC = Android.Runtime.Extensions.JavaCast<Marker>(mBaiduMap.AddOverlay(ooC));
+                .Perspective(false).Anchor(0.5f, 0.5f).InvokeRotate(30).InvokeZIndex(7);
+            mMarkerC = Extensions.JavaCast<Marker>(mBaiduMap.AddOverlay(ooC));
             OverlayOptions ooD = new MarkerOptions().InvokePosition(llD).InvokeIcon(bdD)
-                    .Perspective(false).InvokeZIndex(7);
-            mMarkerD = Android.Runtime.Extensions.JavaCast<Marker>(mBaiduMap.AddOverlay(ooD));
+                .Perspective(false).InvokeZIndex(7);
+            mMarkerD = Extensions.JavaCast<Marker>(mBaiduMap.AddOverlay(ooD));
 
             // add ground overlay
-            LatLng southwest = new LatLng(39.92235, 116.380338);
-            LatLng northeast = new LatLng(39.947246, 116.414977);
+            var southwest = new LatLng(39.92235, 116.380338);
+            var northeast = new LatLng(39.947246, 116.414977);
             LatLngBounds bounds = new LatLngBounds.Builder().Include(northeast)
-                    .Include(southwest).Build();
+                .Include(southwest).Build();
 
             OverlayOptions ooGround = new GroundOverlayOptions()
-                    .PositionFromBounds(bounds).InvokeImage(bdGround).InvokeTransparency(0.8f);
+                .PositionFromBounds(bounds).InvokeImage(bdGround).InvokeTransparency(0.8f);
             mBaiduMap.AddOverlay(ooGround);
 
             MapStatusUpdate u = MapStatusUpdateFactory
-                    .NewLatLng(bounds.Center);
+                .NewLatLng(bounds.Center);
             mBaiduMap.SetMapStatus(u);
         }
 
@@ -191,7 +105,8 @@ namespace XamarinDemo.Maps
          * 
          * @param view
          */
-        [Java.Interop.Export]
+
+        [Export]
         public void ClearOverlay(View view)
         {
             mBaiduMap.Clear();
@@ -202,7 +117,8 @@ namespace XamarinDemo.Maps
          * 
          * @param view
          */
-        [Java.Interop.Export]
+
+        [Export]
         public void ResetOverlay(View view)
         {
             ClearOverlay(null);
@@ -237,5 +153,102 @@ namespace XamarinDemo.Maps
             bdGround.Recycle();
         }
 
+        private class IOnInfoWindowClickListenerImplA : Object, InfoWindow.IOnInfoWindowClickListener
+        {
+            private readonly IOnMarkerClickListenerImpl iOnMarkerClickListenerImpl;
+            private readonly LatLng ll;
+            private readonly Marker marker;
+
+            public IOnInfoWindowClickListenerImplA(IOnMarkerClickListenerImpl iOnMarkerClickListenerImpl, LatLng ll,
+                Marker marker)
+            {
+                this.iOnMarkerClickListenerImpl = iOnMarkerClickListenerImpl;
+                this.ll = ll;
+                this.marker = marker;
+            }
+
+            public void OnInfoWindowClick()
+            {
+                var llNew = new LatLng(ll.Latitude + 0.005,
+                    ll.Longitude + 0.005);
+                marker.Position = llNew;
+                iOnMarkerClickListenerImpl.overlayDemo.mBaiduMap.HideInfoWindow();
+            }
+        }
+
+        private class IOnInfoWindowClickListenerImplB : Object, InfoWindow.IOnInfoWindowClickListener
+        {
+            private readonly IOnMarkerClickListenerImpl iOnMarkerClickListenerImpl;
+            private readonly Marker marker;
+
+            public IOnInfoWindowClickListenerImplB(IOnMarkerClickListenerImpl iOnMarkerClickListenerImpl, Marker marker)
+            {
+                this.iOnMarkerClickListenerImpl = iOnMarkerClickListenerImpl;
+                this.marker = marker;
+            }
+
+            public void OnInfoWindowClick()
+            {
+                marker.Icon = iOnMarkerClickListenerImpl.overlayDemo.bd;
+                iOnMarkerClickListenerImpl.overlayDemo.mBaiduMap.HideInfoWindow();
+            }
+        }
+
+        private class IOnInfoWindowClickListenerImplC : Object, InfoWindow.IOnInfoWindowClickListener
+        {
+            private readonly IOnMarkerClickListenerImpl iOnMarkerClickListenerImpl;
+            private readonly Marker marker;
+
+            public IOnInfoWindowClickListenerImplC(IOnMarkerClickListenerImpl iOnMarkerClickListenerImpl, Marker marker)
+            {
+                this.iOnMarkerClickListenerImpl = iOnMarkerClickListenerImpl;
+                this.marker = marker;
+            }
+
+            public void OnInfoWindowClick()
+            {
+                marker.Remove();
+                iOnMarkerClickListenerImpl.overlayDemo.mBaiduMap.HideInfoWindow();
+            }
+        }
+
+        private class IOnMarkerClickListenerImpl : Object, BaiduMap.IOnMarkerClickListener
+        {
+            public readonly OverlayDemo overlayDemo;
+
+            public IOnMarkerClickListenerImpl(OverlayDemo overlayDemo)
+            {
+                this.overlayDemo = overlayDemo;
+            }
+
+            public bool OnMarkerClick(Marker marker)
+            {
+                var button = new Button(overlayDemo.ApplicationContext);
+                button.SetBackgroundResource(Resource.Drawable.popup);
+                LatLng ll = marker.Position; // 常量
+                Point p = overlayDemo.mBaiduMap.Projection.ToScreenLocation(ll);
+                p.Y -= 47;
+                LatLng llInfo = overlayDemo.mBaiduMap.Projection.FromScreenLocation(p);
+                InfoWindow.IOnInfoWindowClickListener listener = null;
+                if (marker.Equals(overlayDemo.mMarkerA) || marker.Equals(overlayDemo.mMarkerD))
+                {
+                    button.Text = "更改位置";
+                    listener = new IOnInfoWindowClickListenerImplA(this, ll, marker);
+                }
+                else if (marker.Equals(overlayDemo.mMarkerB))
+                {
+                    button.Text = "更改图标";
+                    listener = new IOnInfoWindowClickListenerImplB(this, marker);
+                }
+                else if (marker.Equals(overlayDemo.mMarkerC))
+                {
+                    button.Text = "删除";
+                    listener = new IOnInfoWindowClickListenerImplC(this, marker);
+                }
+                overlayDemo.mInfoWindow = new InfoWindow(button, llInfo, listener);
+                overlayDemo.mBaiduMap.ShowInfoWindow(overlayDemo.mInfoWindow);
+                return true;
+            }
+        }
     }
 }

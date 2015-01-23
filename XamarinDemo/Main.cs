@@ -1,58 +1,51 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.Content.PM;
+using Android.Graphics.Drawables;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
-using XamarinDemo.Maps;
 
 namespace XamarinDemo
 {
     [Activity(Label = "主界面", ScreenOrientation = ScreenOrientation.Sensor)]
-	public class Main : TabActivity
-	{
+    public class Main : TabActivity
+    {
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
+            SetContentView(Resource.Layout.Main);
+            retrieveset();
 
-		protected override void OnCreate (Bundle bundle)
-		{
-			base.OnCreate (bundle);
-			SetContentView (Resource.Layout.Main);
-			retrieveset ();
+            CreateTab(typeof (MainMonitor), "Monitor", "监控中心", Resource.Drawable.ic_tab_whats_on);
+            CreateTab(typeof (CarManage), "carmanage", "车辆管理", Resource.Drawable.ic_tab_speakers);
+            CreateTab(typeof (SijiList), "siji", "司机管理", Resource.Drawable.ic_tab_sessions);
+            CreateTab(typeof (UserLActivity), "author", "权限管理", Resource.Drawable.ic_tab_my_schedule);
+            // Create your application here
+        }
 
-			CreateTab (typeof(MainMonitor), "Monitor", "监控中心", Resource.Drawable.ic_tab_whats_on);
-			CreateTab (typeof(CarManage), "carmanage", "车辆管理", Resource.Drawable.ic_tab_speakers);
-			CreateTab (typeof(SijiList), "siji", "司机管理", Resource.Drawable.ic_tab_sessions);
-            CreateTab(typeof(UserLActivity), "author", "权限管理", Resource.Drawable.ic_tab_my_schedule);
-			// Create your application here
-		}
+        private void CreateTab(Type activityType, string tag, string label, int drawableId)
+        {
+            var intent = new Intent(this, activityType);
+            intent.AddFlags(ActivityFlags.NewTask);
 
-		private void CreateTab (Type activityType, string tag, string label, int drawableId)
-		{
-			var intent = new Intent (this, activityType);
-			intent.AddFlags (ActivityFlags.NewTask);
+            TabHost.TabSpec spec = TabHost.NewTabSpec(tag);
+            Drawable drawableIcon = Resources.GetDrawable(drawableId);
+            spec.SetIndicator(label, drawableIcon);
+            spec.SetContent(intent);
 
-			var spec = TabHost.NewTabSpec (tag);
-			var drawableIcon = Resources.GetDrawable (drawableId);
-			spec.SetIndicator (label, drawableIcon);
-			spec.SetContent (intent);
+            TabHost.AddTab(spec);
+        }
 
-			TabHost.AddTab (spec);
-		}
+        protected void retrieveset()
+        {
+            //retreive 
+            ISharedPreferences prefs = Application.Context.GetSharedPreferences("VehicleMonitor",
+                FileCreationMode.Private);
+            int somePref = prefs.GetInt("UserId", 0);
 
-		protected void retrieveset ()
-		{
-			//retreive 
-			var prefs = Application.Context.GetSharedPreferences ("VehicleMonitor", FileCreationMode.Private);              
-			var somePref = prefs.GetInt ("UserId", 0);
-
-			//Show a toast
-			RunOnUiThread (() => Toast.MakeText (this, somePref.ToString (), ToastLength.Long).Show ());
-
-		}
-	}
+            //Show a toast
+            RunOnUiThread(() => Toast.MakeText(this, somePref.ToString(), ToastLength.Long).Show());
+        }
+    }
 }

@@ -2,6 +2,7 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Views;
+using Java.Interop;
 
 namespace XamarinDemo.Maps
 {
@@ -14,11 +15,11 @@ namespace XamarinDemo.Maps
             SetContentView(Resource.Layout.activity_cloud_search_demo);
         }
 
-        [Java.Interop.Export]
+        [Export]
         public void StartCloudSearchDemo(View view)
         {
-            Intent intent = new Intent();
-            intent.SetClass(this, typeof(CloudSearchActivity));
+            var intent = new Intent();
+            intent.SetClass(this, typeof (CloudSearchActivity));
             StartActivity(intent);
         }
     }

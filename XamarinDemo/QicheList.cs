@@ -1,14 +1,14 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
+using Android.Text;
 using Android.Views;
+using Android.Views.Animations;
 using Android.Views.InputMethods;
 using Android.Widget;
 using Entity;
@@ -19,15 +19,15 @@ namespace XamarinDemo
     [Activity(Label = "汽车列表")]
     public class QicheList : Activity
     {
+        private Testcase4sAdapter mAdapter;
+        private bool mAnimatedDown;
+        private WebClient mClient;
+        private LinearLayout mContainer;
         private List<testCase4> mDataList;
+        private bool mIsAnimating;
         private ListView mListView;
         private EditText mSearch;
-        private LinearLayout mContainer;
-        private bool mAnimatedDown;
-        private bool mIsAnimating;
-        private Testcase4sAdapter mAdapter;
-        private WebClient mClient;
-        private Uri mUrl;        
+        private Uri mUrl;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -48,7 +48,7 @@ namespace XamarinDemo
             // Create your application here
         }
 
-        void mClient_DownloadDataCompleted(object sender, DownloadDataCompletedEventArgs e)
+        private void mClient_DownloadDataCompleted(object sender, DownloadDataCompletedEventArgs e)
         {
             RunOnUiThread(() =>
             {
@@ -59,37 +59,34 @@ namespace XamarinDemo
                     mDataList = JsonConvert.DeserializeObject<List<testCase4>>(fRows.rows.ToString());
                     mAdapter = new Testcase4sAdapter(this, Resource.Layout.row_testcase2, mDataList);
                     mListView.Adapter = mAdapter;
-
                 }
                 catch (Exception ex)
                 {
                     Toast.MakeText(this, ex.ToString(), ToastLength.Long).Show();
                 }
-
             });
         }
 
-        void mSearch_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
+        private void mSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (mDataList!= null)
+            if (mDataList != null)
             {
                 if (mDataList != null)
                 {
                     List<testCase4> searchedData = (from data in mDataList
-                                                    where data.ownercompanyname.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase) || data.chepaino.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase)
-                                                    || data.sijiname.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase)
-                                                    select data).ToList<testCase4>();
+                        where
+                            data.ownercompanyname.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase) ||
+                            data.chepaino.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase)
+                            || data.sijiname.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase)
+                        select data).ToList<testCase4>();
 
                     mAdapter = new Testcase4sAdapter(this, Resource.Layout.row_testcase2, searchedData);
                     mListView.Adapter = mAdapter;
                 }
             }
-
-
-
         }
 
-        void mListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        private void mListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             //var callDialog = new AlertDialog.Builder(this);
             //callDialog.SetMessage("Call " + mDataList[e.Position].lianxidianhua + "?");
@@ -123,7 +120,6 @@ namespace XamarinDemo
         {
             switch (item.ItemId)
             {
-
                 case Resource.Id.search:
                     //Search icon has been clicked
 
@@ -135,7 +131,7 @@ namespace XamarinDemo
                     if (!mAnimatedDown)
                     {
                         //Listview is up
-                        MyAnimation anim = new MyAnimation(mListView, mListView.Height - mSearch.Height);
+                        var anim = new MyAnimation(mListView, mListView.Height - mSearch.Height);
                         anim.Duration = 500;
                         mListView.StartAnimation(anim);
                         anim.AnimationStart += anim_AnimationStartDown;
@@ -145,7 +141,7 @@ namespace XamarinDemo
                     else
                     {
                         //Listview is down
-                        MyAnimation anim = new MyAnimation(mListView, mListView.Height + mSearch.Height);
+                        var anim = new MyAnimation(mListView, mListView.Height + mSearch.Height);
                         anim.Duration = 500;
                         mListView.StartAnimation(anim);
                         anim.AnimationStart += anim_AnimationStartUp;
@@ -161,26 +157,26 @@ namespace XamarinDemo
             }
         }
 
-        void anim_AnimationEndUp(object sender, Android.Views.Animations.Animation.AnimationEndEventArgs e)
+        private void anim_AnimationEndUp(object sender, Animation.AnimationEndEventArgs e)
         {
             mIsAnimating = false;
             mSearch.ClearFocus();
-            InputMethodManager inputManager = (InputMethodManager)this.GetSystemService(Context.InputMethodService);
-            inputManager.HideSoftInputFromWindow(this.CurrentFocus.WindowToken, HideSoftInputFlags.NotAlways);
+            var inputManager = (InputMethodManager) GetSystemService(InputMethodService);
+            inputManager.HideSoftInputFromWindow(CurrentFocus.WindowToken, HideSoftInputFlags.NotAlways);
         }
 
-        void anim_AnimationEndDown(object sender, Android.Views.Animations.Animation.AnimationEndEventArgs e)
+        private void anim_AnimationEndDown(object sender, Animation.AnimationEndEventArgs e)
         {
             mIsAnimating = false;
         }
 
-        void anim_AnimationStartDown(object sender, Android.Views.Animations.Animation.AnimationStartEventArgs e)
+        private void anim_AnimationStartDown(object sender, Animation.AnimationStartEventArgs e)
         {
             mIsAnimating = true;
             mSearch.Animate().AlphaBy(1.0f).SetDuration(500).Start();
         }
 
-        void anim_AnimationStartUp(object sender, Android.Views.Animations.Animation.AnimationStartEventArgs e)
+        private void anim_AnimationStartUp(object sender, Animation.AnimationStartEventArgs e)
         {
             mIsAnimating = true;
             mSearch.Animate().AlphaBy(-1.0f).SetDuration(300).Start();

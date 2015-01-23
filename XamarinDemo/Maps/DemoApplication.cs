@@ -1,7 +1,7 @@
+﻿using System;
 using Android.App;
 using Android.Runtime;
 using Com.Baidu.Mapapi;
-using System;
 
 namespace XamarinDemo.Maps
 {
