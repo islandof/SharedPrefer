@@ -84,15 +84,16 @@ namespace XamarinDemo
 
         private void mListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            var intent = new Intent(this, typeof (AreaDetail));
+            var intent = new Intent(this, typeof(AreaDetail));
             intent.PutExtra("area", JsonConvert.SerializeObject(mDataList[e.Position]));
             StartActivity(intent);
 
-            //CreateContactDialog dialog = new CreateContactDialog();
-            //FragmentTransaction transaction = FragmentManager.BeginTransaction();
-
-            ////Subscribe to event
-            //dialog.OnCreateContact += dialog_OnCreateContact;
+            //AreaDetailDialog dialog = new AreaDetailDialog();
+            ////dialog.Activity.
+            //Bundle args = new Bundle();
+            //args.PutString("area", JsonConvert.SerializeObject(mDataList[e.Position]));
+            //dialog.Arguments = args;            
+            //FragmentTransaction transaction = FragmentManager.BeginTransaction();            
             //dialog.Show(transaction, "create contact");
         }
 

@@ -8,14 +8,14 @@ using Android.Widget;
 
 namespace XamarinDemo
 {
-    [Activity(Label = "主界面", ScreenOrientation = ScreenOrientation.Sensor)]
+    [Activity(Label = "主界面", MainLauncher = true, ScreenOrientation = ScreenOrientation.Sensor)]
     public class Main : TabActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.Main);
-            retrieveset();
+            //retrieveset();
 
             CreateTab(typeof (MainMonitor), "Monitor", "监控中心", Resource.Drawable.ic_tab_whats_on);
             CreateTab(typeof (CarManage), "carmanage", "车辆管理", Resource.Drawable.ic_tab_speakers);

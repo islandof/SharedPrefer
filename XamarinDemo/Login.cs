@@ -16,7 +16,7 @@ using Newtonsoft.Json;
 
 namespace XamarinDemo
 {
-    [Activity(Label = "Login", MainLauncher = true, ScreenOrientation = ScreenOrientation.Sensor)]
+    [Activity(Label = "Login",  ScreenOrientation = ScreenOrientation.Sensor)]
     public class Login : Activity
     {
         private CheckBox checkbox;

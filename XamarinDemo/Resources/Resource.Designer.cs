@@ -34,10 +34,16 @@ namespace XamarinDemo
 		{
 			
 			// aapt resource value: 0x7f040000
-			public const int slide_in_top = 2130968576;
+			public const int slide_down = 2130968576;
 			
 			// aapt resource value: 0x7f040001
-			public const int slide_out_bottom = 2130968577;
+			public const int slide_in_top = 2130968577;
+			
+			// aapt resource value: 0x7f040002
+			public const int slide_out_bottom = 2130968578;
+			
+			// aapt resource value: 0x7f040003
+			public const int slide_up = 2130968579;
 			
 			static Animation()
 			{
@@ -1129,8 +1135,17 @@ namespace XamarinDemo
 		public partial class Style
 		{
 			
+			// aapt resource value: 0x7f060001
+			public const int CustomActionBarTheme = 2131099649;
+			
 			// aapt resource value: 0x7f060000
 			public const int Mono_Android_Theme_Splash = 2131099648;
+			
+			// aapt resource value: 0x7f060002
+			public const int MyActionBar = 2131099650;
+			
+			// aapt resource value: 0x7f060003
+			public const int dialog_animation = 2131099651;
 			
 			static Style()
 			{

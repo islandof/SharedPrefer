@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AreaDetailDialog.cs" />
     <Compile Include="CarTrace.cs" />
     <Compile Include="AreaDetail.cs" />
     <Compile Include="Carposition.cs" />
@@ -324,6 +325,9 @@
     <AndroidResource Include="Resources\drawable\ic_action_person.png" />
     <AndroidResource Include="Resources\drawable\gray_car.gif" />
     <AndroidResource Include="Resources\drawable\green_car.gif" />
+    <AndroidResource Include="Resources\values\themes.xml" />
+    <AndroidResource Include="Resources\anim\slide_down.xml" />
+    <AndroidResource Include="Resources\anim\slide_up.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BaiduMap300Binding\BaiduMap300Binding.csproj">
