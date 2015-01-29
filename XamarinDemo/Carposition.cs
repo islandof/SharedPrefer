@@ -75,6 +75,8 @@ namespace XamarinDemo
             mBaiduMap = mMapView.Map;
             MapStatusUpdate msu = MapStatusUpdateFactory.NewLatLng(GEO_SHENGZHENG);
             mBaiduMap.SetMapStatus(msu);
+            MapStatusUpdate msu1 = MapStatusUpdateFactory.ZoomTo(14.0f);
+            mBaiduMap.SetMapStatus(msu1);
             Toast.MakeText(this, "数据加载中...", ToastLength.Long).Show();
             mClient = new WebClient();
             mUrl = new Uri("http://cloud.tescar.cn/Vehicle/GetQicheData?isspec=1");

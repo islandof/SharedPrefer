@@ -23,7 +23,7 @@
                 android:textColor="#000"
                 android:textSize="16sp" />
             <TextView
-                android:text="怠速时长s"
+                android:text="超速时速km/h"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:layout_weight="50"
